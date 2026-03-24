@@ -8,7 +8,12 @@
     /* Footer */
     .gf-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
+    }
+
+    .gf-cta-section {
+        grid-column: auto;
+        padding-bottom: 2rem;
     }
 
     .gf-grid {
