@@ -86,6 +86,11 @@
     .hero h1 { font-size: clamp(3.5rem, 18vw, 6rem); }
     .hero-name-top, .hero-name-bottom { transform: none !important; }
     .hero-name-bottom { height: clamp(3rem, 15.3vw, 5.1rem); width: 90vw; }
+    /* Fix hollow SVG text on mobile — replace stroke outline with solid fill */
+    .hero-name-bottom text { fill: var(--accent) !important; stroke: none !important; }
+    /* Fix -webkit-text-stroke hollow numbers / headings */
+    .fs-num { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
+    .fs-intro-heading em { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
 
     /* About */
     .editorial-grid {
@@ -101,24 +106,57 @@
     .btn-group { flex-direction: column; align-items: center; }
     .software-toolkit-large { gap: 1.5rem; }
 
-    /* Featured — stack vertically on mobile */
-    .featured-slide { flex-direction: column; align-items: stretch; }
-    .fs-info {
-        flex: 0 0 auto;
-        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-        justify-content: flex-end;
+    /* Featured — disable sticky/scroll, show as alternating image+text cards */
+    .featured-sticky-outer { height: auto; }
+    .featured-sticky-inner { position: relative !important; height: auto !important; overflow: visible !important; }
+    .featured-slides-track { flex-direction: column !important; height: auto !important; transform: none !important; }
+
+    /* Show all slides regardless of .is-active (JS still runs but CSS wins) */
+    .featured-slide .fs-image-wrap { opacity: 1 !important; }
+    .featured-slide .fs-info { opacity: 1 !important; transform: none !important; }
+    .featured-slide .fs-intro-inner { opacity: 1 !important; transform: none !important; }
+
+    /* Intro slide → compact heading */
+    .fs-intro-slide {
+        min-width: 100% !important; height: auto !important; min-height: auto !important;
+        flex-direction: column !important; justify-content: flex-start !important;
+        align-items: flex-start !important; padding: 3rem 1.5rem 1rem !important;
+        cursor: auto !important;
     }
-    .fs-image-wrap {
-        flex: 1 1 0;
-        min-height: 0;
+    .fs-intro-slide::after { display: none !important; }
+    .fs-intro-scroll-cue { display: none !important; }
+    .fs-intro-heading { font-size: clamp(2.2rem, 8vw, 3.5rem) !important; }
+
+    /* Project slides → horizontal card: image left (45%), info right */
+    .featured-slide:not(.fs-intro-slide) {
+        min-width: 100% !important; height: auto !important; min-height: 260px;
+        flex-direction: row !important; align-items: stretch !important;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .featured-slide:not(.fs-intro-slide) .fs-image-wrap {
+        flex: 0 0 45% !important; min-height: 260px; order: 1 !important;
+    }
+    .featured-slide:not(.fs-intro-slide) .fs-info {
+        flex: 1 !important; order: 2 !important;
+        padding: 1.5rem 1.2rem !important; justify-content: center !important;
+        border-left: 1px solid rgba(255,255,255,0.06) !important;
     }
     .fs-image-wrap::before {
-        background: linear-gradient(to bottom, #0c0c0c 0%, rgba(12,12,12,0.4) 30%, transparent 60%);
+        background: linear-gradient(to left, rgba(8,8,8,0.55) 0%, rgba(8,8,8,0.1) 20%, transparent 50%);
     }
-    .fs-title { font-size: clamp(2rem, 8vw, 3rem); }
-    .fs-desc  { font-size: 0.9rem; }
-    .fs-progress { right: 1rem; }
-    .fs-scroll-hint { left: 50%; }
+
+    /* Alternate: slide 2 (Beatles, nth-child(3)) → image right, info left */
+    .featured-slides-track .featured-slide:nth-child(3) .fs-image-wrap { order: 2 !important; }
+    .featured-slides-track .featured-slide:nth-child(3) .fs-info {
+        order: 1 !important;
+        border-left: none !important;
+        border-right: 1px solid rgba(255,255,255,0.06) !important;
+    }
+
+    .fs-progress { display: none !important; }
+    .fs-counter  { display: none !important; }
+    .fs-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+    .fs-desc  { font-size: 0.85rem; display: block; }
 
     /* Modal */
     .modal-close { top: 1rem; right: 1rem; }
@@ -155,10 +193,31 @@
 /* ---- SMALL PHONES (≤ 480px) ---- */
 @media (max-width: 480px) {
     .hero h1 { font-size: clamp(3rem, 20vw, 5rem); }
-    .fs-title { font-size: 1.8rem; }
+    .fs-title { font-size: 1.5rem !important; }
     .fs-desc  { display: none; }
-    .fs-info  { padding: 2rem 1rem 1rem 1rem; }
+    .fs-info  { padding: 1.2rem 1rem !important; }
     .dashboard-stats { flex-direction: column; gap: 0.5rem; }
     .modal-tags { gap: 0.5rem; }
     .modal-tag { padding: 0.5rem 1rem; font-size: 0.8rem; }
+
+    /* Stack project cards vertically on very small phones */
+    .featured-slide:not(.fs-intro-slide) {
+        flex-direction: column !important;
+        min-height: auto !important;
+    }
+    .featured-slide:not(.fs-intro-slide) .fs-image-wrap {
+        flex: none !important; width: 100%; min-height: 200px !important; order: 1 !important;
+    }
+    .featured-slide:not(.fs-intro-slide) .fs-info {
+        flex: 1 !important; order: 2 !important;
+        border-left: none !important; border-right: none !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+        padding: 1.2rem 1.2rem 2rem !important;
+    }
+    /* Reset nth-child(3) flip for stacked layout */
+    .featured-slides-track .featured-slide:nth-child(3) .fs-image-wrap { order: 1 !important; }
+    .featured-slides-track .featured-slide:nth-child(3) .fs-info {
+        order: 2 !important; border-right: none !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+    }
 }
