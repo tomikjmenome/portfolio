@@ -93,19 +93,23 @@
     .hero-name-bottom { height: clamp(3rem, 15.3vw, 5.1rem); width: 90vw; }
 
     /*
-     * Hollow font fix — rendering artifacts on mobile are caused by:
-     *   1) Large stroke-width on small screens
-     *   2) GPU compositing interacting with -webkit-text-stroke
+     * Hollow font fix — SVG is scaled down on mobile so stroke-width
+     * ends up sub-pixel (e.g. 2.5 × 0.6 scale = 1.5px → glitch).
      *
-     * Solution: keep hollow effect, improve rendering precision,
-     * reduce stroke widths slightly, prevent bad compositing layers.
+     * Fix: vector-effect: non-scaling-stroke keeps stroke at exact
+     * pixel size regardless of SVG scale. will-change: auto removes
+     * the element from GPU compositing layer that caused artifacts.
      */
 
-    /* SVG hero text: thinner stroke + crisp rendering */
+    /* SVG hero text */
+    .hero-name-bottom {
+        will-change: auto;
+    }
     .hero-name-bottom text {
         stroke-width: 1.5;
+        vector-effect: non-scaling-stroke;
         text-rendering: geometricPrecision;
-        shape-rendering: crispEdges;
+        stroke-linejoin: round;
     }
 
     /* Numbered labels in work section: smaller size = less glitch surface */
@@ -361,7 +365,7 @@
     .modal-tags  { gap: 0.5rem; }
     .modal-tag   { padding: 0.5rem 1rem; font-size: 0.8rem; }
 
-    /* Even thinner stroke on very small screens */
-    .hero-name-bottom text { stroke-width: 1.2; }
+    /* Even thinner stroke on very small screens — non-scaling keeps it sharp */
+    .hero-name-bottom text { stroke-width: 1.2; vector-effect: non-scaling-stroke; }
     .fs-num { -webkit-text-stroke: 0.8px var(--accent) !important; }
 }
