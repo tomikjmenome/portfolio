@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tomáš Hájek — Designer & Digital Artist</title>
+    <meta name="description" content="Portfolio Tomáše Hájka — grafický designér a digitální umělec z Brna. Specializace na branding, vizuální identitu, print a game art.">
+    <meta name="author" content="Tomáš Hájek">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tomáš Hájek — Designer & Digital Artist">
+    <meta property="og:description" content="Grafický designér a digitální umělec z Brna. Branding, vizuální identita, print design.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#ff3366">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/icons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/icons/web-icon.png" sizes="any">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/noise.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/work.css">
+    <link rel="stylesheet" href="css/archive.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tomáš Hájek",
+        "jobTitle": "Designer & Digital Artist",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Brno",
+            "addressCountry": "CZ"
+        },
+        "url": "https://tomashajek.cz",
+        "knowsAbout": ["Graphic Design", "Branding", "UI/UX", "Pixel Art", "Print Design"]
+    }
+    </script>
+</head>
+<body id="top">
+
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <span class="preloader-logo">TH<span class="preloader-dot">.</span></span>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="lightbox-controls">
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+        </div>
+        <img id="lightboxImg" src="" alt="Fullscreen preview">
+        <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
+    </div>
+
+    <!-- Overlays -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+    <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+    <div class="cursor-aura" aria-hidden="true"></div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" role="banner">
+        <div class="mobile-logo" aria-label="Tomáš Hájek portfolio">TH.</div>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileNav">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigace" aria-hidden="true">
+        <div class="mobile-nav-links">
+            <a href="#about" class="mobile-link" data-i18n="mobileAbout">O mně</a>
+            <a href="#work" class="mobile-link" data-i18n="mobileWork">Práce</a>
+            <a href="#contact" class="mobile-link" data-i18n="mobileContact">Kontakt</a>
+            <div class="mobile-lang-switch">
+                <button class="m-lang-btn" data-lang="cs">CS</button>
+                <button class="m-lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Desktop Language Switcher -->
+    <div class="lang-switcher" role="group" aria-label="Přepnutí jazyka">
+        <button class="lang-btn" id="btn-en" data-lang="en" aria-label="Switch to English">
+            <img src="img/icons/flag-gb.png" alt="English" width="60" height="40">
+        </button>
+        <button class="lang-btn" id="btn-cs" data-lang="cs" aria-label="Přepnout do češtiny">
+            <img src="img/icons/flag-cz.png" alt="Čeština" width="60" height="40">
+        </button>
+    </div>
+
+    <!-- Floating Contact Button (mobile) -->
+    <a href="#contact" class="fab-contact" aria-label="Kontakt" title="Kontaktovat">✉</a>
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero" id="hero" aria-label="Úvod">
+            <div class="hero-background" aria-hidden="true">
+                <canvas id="dotCanvas" aria-hidden="true" role="presentation"></canvas>
+            </div>
+            <div class="hero-content">
+                <h1 aria-label="Tomáš Hájek">
+                    <span class="hero-name-top">TOMÁŠ</span>
+                    <svg class="hero-name-bottom" viewBox="0 0 540 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <text x="50%" y="93%"
+                              text-anchor="middle"
+                              font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                              font-weight="900"
+                              font-size="112"
+                              fill="none"
+                              stroke="#ff3366"
+                              stroke-width="2.5"
+                              letter-spacing="-3">HÁJEK</text>
+                    </svg>
+                </h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Designer & Digital Artist</p>
+            </div>
+            <button class="scroll-indicator" aria-label="Přejít na sekci O mně">↓</button>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="editorial-about" id="about">
+            <div class="bg-number" aria-hidden="true">:)</div>
+            <div class="editorial-grid">
+
+                <!-- Photo Column -->
+                <div class="photo-column">
+                    <div class="location-widget" aria-label="Lokace a čas">
+                        <div class="widget-row">
+                            <div class="status-dot" aria-hidden="true"></div>
+                            <span class="location-label">BRNO, CZ</span>
+                        </div>
+                        <div class="widget-row">
+                            <time class="brno-time" aria-hidden="true">
+                                <span id="brnoDate">01.01.2025</span>
+                                &nbsp;•&nbsp;
+                                <span id="brnoTime">00:00:00</span>
+                            </time>
+                        </div>
+                    </div>
+                    <div class="photo-container">
+                        <div class="photo-frame-back" aria-hidden="true"></div>
+                        <div class="editorial-photo">
+                            <img
+                                src="img/profile-img.png"
+                                alt="Tomáš Hájek — grafický designér"
+                                width="600" height="800"
+                                loading="eager"
+                            >
+                        </div>
+                        <div class="photo-caption" aria-hidden="true">Digital Artist</div>
+                    </div>
+                </div>
+
+                <!-- Text Column -->
+                <div class="text-column">
+                    <div class="manifesto-highlight" id="typewriter-target" aria-live="polite">
+                        <span id="typewriterText"></span><span class="type-cursor" aria-hidden="true"></span>
+                    </div>
+                    <div class="bio-columns">
+                        <p data-i18n="aboutBio1">Jmenuji se Tomáš a jsem grafický designér. Kromě vizuální tvorby se aktivně zajímám o 3D tisk, moderní technologie a historii. Mou velkou inspirací je hudba – konkrétně skladby plné skrytých odkazů, historických narážek a detailů, které člověk docení až při opakovaném poslechu.</p>
+                        <p data-i18n="aboutBio2">Tento princip objevování hlubších vrstev se snažím přenášet i do své práce. Baví mě tvořit design s přesahem a mám radost, když se mi podaří do grafiky zakomponovat jemný detail či "easter egg", který pozorný divák časem odhalí.</p>
+                        <p data-i18n="aboutBio3">Angličtina: B2 (upper-intermediate)</p>
+                    </div>
+                    <div class="action-row">
+                        <div class="btn-group">
+                            <div class="status-badge">
+                                <div class="dot" aria-hidden="true"></div>
+                                <span data-i18n="available">Dostupný</span>
+                            </div>
+                            <a href="#contact" class="contact-cta" data-i18n="contactCTA">Kontaktovat</a>
+                            <a href="cv.pdf" class="download-cv" data-i18n="downloadCV" download="Tomas_Hajek_CV.pdf">Stáhnout CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career -->
+            <div class="career-section">
+                <div class="career-header">
+                    <span class="career-title" data-i18n="careerTitle">Vzdělání</span>
+                    <div class="career-line" aria-hidden="true"></div>
+                </div>
+                <div class="xp-grid">
+                    <article class="xp-card">
+                        <div class="xp-card-header">
+                            <span class="xp-date">2022 — 2026</span>
+                            <span class="xp-company-logo">SPŠ Brno Purkyňova</span>
+                        </div>
+                        <div class="xp-main">
+                            <h3 data-i18n="xpDegree">Informační Technologie</h3>
+                            <p class="xp-desc" data-i18n="xpDesc">Maturitní obor zakončený státní maturitní zkouškou. Průměr 1,47. Angličtina B2.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Software Toolkit -->
+            <div class="software-section-bottom">
+                <span class="software-title" data-i18n="softwareTitle">Můj Digitální Arzenál</span>
+                <div class="software-toolkit-large" role="list" aria-label="Software tools">
+                    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe Photoshop">
+                        <img src="img/icons/adobe-photoshop-icon.png" alt="Adobe Photoshop" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe Illustrator">
+                        <img src="img/icons/adobe-illustrator-icon.png" alt="Adobe Illustrator" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.adobe.com/products/indesign.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe InDesign">
+                        <img src="img/icons/indesign-icon.svg" alt="Adobe InDesign" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe Premiere Pro">
+                        <img src="img/icons/premiere-icon.svg" alt="Adobe Premiere Pro" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.autodesk.com/products/inventor/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Autodesk Inventor">
+                        <img src="img/icons/autodesk-inventor-icon.png" alt="Autodesk Inventor" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.blender.org/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Blender">
+                        <img src="img/icons/blender-icon.svg" alt="Blender" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.audacityteam.org/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Audacity">
+                        <img src="img/icons/audacity-icon.svg" alt="Audacity" class="software-icon-lg" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED WORK -->
+        <section class="featured-work" id="work" aria-label="Vybraná práce">
+            <div class="featured-bg-gradient" aria-hidden="true"></div>
+
+            <!-- Sticky full-screen slides -->
+            <div class="featured-sticky-outer" id="featuredOuter">
+                <div class="featured-sticky-inner" id="featuredInner">
+                <div class="featured-slides-track" id="featuredSlidesTrack">
+
+                    <!-- Slide 0: Intro -->
+                    <article class="featured-slide fs-intro-slide is-active" role="presentation" aria-hidden="true">
+                        <div class="fs-intro-inner">
+                            <p class="fs-intro-eyebrow">Tomáš Hájek — selected work</p>
+                            <h2 class="fs-intro-heading">Vybraná<br><em>práce</em></h2>
+                        </div>
+                        <div class="fs-intro-scroll-cue">
+                            <div class="fs-sh-bar"></div>
+                            <span>scroll dolů</span>
+                        </div>
+                    </article>
+
+                    <!-- Slide 1: Robokolo -->
+                    <article class="featured-slide" role="button" tabindex="0" data-project="branding-1" data-num="01" aria-label="Zobrazit projekt Robokolo">
+                        <div class="fs-info">
+                            <div class="fs-meta">
+                                <span class="fs-num">01</span>
+                                <span class="fs-cat" data-i18n="f1Cat">/ Branding &amp; Identity</span>
+                            </div>
+                            <span class="fs-rule" aria-hidden="true"></span>
+                            <h3 class="fs-title" data-i18n="f1Title">Robokolo</h3>
+                            <p class="fs-desc" data-i18n="f1Desc">Kompletní redesign značky — nové logo, piktogram, tiskoviny a merch. Cílem bylo posunout projekt od garážového hobby k moderní technologické identitě.</p>
+                            <div class="fs-tags">
+                                <span class="f-tag">Branding</span>
+                                <span class="f-tag">Print</span>
+                                <span class="f-tag">UI/UX</span>
+                            </div>
+                            <div class="fs-cta" aria-hidden="true">Zobrazit projekt <span>→</span></div>
+                        </div>
+                        <div class="fs-image-wrap">
+                            <img src="img/works/Robokolo/robokolo.png" alt="Robokolo" class="fs-img" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Slide 2: Abbey Road -->
+                    <article class="featured-slide" role="button" tabindex="0" data-project="web-1" data-num="02" aria-label="Zobrazit projekt Abbey Road">
+                        <div class="fs-info">
+                            <div class="fs-meta">
+                                <span class="fs-num">02</span>
+                                <span class="fs-cat" data-i18n="f2Cat">/ Cover Art &amp; Fan Art</span>
+                            </div>
+                            <span class="fs-rule" aria-hidden="true"></span>
+                            <h3 class="fs-title" data-i18n="f2Title">Abbey Road</h3>
+                            <p class="fs-desc" data-i18n="f2Desc">Moderní reinterpretace ikonického alba The Beatles z roku 1969. Nový vinyl, obal a série plakátů s minimalistickým přístupem.</p>
+                            <div class="fs-tags">
+                                <span class="f-tag">Redesign</span>
+                                <span class="f-tag">Cover Art</span>
+                                <span class="f-tag">Typography</span>
+                            </div>
+                            <div class="fs-cta" aria-hidden="true">Zobrazit projekt <span>→</span></div>
+                        </div>
+                        <div class="fs-image-wrap">
+                            <img src="img/works/Beatles/Beatles-mockup-final.png" alt="Abbey Road" class="fs-img" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Slide 3: Fusion TD -->
+                    <article class="featured-slide" role="button" tabindex="0" data-project="fusion-1" data-num="03" aria-label="Zobrazit projekt Fusion Tower Defense">
+                        <div class="fs-info">
+                            <div class="fs-meta">
+                                <span class="fs-num">03</span>
+                                <span class="fs-cat" data-i18n="f3Cat">/ Game Art &amp; UI</span>
+                            </div>
+                            <span class="fs-rule" aria-hidden="true"></span>
+                            <h3 class="fs-title" data-i18n="f3Title">Fusion Tower Defense</h3>
+                            <p class="fs-desc" data-i18n="f3Desc">Kompletní vizuální stránka hry — pixel art, herní UI, logo a title screen. Každý element navržen od nuly pro indie titul.</p>
+                            <div class="fs-tags">
+                                <span class="f-tag">Pixel Art</span>
+                                <span class="f-tag">Game Design</span>
+                                <span class="f-tag">UI</span>
+                            </div>
+                            <div class="fs-cta" aria-hidden="true">Zobrazit projekt <span>→</span></div>
+                        </div>
+                        <div class="fs-image-wrap">
+                            <img src="img/works/Fusion - Tower defense/main-titlescreen.png" alt="Fusion Tower Defense" class="fs-img" loading="lazy">
+                        </div>
+                    </article>
+
+                </div><!-- /featured-slides-track -->
+
+                    <!-- Progress dots (project slides only, hidden on intro) -->
+                    <nav class="fs-progress hidden" id="fsProgress" aria-label="Navigace projekty">
+                        <button class="fs-dot" aria-label="Robokolo"></button>
+                        <button class="fs-dot" aria-label="Abbey Road"></button>
+                        <button class="fs-dot" aria-label="Fusion TD"></button>
+                    </nav>
+
+                    <!-- Slide counter -->
+                    <div class="fs-counter hidden" id="fsCounter" aria-live="polite"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ARCHIVE -->
+        <section class="archive-section" id="work-grid" aria-label="Archiv projektů">
+            <div class="archive-bg-grid" aria-hidden="true"></div>
+            <div class="archive-container">
+                <div class="archive-header">
+                    <h2 data-i18n="archiveTitle">Projekty</h2>
+                    <div class="archive-id-badge" aria-hidden="true">VOL. 2024—26</div>
+                </div>
+
+                <div class="archive-dashboard">
+                    <div class="dashboard-stats" aria-label="Statistiky">
+                        <div class="d-stat">
+                            <span class="d-label">Total Files</span>
+                            <span class="d-value stat-number" id="totalFilesCount" aria-live="polite">0</span>
+                        </div>
+                        <div class="d-stat">
+                            <span class="d-label">Clients</span>
+                            <span class="d-value stat-number" data-target="15">0</span>
+                        </div>
+                        <div class="d-stat">
+                            <span class="d-label">XP Years</span>
+                            <span class="d-value stat-number" data-target="5">0</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="random-glitch-btn" id="randomProjectBtn" aria-label="Zobrazit náhodný projekt">
+                            Surprise Me 🎲
+                        </button>
+                    </div>
+                </div>
+
+                <div class="archive-layout">
+                    <aside class="archive-sidebar" aria-label="Filtrování projektů">
+                        <div class="sticky-filter-wrapper">
+                            <span class="filter-label" id="filter-label">// FILTER SYSTEM</span>
+                            <div class="filter-list" role="group" aria-labelledby="filter-label">
+                                <!-- Dynamically rendered by archive.js -->
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="archive-grid" id="archiveGrid" role="list" aria-label="Projekty">
+                        <!-- Dynamically rendered by archive.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="grid-footer" id="contact" aria-label="Kontakt a patička">
+        <div class="footer-top-border" aria-hidden="true"></div>
+        <div class="gf-container">
+
+            <!-- CTA + Email -->
+            <div class="gf-cta-section">
+                <span class="gf-label" data-i18n="footerCTA">Máte projekt?</span>
+                <a href="mailto:tomashajek07@gmail.com" class="gf-big-email" aria-label="Napsat e-mail na tomashajek07@gmail.com">
+                    tomashajek07<br>@gmail.com
+                    <span class="copy-hint" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        kopírovat
+                    </span>
+                </a>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="gf-nav-section">
+                <div class="gf-grid">
+                    <div class="gf-col">
+                        <span class="gf-header" data-i18n="footerMenuTitle">Menu</span>
+                        <nav class="gf-nav" aria-label="Footer navigace">
+                            <a href="#about" data-i18n="footerAbout">O mně</a>
+                            <a href="#work" data-i18n="footerWork">Práce</a>
+                            <a href="#work-grid" data-i18n="footerArchive">Archiv</a>
+                        </nav>
+                    </div>
+                    <div class="gf-col">
+                        <span class="gf-header" data-i18n="footerSocialsTitle">Socials</span>
+                        <nav class="gf-nav" aria-label="Sociální sítě">
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram (otevře nové okno)">Instagram ↗</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (otevře nové okno)">LinkedIn ↗</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub (otevře nové okno)">GitHub ↗</a>
+                        </nav>
+                    </div>
+                    <div class="gf-col extra-info">
+                        <span class="gf-header" data-i18n="footerLocationTitle">Lokace</span>
+                        <p>Brno, Czech Republic<br>Available for remote</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="gf-bottom">
+            <div class="gf-copy">&copy; 2026 Tomáš Hájek</div>
+            <a href="#top" class="gf-back-top" aria-label="Zpět nahoru" data-i18n="footerBackTop">Zpět nahoru ↑</a>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" aria-label="Zavřít projekt">×</button>
+        <div class="modal-layout">
+            <!-- Left: sticky sidebar with project info -->
+            <aside class="modal-sidebar-col">
+                <div class="modal-logo" aria-hidden="true">TH<span class="logo-dot">.</span></div>
+                <div class="modal-category" id="modalCategory">Category</div>
+                <h2 id="modalTitle">Project Title</h2>
+                <div class="modal-tags" id="modalTags" aria-label="Tagy projektu"></div>
+                <p class="modal-side-desc" id="modalSideDesc"></p>
+            </aside>
+            <!-- Right: scrollable content -->
+            <div class="modal-main-col">
+                <!-- Skeleton loader -->
+                <div class="modal-loading hidden" id="modalLoading" aria-hidden="true">
+                    <div class="sk-block sk-hero"></div>
+                    <div class="sk-block sk-text-lg"></div>
+                    <div class="sk-block sk-text-sm"></div>
+                    <div class="sk-duo">
+                        <div class="sk-block"></div>
+                        <div class="sk-block"></div>
+                    </div>
+                    <div class="sk-block sk-hero"></div>
+                </div>
+                <div class="modal-image" style="display:none">
+                    <img id="modalImage" src="" alt="Hlavní obrázek projektu">
+                </div>
+                <div class="modal-description" id="modalDescription"></div>
+                <div class="modal-grid" id="modalGallery" aria-label="Galerie projektu"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

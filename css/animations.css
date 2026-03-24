@@ -1,0 +1,112 @@
+/* =========================================
+   ANIMATIONS & KEYFRAMES
+   ========================================= */
+
+/* Easter egg — Konami glitch */
+@keyframes konami-glitch {
+    0%   { filter: none; transform: none; }
+    8%   { filter: brightness(3) hue-rotate(90deg); transform: skewX(6deg) translateX(4px); }
+    16%  { filter: none; transform: none; }
+    24%  { filter: invert(0.15) hue-rotate(200deg); transform: skewX(-3deg) translateX(-3px); }
+    32%  { filter: none; transform: none; }
+    42%  { filter: brightness(1.6) saturate(3) hue-rotate(120deg); transform: skewY(2deg); }
+    50%  { filter: none; transform: none; }
+    60%  { filter: invert(0.08); transform: translateX(2px); }
+    70%  { filter: none; transform: none; }
+    100% { filter: none; transform: none; }
+}
+.konami-active {
+    animation: konami-glitch 1.4s ease forwards;
+}
+
+/* Easter egg overlay */
+#konami-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#konami-overlay.visible { opacity: 1; }
+.konami-msg {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    border: 1px solid var(--accent);
+    padding: 1.2rem 2.5rem;
+    background: rgba(5,5,5,0.92);
+    text-align: center;
+    animation: konami-glitch 1.4s ease forwards;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 5px #00ff00; }
+    50% { opacity: 0.6; box-shadow: 0 0 12px #00ff00; }
+}
+
+@keyframes pulseGlow {
+    0% { background: radial-gradient(circle, rgba(255, 51, 102, 0.08) 0%, rgba(0,0,0,0) 70%); }
+    100% { background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, rgba(0,0,0,0) 70%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}

@@ -1,0 +1,44 @@
+/* =========================================
+   NOISE OVERLAY & SCROLL PROGRESS
+   ========================================= */
+
+@keyframes grainMove {
+    0%   { background-position: 0% 0%; }
+    10%  { background-position: -5% -10%; }
+    20%  { background-position: -15% 5%; }
+    30%  { background-position: 7% -25%; }
+    40%  { background-position: -5% 25%; }
+    50%  { background-position: -15% 10%; }
+    60%  { background-position: 15% 0%; }
+    70%  { background-position: 0% 15%; }
+    80%  { background-position: 3% 35%; }
+    90%  { background-position: -10% 10%; }
+    100% { background-position: 0% 0%; }
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9000;
+    opacity: 0.04;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzNmZmZvMy3uAAAACHRSTlMAM8zMzMwAzG1jNjMAAAABYktHRACIBR1IAAAAJElEQVQ4y2NgwA78jYJB7fw/CgY1//8D8f+//4H4/38wDCoHAOt+C/78g4XCAAAAAElFTkSuQmCC');
+    animation: grainMove 0.8s steps(1) infinite;
+}
+
+.scroll-progress-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: transparent;
+    z-index: 10001;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px var(--accent);
+}

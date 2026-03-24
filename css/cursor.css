@@ -1,0 +1,101 @@
+/* =========================================
+   CUSTOM CURSOR
+   ========================================= */
+
+a, button, .contact-cta, .f-btn, .lang-btn,
+.random-glitch-btn, .download-cv, .modal-close,
+.back-to-top, .software-icon-lg, .f-card, .f-tag,
+.a-card, .slider-dot, .slider-nav-btn, .xp-card,
+.pd-btn, .gf-nav a, .gf-big-email, .gf-back-top,
+.lb-arrow, .hamburger-menu, .m-lang-btn,
+.featured-slide {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 13000;
+    transform: translate(-50%, -50%);
+    transition: transform var(--transition-fast), width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    mix-blend-mode: exclusion;
+    will-change: left, top;
+}
+
+.cursor-aura {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 12999;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: transform var(--transition-base), width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    will-change: left, top;
+}
+
+.custom-cursor.hovering {
+    width: 24px;
+    height: 24px;
+    background: var(--white);
+}
+
+.cursor-aura.hovering {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+}
+
+/* Cursor label */
+.cursor-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* State: VIEW (on project slides) */
+.custom-cursor.cursor-view {
+    width: 52px;
+    height: 52px;
+    background: var(--accent);
+    mix-blend-mode: normal;
+}
+.custom-cursor.cursor-view .cursor-label { opacity: 1; }
+
+/* State: COPY (on email) */
+.custom-cursor.cursor-copy {
+    width: 52px;
+    height: 52px;
+    background: var(--white);
+    mix-blend-mode: normal;
+}
+.custom-cursor.cursor-copy .cursor-label { opacity: 1; color: var(--black); }
+
+/* State: ZOOM (on modal gallery images) */
+.custom-cursor.cursor-zoom {
+    width: 52px;
+    height: 52px;
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    mix-blend-mode: normal;
+}
+.custom-cursor.cursor-zoom .cursor-label { opacity: 1; color: var(--white); }

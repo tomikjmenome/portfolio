@@ -1,0 +1,98 @@
+/* =========================================
+   SECTIONS — general layout
+   ========================================= */
+
+section {
+    scroll-margin-top: 100px;
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+/* =========================================
+   PRELOADER
+   ========================================= */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease 0.1s, visibility 0.6s ease 0.1s;
+}
+#preloader.done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.preloader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.preloader-logo {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.04em;
+    animation: plFadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.preloader-dot { color: var(--accent); }
+.preloader-bar {
+    width: 120px;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+}
+.preloader-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    animation: plBar 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes plFadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes plBar {
+    from { width: 0%; }
+    to   { width: 100%; }
+}
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+.sr-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: inherit;
+}
+.sr-word span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.sr-word span.sr-visible {
+    transform: translateY(0);
+}
