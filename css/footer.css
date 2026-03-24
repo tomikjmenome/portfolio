@@ -29,7 +29,7 @@
     margin: 0 auto;
     padding: 6rem 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 4rem;
     align-items: start;
 }

@@ -1069,12 +1069,25 @@ function initContactForm() {
 
         if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '...'; }
 
-        var mailtoUrl = 'mailto:tomashajek07@gmail.com?subject=' + encodeURIComponent('Portfolio inquiry from ' + name) + '&body=' + encodeURIComponent(message) + '%0A%0AFrom: ' + encodeURIComponent(email);
-        window.location.href = mailtoUrl;
-
-        _showFormStatus('success', t.formSuccess);
-        form.reset();
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = t.formSend; }
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(function(res) {
+            if (res.ok) {
+                _showFormStatus('success', t.formSuccess);
+                form.reset();
+            } else {
+                res.json().then(function(data) {
+                    var msg = data.errors ? data.errors.map(function(e) { return e.message; }).join(', ') : t.formError;
+                    _showFormStatus('error', msg);
+                }).catch(function() { _showFormStatus('error', t.formError); });
+            }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = t.formSend; }
+        }).catch(function() {
+            _showFormStatus('error', t.formError);
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = t.formSend; }
+        });
     });
 }
 
