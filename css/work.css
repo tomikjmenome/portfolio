@@ -133,12 +133,13 @@
     transform: scale(1);
 }
 
-/* Portrait posters — show full image instead of cropping */
+/* Jurský Park — portrait poster: size image-wrap to exact poster ratio */
+.featured-slide[data-project="poster-3"] .fs-image-wrap {
+    flex: 0 0 calc(100vh * 0.7071);  /* w/h ratio of the poster */
+}
 .featured-slide[data-project="poster-3"] .fs-img {
-    object-fit: contain;
-    object-position: center;
-    transform: scale(1);
-    background: #050505;
+    object-fit: cover;   /* fills exact dimensions — no cropping */
+    transform: scale(1); /* no ken-burns on a portrait poster */
 }
 .featured-slide[data-project="poster-3"].is-active .fs-img {
     transform: scale(1);
