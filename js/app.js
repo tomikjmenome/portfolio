@@ -225,20 +225,11 @@ const projectsDatabase = {
         category: 'Digital Art',
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/DeathNote.png',
+        modalImage: 'img/works/Digitální kresba/DeathNote.png',
         gridClass: 'span-row-2',
-        tags: ['Digital Art', 'Fan Art', 'Illustration'],
+        tags: ['Digital Art', 'Fan Art'],
         shortDesc: 'Fan art inspirovaný japonskou manga sérií Death Note. Kresleno v Procreate na iPadu.',
         shortDescEn: 'Fan art inspired by the Japanese manga series Death Note. Drawn in Procreate on iPad.',
-        contentHTML: `
-            <div class="project-detail-container">
-                <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Digitální kresba/DeathNote.png" class="pd-image" alt="Death Note Fan Art">
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Death Note — Fan Art</h3>
-                    <p class="pd-text">Digitální kresba inspirovaná japonskou manga sérií Death Note. Kresleno v aplikaci Procreate na iPadu.</p>
-                </div>
-            </div>`
     },
 
     'digital-2': {
@@ -246,20 +237,11 @@ const projectsDatabase = {
         category: 'Digital Art',
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/Dragon1.png',
+        modalImage: 'img/works/Digitální kresba/Dragon1.png',
         gridClass: 'span-row-2',
-        tags: ['Digital Art', 'Illustration', 'Fantasy'],
+        tags: ['Digital Art', 'Fantasy'],
         shortDesc: 'Fantasy drak s detailně zpracovanými šupinami a texturou. Kresleno v Procreate na iPadu.',
         shortDescEn: 'Fantasy dragon with detailed scales and texture. Drawn in Procreate on iPad.',
-        contentHTML: `
-            <div class="project-detail-container">
-                <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Digitální kresba/Dragon1.png" class="pd-image" alt="Dragon I">
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Dragon I</h3>
-                    <p class="pd-text">Fantasy ilustrace draka s důrazem na detail šupiny, světlo a stín. Kresleno v aplikaci Procreate na iPadu.</p>
-                </div>
-            </div>`
     },
 
     'digital-3': {
@@ -267,20 +249,11 @@ const projectsDatabase = {
         category: 'Digital Art',
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/Dragon2.png',
+        modalImage: 'img/works/Digitální kresba/Dragon2.png',
         gridClass: 'span-row-2',
-        tags: ['Digital Art', 'Illustration', 'Fantasy'],
+        tags: ['Digital Art', 'Fantasy'],
         shortDesc: 'Druhá varianta fantasy draka — odlišná kompozice a barevnost. Kresleno v Procreate na iPadu.',
         shortDescEn: 'Second variant of the fantasy dragon — different composition and colour palette. Drawn in Procreate on iPad.',
-        contentHTML: `
-            <div class="project-detail-container">
-                <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Digitální kresba/Dragon2.png" class="pd-image" alt="Dragon II">
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Dragon II</h3>
-                    <p class="pd-text">Druhá varianta fantasy draka s odlišnou kompozicí a barevností. Kresleno v aplikaci Procreate na iPadu.</p>
-                </div>
-            </div>`
     }
 };
 
@@ -812,7 +785,7 @@ function renderArchive() {
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
         card.setAttribute('aria-label', 'View project: ' + item.title);
-        card.innerHTML = '<div class="a-image"><img src="' + item.image + '" alt="' + item.title + '" loading="lazy"><div class="a-overlay-tech" aria-hidden="true">VIEW PROJECT</div></div><div class="a-meta"><div class="a-id">PRJ-' + num + '</div><div class="a-info"><h4>' + item.title + '</h4><span class="a-tag">' + item.displayTag + '</span></div></div>';
+        card.innerHTML = '<div class="a-image"><img src="' + item.image + '" alt="' + item.title + '" loading="lazy"><div class="a-overlay-tech" aria-hidden="true">VIEW PROJECT</div></div><div class="a-meta"><div class="a-id">PRJ-' + num + '</div><div class="a-info"><h4>' + item.title + '</h4></div></div>';
         card.addEventListener('click', function() { openModal(key); });
         card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(key); } });
         fragment.appendChild(card);
