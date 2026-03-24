@@ -48,7 +48,7 @@
 
 /* ---- Sticky outer ---- */
 .featured-sticky-outer {
-    height: 500vh;   /* 4 slides × ~100vh scroll each */
+    height: 400vh;   /* 4 slides × ~75vh scroll each */
     position: relative;
 }
 

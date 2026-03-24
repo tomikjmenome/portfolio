@@ -289,7 +289,7 @@ const translations = {
         featuredSubtitle: 'Výběr mých nejlepších prací',
         f1Cat: 'Redesign', f1Title: 'Robokolo', f1Desc: 'Kompletní redesign značky a vizuální identity.',
         f2Cat: 'Redesign', f2Title: 'Abbey Road — The Beatles', f2Desc: 'Kompletní redesign LP desky a souvisejících plakátů.',
-        f3Cat: 'Game Art', f3Title: 'Fusion Tower Defense', f3Desc: 'Kompletní vizuální stránka hry — pixel art, UI, logo.',
+        f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternativní redesign filmového plakátu kultovního Jurského Parku.',
         // Archive
         archiveTitle: 'Projekty',
         // Footer
@@ -327,7 +327,7 @@ const translations = {
         featuredSubtitle: 'Curated selection of my finest pixels',
         f1Cat: 'Redesign', f1Title: 'Robokolo', f1Desc: 'Complete brand and visual identity redesign.',
         f2Cat: 'Redesign', f2Title: 'Abbey Road — The Beatles', f2Desc: 'Complete LP record and poster series redesign.',
-        f3Cat: 'Game Art', f3Title: 'Fusion Tower Defense', f3Desc: 'Complete game visuals — pixel art, UI, logo.',
+        f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternative movie poster redesign for the iconic Jurassic Park.',
         // Archive
         archiveTitle: 'Projects',
         // Footer
@@ -882,8 +882,8 @@ function _initStatsCounter() {
                 var target = parseInt(counter.dataset.target) || Object.keys(projectsDatabase).length;
                 var suffix = counter.dataset.target ? '+' : '';
                 var current = 0;
-                // ~1.2 s total, min 40 ms per step so large numbers don't fly by
-                var stepDelay = Math.min(Math.max(40, Math.floor(1200 / target)), 600);
+                // ~600 ms total regardless of target size
+                var stepDelay = Math.max(30, Math.floor(600 / target));
                 var timer = setInterval(function() {
                     current++;
                     counter.textContent = current >= target ? target + suffix : current;
