@@ -371,6 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initKonami();
     initScrollReveal();
     initFeaturedScroll();
+    initScrollProgress();
 
     // Featured slide click (skip intro slide — no data-project)
     document.querySelectorAll('.featured-slide').forEach(function(slide) {
@@ -1056,6 +1057,50 @@ function _updateLbImg() {
 function initContactForm() {
     var form = document.getElementById('contactForm');
     if (!form) return;
+
+    // Real-time email validation
+    var emailInput = form.querySelector('#contact-email');
+    if (emailInput) {
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        emailInput.addEventListener('blur', function() {
+            var val = this.value.trim();
+            if (!val) { this.classList.remove('input-error', 'input-ok'); return; }
+            this.classList.toggle('input-error', !emailRe.test(val));
+            this.classList.toggle('input-ok',    emailRe.test(val));
+        });
+        emailInput.addEventListener('input', function() {
+            if (emailRe.test(this.value.trim())) {
+                this.classList.remove('input-error');
+                this.classList.add('input-ok');
+            }
+        });
+    }
+
+    // Name — mark ok on blur if non-empty
+    var nameInput = form.querySelector('#contact-name');
+    if (nameInput) {
+        nameInput.addEventListener('blur', function() {
+            this.classList.toggle('input-ok', this.value.trim().length > 0);
+            this.classList.toggle('input-error', this.value.trim().length === 0 && document.activeElement !== this);
+        });
+    }
+
+    // Message char counter
+    var textarea = form.querySelector('#contact-message');
+    if (textarea) {
+        var counter = document.createElement('span');
+        counter.className = 'char-counter';
+        counter.textContent = '0 / min. 20 znaků';
+        textarea.parentNode.appendChild(counter);
+        textarea.addEventListener('input', function() {
+            var len = this.value.length;
+            counter.textContent = len < 20 ? len + ' / min. 20 znaků' : len + ' znaků ✓';
+            counter.classList.toggle('counter-ok', len >= 20);
+            this.classList.toggle('input-ok', len >= 20);
+            this.classList.toggle('input-error', len > 0 && len < 20);
+        });
+    }
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         var t = translations[_currentLang];
@@ -1093,6 +1138,18 @@ function initContactForm() {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = t.formSend; }
         });
     });
+}
+
+// =========================================
+// SCROLL PROGRESS BAR
+// =========================================
+function initScrollProgress() {
+    var bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+    window.addEventListener('scroll', function() {
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
 }
 
 function _showFormStatus(type, message) {

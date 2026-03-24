@@ -198,6 +198,27 @@
 .form-status.success { color: #00ff00; }
 .form-status.error { color: var(--accent); }
 
+.form-input.input-error,
+.form-textarea.input-error {
+    border-color: var(--accent);
+    background: rgba(255, 51, 102, 0.07);
+}
+
+.form-input.input-ok,
+.form-textarea.input-ok {
+    border-color: #2a7a2a;
+}
+
+.char-counter {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #444;
+    align-self: flex-end;
+    margin-top: -0.3rem;
+    transition: color 0.2s;
+}
+.char-counter.counter-ok { color: #2a7a2a; }
+
 /* Footer Nav Grid */
 .gf-nav-section {
     display: flex;
