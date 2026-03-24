@@ -10,7 +10,7 @@ const projectsDatabase = {
         title: 'Robokolo',
         category: 'Redesign',
         displayTag: 'Redesign',
-        image: 'img/works/Robokolo/robokolo.png',
+        image: 'img/works/Robokolo/robokolo.webp',
         gridClass: '',
         tags: ['Redesign', 'Branding', 'UI/UX'],
         shortDesc: 'Kompletní redesign vizuální identity. Cílem bylo posunout značku od "garážového hobby" k moderní technologické firmě. Výstupem je nové logo, piktogram, tiskoviny a merch.',
@@ -18,7 +18,7 @@ const projectsDatabase = {
         contentHTML: `
             <div class="project-detail-container">
                 <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Robokolo/robokolo.png" class="pd-image" alt="Robokolo Hero">
+                    <img src="img/works/Robokolo/robokolo.webp" class="pd-image" alt="Robokolo Hero">
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">Rebranding</h3>
@@ -38,31 +38,31 @@ const projectsDatabase = {
                 <div class="pd-section">
                     <h3 class="pd-title">Firemní Tiskoviny</h3>
                     <div class="pd-grid-3">
-                        <div><img src="img/works/Robokolo/Robokolo_vizitka.png" class="pd-image" alt="Vizitka"><span class="pd-caption">Vizitky</span></div>
-                        <div><img src="img/works/Robokolo/obalka-mockup.png" class="pd-image" alt="Obálka"><span class="pd-caption">DL Obálka</span></div>
-                        <div><img src="img/works/Robokolo/Dopis-papir-mockup.png" class="pd-image" alt="Dopisní papír"><span class="pd-caption">Hlavičkový papír</span></div>
+                        <div><img src="img/works/Robokolo/Robokolo_vizitka.webp" class="pd-image" alt="Vizitka"><span class="pd-caption">Vizitky</span></div>
+                        <div><img src="img/works/Robokolo/obalka-mockup.webp" class="pd-image" alt="Obálka"><span class="pd-caption">DL Obálka</span></div>
+                        <div><img src="img/works/Robokolo/Dopis-papir-mockup.webp" class="pd-image" alt="Dopisní papír"><span class="pd-caption">Hlavičkový papír</span></div>
                     </div>
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">Merch & Produkty</h3>
                     <p class="pd-text">Aplikace nové identity na fyzické produkty. Od plechovek po textil.</p>
                     <div class="pd-grid-2" style="margin-bottom:2rem">
-                        <img src="img/works/Robokolo/Merch/Plechovka/can.png" class="pd-image" alt="Energy Drink">
-                        <img src="img/works/Robokolo/Merch/Taška/Taška-barevne.png" class="pd-image" alt="Taška">
+                        <img src="img/works/Robokolo/Merch/Plechovka/can.webp" class="pd-image" alt="Energy Drink">
+                        <img src="img/works/Robokolo/Merch/Taška/Taška-barevne.webp" class="pd-image" alt="Taška">
                     </div>
                     <div class="pd-grid-3">
-                        <img src="img/works/Robokolo/Merch/Tričko/Barevné/Normální/Normální.png" class="pd-image" alt="Tričko Barevné">
+                        <img src="img/works/Robokolo/Merch/Tričko/Barevné/Normální/Normální.webp" class="pd-image" alt="Tričko Barevné">
                         <img src="img/works/Robokolo/Merch/Tričko/Černý potisk/Piktogram/Piktogram_black_wb.png" class="pd-image" alt="Tričko BW">
-                        <img src="img/works/Robokolo/Merch/Placka/Robokoloplacka.png" class="pd-image" alt="Placka">
+                        <img src="img/works/Robokolo/Merch/Placka/Robokoloplacka.webp" class="pd-image" alt="Placka">
                     </div>
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">Proces & Skici</h3>
                     <p class="pd-text">Pohled do zákulisí tvorby loga. Prvotní nápady na papíře.</p>
                     <div class="pd-grid-3">
-                        <img src="img/works/Robokolo/Návrhy/20250415_201640.jpg" class="pd-image" style="opacity:0.8" alt="Sketch 1">
-                        <img src="img/works/Robokolo/Návrhy/20250415_201727.jpg" class="pd-image rotate-left" style="opacity:0.8" alt="Sketch 2">
-                        <img src="img/works/Robokolo/Návrhy/20250415_201755.jpg" class="pd-image rotate-left" style="opacity:0.8" alt="Sketch 3">
+                        <img src="img/works/Robokolo/Návrhy/20250415_201640.webp" class="pd-image" style="opacity:0.8" alt="Sketch 1">
+                        <img src="img/works/Robokolo/Návrhy/20250415_201727.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Sketch 2">
+                        <img src="img/works/Robokolo/Návrhy/20250415_201755.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Sketch 3">
                     </div>
                 </div>
                 <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
@@ -75,7 +75,7 @@ const projectsDatabase = {
         title: 'Abbey Road',
         category: 'Redesign',
         displayTag: 'Cover Art',
-        image: 'img/works/Beatles/Beatles-mockup-final.png',
+        image: 'img/works/Beatles/Beatles-mockup-final.webp',
         gridClass: 'span-col-2',
         tags: ['Redesign', 'Fan Art', 'Cover Art'],
         shortDesc: 'Redesign ikonického alba The Beatles z roku 1969. Moderní reinterpretace hudebního dědictví — nové LP, obal a série plakátů. Osobní projekt / fan art.',
@@ -83,7 +83,7 @@ const projectsDatabase = {
         contentHTML: `
             <div class="project-detail-container">
                 <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Beatles/Beatles-mockup-final.png" class="pd-image" alt="Abbey Road Hero">
+                    <img src="img/works/Beatles/Beatles-mockup-final.webp" class="pd-image" alt="Abbey Road Hero">
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">Osobní Projekt / Fan Art</h3>
@@ -92,18 +92,18 @@ const projectsDatabase = {
                 <div class="pd-section">
                     <h3 class="pd-title">Vinyl & Cover Design</h3>
                     <div class="pd-grid-2">
-                        <div><img src="img/works/Beatles/lp-design.png" class="pd-image" alt="LP Design"></div>
+                        <div><img src="img/works/Beatles/lp-design.webp" class="pd-image" alt="LP Design"></div>
                         <div class="pd-text">Detailní pohled na zpracování samotné desky a obalu. Důraz na čisté linie a výrazný kontrast, který nechává vyniknout podstatu díla.</div>
                     </div>
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">Plakáty</h3>
                     <p class="pd-text">Série plakátů navržená jako doprovodný vizuál k tomuto fiktivnímu redesignu.</p>
-                    <img src="img/works/Beatles/posters-mockup-final-Recovered.png" class="pd-image" style="margin-bottom:2rem" alt="Posters Mockup">
+                    <img src="img/works/Beatles/posters-mockup-final-Recovered.webp" class="pd-image" style="margin-bottom:2rem" alt="Posters Mockup">
                     <div class="pd-grid-3">
-                        <img src="img/works/Beatles/poster/poster-beatles-black-gradiant.png" class="pd-image" alt="Poster Black Gradient">
-                        <img src="img/works/Beatles/poster/poster-beatles-white-gradiant.png" class="pd-image" alt="Poster White Gradient">
-                        <img src="img/works/Beatles/poster/poster-beatles-black-white.png" class="pd-image" alt="Poster BW">
+                        <img src="img/works/Beatles/poster/poster-beatles-black-gradiant.webp" class="pd-image" alt="Poster Black Gradient">
+                        <img src="img/works/Beatles/poster/poster-beatles-white-gradiant.webp" class="pd-image" alt="Poster White Gradient">
+                        <img src="img/works/Beatles/poster/poster-beatles-black-white.webp" class="pd-image" alt="Poster BW">
                     </div>
                 </div>
                 <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
@@ -163,40 +163,40 @@ const projectsDatabase = {
         title: 'PF 2026',
         category: 'Posters',
         displayTag: 'Graphic Design',
-        image: 'img/works/Posters/PolicieRajhrad-PF-2026.png',
+        image: 'img/works/Posters/PolicieRajhrad-PF-2026.webp',
         gridClass: 'span-row-2',
         tags: ['Posters', 'Print'],
         shortDesc: 'Novoroční přání pro Obvodní oddělení Policie ČR Rajhrad.',
         shortDescEn: 'New Year greeting card for the Rajhrad Police department.',
-        modalImage: 'img/works/Posters/PolicieRajhrad-PF-2026.png'
+        modalImage: 'img/works/Posters/PolicieRajhrad-PF-2026.webp'
     },
     'poster-2': {
         title: 'Matl Group',
         category: 'Posters',
         displayTag: 'Advertising',
-        image: 'img/works/Posters/MatlGroup-Reklamniplakat-krytapřeprava.png',
+        image: 'img/works/Posters/MatlGroup-Reklamniplakat-krytapřeprava.webp',
         gridClass: 'span-row-2',
         tags: ['Posters', 'Branding'],
         shortDesc: 'Reklamní plakát pro společnost Matl Group zaměřený na kryté přepravy luxusních a nových vozidel.',
         shortDescEn: 'Advertising poster for Matl Group focusing on covered transport of luxury and new vehicles.',
-        modalImage: 'img/works/Posters/MatlGroup-Reklamniplakat-krytapřeprava.png'
+        modalImage: 'img/works/Posters/MatlGroup-Reklamniplakat-krytapřeprava.webp'
     },
     'poster-3': {
         title: 'Jurský Park',
         category: 'Posters',
         displayTag: 'Redesign',
-        image: 'img/works/Posters/JurskýPark-redesignFilmovehoPlakatu.png',
+        image: 'img/works/Posters/JurskýPark-redesignFilmovehoPlakatu.webp',
         gridClass: 'span-row-2',
         tags: ['Posters', 'Redesign', 'Art'],
         shortDesc: 'Alternativní redesign filmového plakátu pro kultovní sci-fi snímek Jurský Park (1993). Moderní reinterpretace ikonické vizuální identity.',
         shortDescEn: 'Alternative poster redesign for the iconic sci-fi film Jurassic Park (1993). A modern reinterpretation of the classic visual identity.',
-        modalImage: 'img/works/Posters/JurskýPark-redesignFilmovehoPlakatu.png'
+        modalImage: 'img/works/Posters/JurskýPark-redesignFilmovehoPlakatu.webp'
     },
     'apex-1': {
         title: 'Apex',
         category: 'UI/UX',
         displayTag: 'App Design',
-        image: 'img/works/Apex/apex-home.png',
+        image: 'img/works/Apex/apex-home.webp',
         gridClass: 'span-col-2',
         tags: ['UI/UX', 'App Design', 'Concept'],
         shortDesc: 'Konceptuální návrh UI pro streamovací aplikaci Apex. Důraz na přehlednost, typografii a tmavý vizuální styl inspirovaný prémiových streamovacími platformami.',
@@ -204,7 +204,7 @@ const projectsDatabase = {
         contentHTML: `
             <div class="project-detail-container">
                 <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Apex/apex-home.png" class="pd-image" alt="Apex — Hlavní obrazovka">
+                    <img src="img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — Hlavní obrazovka">
                 </div>
                 <div class="pd-section">
                     <h3 class="pd-title">O Projektu</h3>
@@ -214,8 +214,8 @@ const projectsDatabase = {
                 <div class="pd-section">
                     <h3 class="pd-title">Obrazovky</h3>
                     <div class="pd-grid-2">
-                        <div><img src="img/works/Apex/apex-home.png" class="pd-image" alt="Apex — Domovská stránka"><span class="pd-caption">Domovská stránka</span></div>
-                        <div><img src="img/works/Apex/apex-selected-movie.png" class="pd-image" alt="Apex — Detail filmu"><span class="pd-caption">Detail vybraného titulu</span></div>
+                        <div><img src="img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — Domovská stránka"><span class="pd-caption">Domovská stránka</span></div>
+                        <div><img src="img/works/Apex/apex-selected-movie.webp" class="pd-image" alt="Apex — Detail filmu"><span class="pd-caption">Detail vybraného titulu</span></div>
                     </div>
                 </div>
             </div>`
