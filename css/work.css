@@ -133,13 +133,18 @@
     transform: scale(1);
 }
 
-/* Jurský Park — portrait poster: size image-wrap to exact poster ratio */
+/* Jurský Park — portrait poster */
+.featured-slide[data-project="poster-3"] {
+    background: #080808;
+}
 .featured-slide[data-project="poster-3"] .fs-image-wrap {
-    flex: 0 0 calc(100vh * 0.7071);  /* w/h ratio of the poster */
+    flex: 0 0 calc(100vh * 0.7071);
+    background: #080808;
 }
 .featured-slide[data-project="poster-3"] .fs-img {
-    object-fit: cover;   /* fills exact dimensions — no cropping */
-    transform: scale(1); /* no ken-burns on a portrait poster */
+    object-fit: cover;
+    transform: scale(1);
+    background: #080808;
 }
 .featured-slide[data-project="poster-3"].is-active .fs-img {
     transform: scale(1);
