@@ -163,7 +163,7 @@
         flex-direction: column !important;
         height: auto !important;
         transform: none !important;   /* Override JS inline transform */
-        gap: 1.5rem !important;       /* Visible dark gap between cards */
+        gap: 0 !important;
     }
 
     /* Step 2: All slides visible regardless of .is-active class */
@@ -181,7 +181,7 @@
         align-items: flex-start !important;
         padding: 2.5rem 1.2rem 1.8rem !important;
         cursor: auto !important;
-        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        border-bottom: none !important;
     }
     .fs-intro-slide::after    { display: none !important; }
     .fs-intro-scroll-cue      { display: none !important; }
@@ -197,8 +197,9 @@
         height: auto !important;
         flex-direction: column !important;
         align-items: stretch !important;
-        border-bottom: none !important;   /* gap handles separation */
-        background: #0e0e0e !important;   /* slightly lighter than #050505 section bg */
+        border-top: 2px solid var(--accent) !important;
+        border-bottom: none !important;
+        background: #080808 !important;
     }
 
     /* Image: fixed height proportional to screen */
