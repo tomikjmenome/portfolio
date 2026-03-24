@@ -68,156 +68,235 @@
 /* ---- MOBILE (≤ 768px) ---- */
 @media (max-width: 768px) {
 
-    /* Cursor — off on touch */
+    /* ---- CURSOR ---- */
     .custom-cursor, .cursor-aura { display: none; }
     body { cursor: auto; }
     a, button, .f-card, .a-card, .featured-slide[data-project] { cursor: pointer !important; }
 
-    /* Show mobile nav, hide desktop lang switcher */
+    /* ---- NAV ---- */
     .mobile-header { display: flex; }
     .lang-switcher { display: none; }
     .fab-contact { display: flex; }
 
-    /* Sections */
-    section { padding: 4rem 1.5rem; }
-    .hero { padding-top: 6rem; }
+    /* ---- SECTIONS ---- */
+    section { padding: 3rem 1.2rem; }
+    .hero { padding-top: 5.5rem; }
 
-    /* Hero */
+    /* ---- HERO ---- */
     .hero h1 { font-size: clamp(3.5rem, 18vw, 6rem); }
     .hero-name-top, .hero-name-bottom { transform: none !important; }
     .hero-name-bottom { height: clamp(3rem, 15.3vw, 5.1rem); width: 90vw; }
-    /* Fix hollow SVG text on mobile — replace stroke outline with solid fill */
-    .hero-name-bottom text { fill: var(--accent) !important; stroke: none !important; }
-    /* Fix -webkit-text-stroke hollow numbers / headings */
-    .fs-num { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
-    .fs-intro-heading em { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
 
-    /* About */
+    /*
+     * Hollow font fix — rendering artifacts on mobile are caused by:
+     *   1) Large stroke-width on small screens
+     *   2) GPU compositing interacting with -webkit-text-stroke
+     *
+     * Solution: keep hollow effect, improve rendering precision,
+     * reduce stroke widths slightly, prevent bad compositing layers.
+     */
+
+    /* SVG hero text: thinner stroke + crisp rendering */
+    .hero-name-bottom text {
+        stroke-width: 1.5;
+        text-rendering: geometricPrecision;
+        shape-rendering: crispEdges;
+    }
+
+    /* Numbered labels in work section: smaller size = less glitch surface */
+    .fs-num {
+        font-size: 2.8rem !important;
+        line-height: 1 !important;
+        -webkit-text-stroke: 1px var(--accent) !important;
+        will-change: auto !important;
+    }
+
+    /* "práce" italic in intro heading */
+    .fs-intro-heading em {
+        -webkit-text-stroke: 1.5px var(--accent) !important;
+        will-change: auto !important;
+    }
+
+    /* ---- ABOUT ---- */
+
+    /* Remove huge decorative :) number — overflows and creates scroll on mobile */
+    .bg-number { display: none; }
+
     .editorial-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
-        margin-bottom: 3rem;
+        gap: 2rem;
+        margin-bottom: 2rem;
     }
 
-    .editorial-photo { aspect-ratio: 1; width: 100%; }
-    .manifesto-highlight { font-size: 2rem; }
-    .bio-columns { grid-template-columns: 1fr; gap: 1rem; }
-    .action-row { flex-direction: column; align-items: center; text-align: center; }
-    .btn-group { flex-direction: column; align-items: center; }
-    .software-toolkit-large { gap: 1.5rem; }
+    /* Simplify photo on mobile */
+    .photo-column { padding: 0.5rem 0 0; }
+    .photo-frame-back { display: none; }
+    .editorial-photo { aspect-ratio: 3/2; width: 100%; }
+    .photo-caption { right: 0; bottom: 0; font-size: 0.7rem; }
+    .location-widget { margin-bottom: 1rem; font-size: 0.72rem; padding: 0.6rem 1rem; }
 
-    /* Featured — disable sticky/scroll, show as alternating image+text cards */
+    .manifesto-highlight { font-size: 1.7rem; margin-bottom: 1.2rem; min-height: 0; }
+    .bio-columns { grid-template-columns: 1fr; gap: 0.8rem; font-size: 0.95rem; }
+    .action-row { flex-direction: column; align-items: flex-start; margin-top: 1.5rem; gap: 1rem; }
+    .btn-group { flex-direction: row; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+    .contact-cta, .download-cv { padding: 0.85rem 1.5rem; font-size: 0.85rem; }
+    .software-toolkit-large { gap: 1.2rem; }
+    .software-icon-lg { width: 40px; height: 40px; }
+
+    .career-section { margin-top: 3.5rem; }
+
+    /* ---- FEATURED WORK — mobile redesign ---- */
+    /*
+     * On desktop: sticky horizontal scroll through full-screen slides.
+     * On mobile: disable sticky mechanism entirely, show as vertical
+     * card list — each card has image on top (56vw height) + info below.
+     */
+
+    /* Step 1: Kill the sticky scroll container */
     .featured-sticky-outer { height: auto; }
-    .featured-sticky-inner { position: relative !important; height: auto !important; overflow: visible !important; }
-    .featured-slides-track { flex-direction: column !important; height: auto !important; transform: none !important; }
+    .featured-sticky-inner {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .featured-slides-track {
+        flex-direction: column !important;
+        height: auto !important;
+        transform: none !important;   /* Override JS inline transform */
+    }
 
-    /* Show all slides regardless of .is-active (JS still runs but CSS wins) */
-    .featured-slide .fs-image-wrap { opacity: 1 !important; }
-    .featured-slide .fs-info { opacity: 1 !important; transform: none !important; }
+    /* Step 2: All slides visible regardless of .is-active class */
+    .featured-slide .fs-image-wrap  { opacity: 1 !important; }
+    .featured-slide .fs-info        { opacity: 1 !important; transform: none !important; }
     .featured-slide .fs-intro-inner { opacity: 1 !important; transform: none !important; }
 
-    /* Intro slide → compact heading */
+    /* Step 3: Intro slide → compact section label */
     .fs-intro-slide {
-        min-width: 100% !important; height: auto !important; min-height: auto !important;
-        flex-direction: column !important; justify-content: flex-start !important;
-        align-items: flex-start !important; padding: 3rem 1.5rem 1rem !important;
+        min-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 2.5rem 1.2rem 1.8rem !important;
         cursor: auto !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
     }
-    .fs-intro-slide::after { display: none !important; }
-    .fs-intro-scroll-cue { display: none !important; }
-    .fs-intro-heading { font-size: clamp(2.2rem, 8vw, 3.5rem) !important; }
+    .fs-intro-slide::after    { display: none !important; }
+    .fs-intro-scroll-cue      { display: none !important; }
+    .fs-intro-eyebrow         { margin-bottom: 0.6rem; }
+    .fs-intro-heading {
+        font-size: clamp(2rem, 9vw, 2.8rem) !important;
+        line-height: 1.0 !important;
+    }
 
-    /* Project slides → horizontal card: image left (45%), info right */
+    /* Step 4: Project cards — image top, info below */
     .featured-slide:not(.fs-intro-slide) {
-        min-width: 100% !important; height: auto !important; min-height: 260px;
-        flex-direction: row !important; align-items: stretch !important;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        min-width: 100% !important;
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        background: #080808 !important;
     }
+
+    /* Image: fixed height proportional to screen */
     .featured-slide:not(.fs-intro-slide) .fs-image-wrap {
-        flex: 0 0 45% !important; min-height: 260px; order: 1 !important;
-    }
-    .featured-slide:not(.fs-intro-slide) .fs-info {
-        flex: 1 !important; order: 2 !important;
-        padding: 1.5rem 1.2rem !important; justify-content: center !important;
-        border-left: 1px solid rgba(255,255,255,0.06) !important;
-    }
-    .fs-image-wrap::before {
-        background: linear-gradient(to left, rgba(8,8,8,0.55) 0%, rgba(8,8,8,0.1) 20%, transparent 50%);
-    }
-
-    /* Alternate: slide 2 (Beatles, nth-child(3)) → image right, info left */
-    .featured-slides-track .featured-slide:nth-child(3) .fs-image-wrap { order: 2 !important; }
-    .featured-slides-track .featured-slide:nth-child(3) .fs-info {
+        flex: none !important;
+        width: 100% !important;
+        height: 56vw !important;
+        min-height: 180px !important;
         order: 1 !important;
-        border-left: none !important;
-        border-right: 1px solid rgba(255,255,255,0.06) !important;
     }
 
+    /* Image gradient: fade darker at bottom edge */
+    .featured-slide:not(.fs-intro-slide) .fs-image-wrap::before {
+        background: linear-gradient(to bottom, transparent 45%, rgba(8,8,8,0.65) 100%);
+    }
+
+    /* Info block: below image */
+    .featured-slide:not(.fs-intro-slide) .fs-info {
+        flex: 1 !important;
+        order: 2 !important;
+        flex-direction: column !important;
+        padding: 1.4rem 1.2rem 1.8rem !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+    }
+
+    /* Typography tweaks inside cards */
+    .fs-meta    { margin-bottom: 0.3rem !important; gap: 0.1rem !important; }
+    .fs-rule    { margin-bottom: 0.5rem !important; width: 1.5rem !important; }
+    .fs-title   { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; margin-bottom: 0 !important; }
+    .fs-tags    { margin-bottom: 0.3rem !important; gap: 0.25rem !important; }
+    .fs-cta     { margin-top: 0.2rem !important; }
+
+    /* Description: show, clamp to 2 lines */
+    .fs-desc {
+        font-size: 0.875rem !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Hide nav dots and slide counter */
     .fs-progress { display: none !important; }
     .fs-counter  { display: none !important; }
-    .fs-title { font-size: clamp(1.4rem, 5vw, 2rem); }
-    .fs-desc  { font-size: 0.85rem; display: block; }
 
-    /* Modal */
+    /* ---- MODAL ---- */
     .modal-close { top: 1rem; right: 1rem; }
     .modal-layout { flex-direction: column; overflow-y: auto; height: 100vh; }
-    .modal-sidebar-col { width: 100%; height: auto; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem; }
+    .modal-sidebar-col {
+        width: 100%; height: auto;
+        border-left: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 1.5rem;
+    }
     .modal-main-col { height: auto; overflow-y: visible; padding: 1.5rem; }
     .modal-sidebar-col h2 { font-size: 2rem; }
     .modal-image { height: auto; padding: 1.5rem 0; }
     .modal-image img { max-height: 80vh; }
-
-    /* Modal detail */
     .pd-grid-2, .comparison-wrapper { grid-template-columns: 1fr; gap: 2rem; }
     .pd-title { font-size: 1.5rem; }
 
-    /* Footer */
-    .gf-container { padding: 4rem 1.5rem; }
+    /* ---- FOOTER ---- */
+    .gf-container { padding: 3.5rem 1.2rem; }
     .gf-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .gf-big-email { font-size: 2.5rem; }
+    .gf-big-email { font-size: clamp(1.8rem, 7vw, 2.5rem); }
     .gf-bottom { flex-direction: column; gap: 1rem; align-items: center; }
 
-    /* Archive dashboard */
+    /* ---- ARCHIVE ---- */
     .archive-dashboard { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
 
-    /* Career */
+    /* ---- CAREER ---- */
     .xp-card { min-height: auto; }
     .xp-card-header { flex-direction: column; gap: 0.5rem; }
     .xp-company-logo { text-align: left; font-size: 1rem; }
 
-    /* Lightbox */
+    /* ---- LIGHTBOX ---- */
     .lightbox img { max-width: 95%; }
     .lb-arrow { width: 44px; height: 44px; font-size: 1.2rem; }
 }
 
 /* ---- SMALL PHONES (≤ 480px) ---- */
 @media (max-width: 480px) {
-    .hero h1 { font-size: clamp(3rem, 20vw, 5rem); }
-    .fs-title { font-size: 1.5rem !important; }
-    .fs-desc  { display: none; }
-    .fs-info  { padding: 1.2rem 1rem !important; }
-    .dashboard-stats { flex-direction: column; gap: 0.5rem; }
-    .modal-tags { gap: 0.5rem; }
-    .modal-tag { padding: 0.5rem 1rem; font-size: 0.8rem; }
+    .hero h1    { font-size: clamp(3rem, 20vw, 5rem); }
+    .fs-title   { font-size: 1.4rem !important; }
+    .fs-num     { font-size: 2.2rem !important; }
+    .fs-info    { padding: 1.2rem 1rem 1.5rem !important; }
+    .gf-big-email { font-size: 1.7rem; }
+    .gf-bottom  { padding: 1.5rem 1.2rem; }
 
-    /* Stack project cards vertically on very small phones */
-    .featured-slide:not(.fs-intro-slide) {
-        flex-direction: column !important;
-        min-height: auto !important;
-    }
-    .featured-slide:not(.fs-intro-slide) .fs-image-wrap {
-        flex: none !important; width: 100%; min-height: 200px !important; order: 1 !important;
-    }
-    .featured-slide:not(.fs-intro-slide) .fs-info {
-        flex: 1 !important; order: 2 !important;
-        border-left: none !important; border-right: none !important;
-        border-top: 1px solid rgba(255,255,255,0.06) !important;
-        padding: 1.2rem 1.2rem 2rem !important;
-    }
-    /* Reset nth-child(3) flip for stacked layout */
-    .featured-slides-track .featured-slide:nth-child(3) .fs-image-wrap { order: 1 !important; }
-    .featured-slides-track .featured-slide:nth-child(3) .fs-info {
-        order: 2 !important; border-right: none !important;
-        border-top: 1px solid rgba(255,255,255,0.06) !important;
-    }
+    .dashboard-stats { flex-direction: column; gap: 0.5rem; }
+    .modal-tags  { gap: 0.5rem; }
+    .modal-tag   { padding: 0.5rem 1rem; font-size: 0.8rem; }
+
+    /* Even thinner stroke on very small screens */
+    .hero-name-bottom text { stroke-width: 1.2; }
+    .fs-num { -webkit-text-stroke: 0.8px var(--accent) !important; }
 }
