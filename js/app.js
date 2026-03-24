@@ -876,13 +876,15 @@ function _initStatsCounter() {
             observer.unobserve(entry.target);
             entry.target.querySelectorAll('.stat-number').forEach(function(counter) {
                 var target = parseInt(counter.dataset.target) || Object.keys(projectsDatabase).length;
-                var current = 0, inc = target / 50;
                 var suffix = counter.dataset.target ? '+' : '';
+                var current = 0;
+                // ~1.2 s total, min 40 ms per step so large numbers don't fly by
+                var stepDelay = Math.min(Math.max(40, Math.floor(1200 / target)), 600);
                 var timer = setInterval(function() {
-                    current += inc;
-                    if (current >= target) { counter.textContent = target + suffix; clearInterval(timer); }
-                    else counter.textContent = Math.floor(current);
-                }, 30);
+                    current++;
+                    counter.textContent = current >= target ? target + suffix : current;
+                    if (current >= target) clearInterval(timer);
+                }, stepDelay);
             });
         });
     }, { threshold: 0.5 });
