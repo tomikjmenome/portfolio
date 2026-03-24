@@ -133,6 +133,17 @@
     transform: scale(1);
 }
 
+/* Portrait posters — show full image instead of cropping */
+.featured-slide[data-project="poster-3"] .fs-img {
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1);
+    background: #050505;
+}
+.featured-slide[data-project="poster-3"].is-active .fs-img {
+    transform: scale(1);
+}
+
 /* ---- INFO panel (RIGHT) ---- */
 .fs-info {
     order: 2;
