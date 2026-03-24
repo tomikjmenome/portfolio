@@ -220,34 +220,65 @@ const projectsDatabase = {
                 </div>
             </div>`
     },
-    'digital-art-1': {
-        title: 'Digitální Kresba',
-        category: 'Illustration',
+    'digital-1': {
+        title: 'Death Note',
+        category: 'Digital Art',
         displayTag: 'Digital Art',
-        image: 'img/works/Digitální kresba/Dragon1.png',
-        gridClass: '',
-        tags: ['Illustration', 'Digital Art', 'Fan Art'],
-        shortDesc: 'Série digitálních kreseb vytvořených ve volném čase. Fantasy motivy a fan art — draci a postavy z oblíbených sérií. Kresleno v Photoshopu na grafickém tabletu.',
-        shortDescEn: 'A series of digital drawings created in free time. Fantasy motifs and fan art — dragons and characters from favourite series. Drawn in Photoshop on a graphics tablet.',
+        image: 'img/works/Digitální kresba/DeathNote.png',
+        gridClass: 'span-row-2',
+        tags: ['Digital Art', 'Fan Art', 'Illustration'],
+        shortDesc: 'Fan art inspirovaný japonskou manga sérií Death Note. Kresleno v Procreate na iPadu.',
+        shortDescEn: 'Fan art inspired by the Japanese manga series Death Note. Drawn in Procreate on iPad.',
         contentHTML: `
             <div class="project-detail-container">
                 <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Digitální kresba/Dragon1.png" class="pd-image" alt="Drak — digitální kresba">
+                    <img src="img/works/Digitální kresba/DeathNote.png" class="pd-image" alt="Death Note Fan Art">
                 </div>
                 <div class="pd-section">
-                    <h3 class="pd-title">O Pracích</h3>
-                    <p class="pd-text">Digitální kresba je pro mě způsob, jak relaxovat a zároveň rozvíjet cit pro detail, světlo a stín mimo komerční zakázky. Pracuji v Adobe Photoshopu s grafickým tabletem Wacom.</p>
-                    <p class="pd-text">Tato série zahrnuje fantasy motivy — draci s detailně zpracovanými šupinami a texturou, a fan art inspirovaný japonskou manga sérií Death Note.</p>
+                    <h3 class="pd-title">Death Note — Fan Art</h3>
+                    <p class="pd-text">Digitální kresba inspirovaná japonskou manga sérií Death Note. Kresleno v aplikaci Procreate na iPadu.</p>
+                </div>
+            </div>`
+    },
+
+    'digital-2': {
+        title: 'Dragon I',
+        category: 'Digital Art',
+        displayTag: 'Digital Art',
+        image: 'img/works/Digitální kresba/Dragon1.png',
+        gridClass: 'span-row-2',
+        tags: ['Digital Art', 'Illustration', 'Fantasy'],
+        shortDesc: 'Fantasy drak s detailně zpracovanými šupinami a texturou. Kresleno v Procreate na iPadu.',
+        shortDescEn: 'Fantasy dragon with detailed scales and texture. Drawn in Procreate on iPad.',
+        contentHTML: `
+            <div class="project-detail-container">
+                <div class="pd-section" style="margin-top:2rem">
+                    <img src="img/works/Digitální kresba/Dragon1.png" class="pd-image" alt="Dragon I">
                 </div>
                 <div class="pd-section">
-                    <h3 class="pd-title">Galerie</h3>
-                    <div class="pd-grid-2" style="margin-bottom:2rem">
-                        <div><img src="img/works/Digitální kresba/Dragon1.png" class="pd-image" alt="Drak 1"><span class="pd-caption">Drak — verze 1</span></div>
-                        <div><img src="img/works/Digitální kresba/Dragon2.png" class="pd-image" alt="Drak 2"><span class="pd-caption">Drak — verze 2</span></div>
-                    </div>
-                    <div>
-                        <img src="img/works/Digitální kresba/DeathNote.png" class="pd-image" alt="Death Note Fan Art"><span class="pd-caption">Death Note — Fan Art</span>
-                    </div>
+                    <h3 class="pd-title">Dragon I</h3>
+                    <p class="pd-text">Fantasy ilustrace draka s důrazem na detail šupiny, světlo a stín. Kresleno v aplikaci Procreate na iPadu.</p>
+                </div>
+            </div>`
+    },
+
+    'digital-3': {
+        title: 'Dragon II',
+        category: 'Digital Art',
+        displayTag: 'Digital Art',
+        image: 'img/works/Digitální kresba/Dragon2.png',
+        gridClass: 'span-row-2',
+        tags: ['Digital Art', 'Illustration', 'Fantasy'],
+        shortDesc: 'Druhá varianta fantasy draka — odlišná kompozice a barevnost. Kresleno v Procreate na iPadu.',
+        shortDescEn: 'Second variant of the fantasy dragon — different composition and colour palette. Drawn in Procreate on iPad.',
+        contentHTML: `
+            <div class="project-detail-container">
+                <div class="pd-section" style="margin-top:2rem">
+                    <img src="img/works/Digitální kresba/Dragon2.png" class="pd-image" alt="Dragon II">
+                </div>
+                <div class="pd-section">
+                    <h3 class="pd-title">Dragon II</h3>
+                    <p class="pd-text">Druhá varianta fantasy draka s odlišnou kompozicí a barevností. Kresleno v aplikaci Procreate na iPadu.</p>
                 </div>
             </div>`
     }
@@ -260,7 +291,7 @@ const filterCategories = [
     { value: 'Posters',      label: 'Posters'      },
     { value: 'Game Art',     label: 'Game Art'     },
     { value: 'UI/UX',        label: 'UI/UX'        },
-    { value: 'Illustration', label: 'Illustration' },
+    { value: 'Digital Art',  label: 'Digital Art'  },
 ];
 
 const translations = {
