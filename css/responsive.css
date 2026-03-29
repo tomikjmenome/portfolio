@@ -90,22 +90,22 @@
     /* ---- HERO ---- */
     .hero h1 { font-size: clamp(3.5rem, 18vw, 6rem); }
     .hero-name-top, .hero-name-bottom { transform: none !important; }
+    /* Hollow text → filled on mobile (no stroke glitches) */
     .hero-name-bottom {
         will-change: auto;
-        -webkit-text-stroke: 1.5px var(--accent);
+        -webkit-text-stroke: 0;
+        color: var(--accent);
     }
-
-    /* Numbered labels in work section: smaller size = less glitch surface */
     .fs-num {
         font-size: 2.8rem !important;
         line-height: 1 !important;
-        -webkit-text-stroke: 1px var(--accent) !important;
+        -webkit-text-stroke: 0 !important;
+        color: var(--accent) !important;
         will-change: auto !important;
     }
-
-    /* "práce" italic in intro heading */
     .fs-intro-heading em {
-        -webkit-text-stroke: 1.5px var(--accent) !important;
+        -webkit-text-stroke: 0 !important;
+        color: var(--accent) !important;
         will-change: auto !important;
     }
 
@@ -350,6 +350,5 @@
     .modal-tags  { gap: 0.5rem; }
     .modal-tag   { padding: 0.5rem 1rem; font-size: 0.8rem; }
 
-    .hero-name-bottom { -webkit-text-stroke: 1.2px var(--accent); }
-    .fs-num { -webkit-text-stroke: 0.8px var(--accent) !important; }
+    /* Already filled via 768px block — no overrides needed */
 }
