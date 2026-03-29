@@ -265,7 +265,9 @@
     .gf-bottom { flex-direction: column; gap: 1rem; align-items: center; }
 
     /* ---- ARCHIVE ---- */
+    .archive-section { padding: 3rem 1.2rem; }
     .archive-grid { grid-template-columns: 1fr; }
+    .archive-sidebar, .archive-grid { min-width: 0; }
 
     /* Stats + button in one row */
     .archive-dashboard {
@@ -276,6 +278,7 @@
         padding: 1rem 1.2rem !important;
     }
     .dashboard-stats { flex: 1; min-width: 0; gap: 1.2rem; }
+    .d-stat { justify-content: flex-end; }
     .d-label { font-size: 0.7rem; }
     .d-value { font-size: 1.7rem; }
     .dashboard-actions { flex-shrink: 0; }
