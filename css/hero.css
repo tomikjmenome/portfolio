@@ -68,14 +68,11 @@
     transition: transform var(--transition-slow) ease-out;
     will-change: transform;
     display: block;
-    /* Height matches h1 line-height (font-size * 0.85).
-       Width is calculated automatically from viewBox aspect ratio. */
-    height: clamp(4rem, 15vw, 11rem);
-    width: auto;
-    overflow: visible;
+    color: transparent;
+    -webkit-text-stroke: 2.5px var(--accent);
 }
 
-.hero-name-bottom:hover text {
+.hero-name-bottom:hover {
     opacity: 0.85;
 }
 

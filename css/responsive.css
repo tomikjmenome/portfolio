@@ -90,26 +90,9 @@
     /* ---- HERO ---- */
     .hero h1 { font-size: clamp(3.5rem, 18vw, 6rem); }
     .hero-name-top, .hero-name-bottom { transform: none !important; }
-    .hero-name-bottom { height: clamp(3rem, 15.3vw, 5.1rem); width: 90vw; }
-
-    /*
-     * Hollow font fix — SVG is scaled down on mobile so stroke-width
-     * ends up sub-pixel (e.g. 2.5 × 0.6 scale = 1.5px → glitch).
-     *
-     * Fix: vector-effect: non-scaling-stroke keeps stroke at exact
-     * pixel size regardless of SVG scale. will-change: auto removes
-     * the element from GPU compositing layer that caused artifacts.
-     */
-
-    /* SVG hero text */
     .hero-name-bottom {
         will-change: auto;
-    }
-    .hero-name-bottom text {
-        stroke-width: 1.5;
-        vector-effect: non-scaling-stroke;
-        text-rendering: geometricPrecision;
-        stroke-linejoin: round;
+        -webkit-text-stroke: 1.5px var(--accent);
     }
 
     /* Numbered labels in work section: smaller size = less glitch surface */
@@ -282,6 +265,8 @@
     .gf-bottom { flex-direction: column; gap: 1rem; align-items: center; }
 
     /* ---- ARCHIVE ---- */
+    .archive-grid { grid-template-columns: 1fr; }
+
     /* Stats + button in one row */
     .archive-dashboard {
         flex-direction: row !important;
@@ -365,7 +350,6 @@
     .modal-tags  { gap: 0.5rem; }
     .modal-tag   { padding: 0.5rem 1rem; font-size: 0.8rem; }
 
-    /* Even thinner stroke on very small screens — non-scaling keeps it sharp */
-    .hero-name-bottom text { stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+    .hero-name-bottom { -webkit-text-stroke: 1.2px var(--accent); }
     .fs-num { -webkit-text-stroke: 0.8px var(--accent) !important; }
 }
