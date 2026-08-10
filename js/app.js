@@ -11,6 +11,9 @@ const projectsDatabase = {
         category: 'Redesign',
         displayTag: 'Redesign',
         image: 'img/works/Robokolo/robokolo.webp',
+        // Velká case study má vlastní stránku — `url` přepne kartu z modálu na navigaci.
+        url: 'projects/robokolo.html',
+        vtName: 'project-robokolo',
         gridClass: '',
         tags: ['Redesign', 'Branding', 'UI/UX'],
         shortDesc: 'Kompletní redesign vizuální identity. Cílem bylo posunout značku od "garážového hobby" k moderní technologické firmě. Výstupem je nové logo, piktogram, tiskoviny a merch.',
@@ -391,9 +394,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.featured-slide').forEach(function(slide) {
         var projectId = slide.dataset.project;
         if (!projectId) return;
-        slide.addEventListener('click', function() { openModal(projectId); });
+        var open = function() { _openProject(projectId, slide); };
+        slide.addEventListener('click', open);
         slide.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(projectId); }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
         });
     });
 });
@@ -801,8 +805,23 @@ function renderArchive() {
         card.setAttribute('tabindex', '0');
         card.setAttribute('aria-label', 'View project: ' + item.title);
         card.innerHTML = '<div class="a-image"><img src="' + item.image + '" alt="' + item.title + '" loading="lazy"><div class="a-overlay-tech" aria-hidden="true">VIEW PROJECT</div></div><div class="a-meta"><div class="a-id">PRJ-' + num + '</div><div class="a-info"><h4>' + item.title + '</h4></div></div>';
-        card.addEventListener('click', function() { openModal(key); });
-        card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(key); } });
+
+        if (item.url) {
+            // Projekt s vlastní stránkou dostane skutečný odkaz — kvůli
+            // procházení vyhledávači a otevření v novém panelu.
+            card.removeAttribute('role');
+            card.removeAttribute('tabindex');
+            card.removeAttribute('aria-label');
+            var link = document.createElement('a');
+            link.className = 'a-card-link';
+            link.href = item.url;
+            link.setAttribute('aria-label', 'Otevřít projekt: ' + item.title);
+            link.addEventListener('click', function() { _tagViewTransition(card, item.vtName); });
+            card.appendChild(link);
+        } else {
+            card.addEventListener('click', function() { openModal(key); });
+            card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(key); } });
+        }
         fragment.appendChild(card);
     });
 
@@ -965,6 +984,24 @@ function initModal() {
             if (Math.abs(diff) > 50) _changeImg(diff > 0 ? 1 : -1);
         }, { passive: true });
     }
+}
+
+// Projekt buď otevře v modálu, nebo přejde na vlastní stránku.
+function _openProject(projectId, sourceEl) {
+    var data = projectsDatabase[projectId];
+    if (!data) return;
+    if (!data.url) { openModal(projectId); return; }
+    _tagViewTransition(sourceEl, data.vtName);
+    window.location.href = data.url;
+}
+
+// Pojmenuje obrázek pro cross-document View Transition. Název se přiděluje
+// až při kliknutí schválně: stejný snímek je na indexu ve dvou místech
+// (karta v archivu i featured slide) a duplicitní název by přechod zrušil.
+function _tagViewTransition(sourceEl, name) {
+    if (!name || !sourceEl || !document.startViewTransition) return;
+    var img = sourceEl.querySelector('img');
+    if (img) img.style.viewTransitionName = name;
 }
 
 function openModal(projectId) {

@@ -1,0 +1,188 @@
+/* =========================================
+   PROJECT PAGE — standalone case study
+   Každá stránka si v <head> přepíše --accent na barvu své značky.
+   ========================================= */
+.project-page {
+    background: #050505;
+    color: var(--white);
+}
+
+/* Globální `section` je skrytá dokud ji nezviditelní IntersectionObserver.
+   Stránka projektu žádný takový skript nemá, takže reveal vypínáme. */
+.project-page section {
+    opacity: 1;
+    transform: none;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Header ---- */
+.pp-header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem clamp(1.2rem, 4vw, 3rem);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0));
+    backdrop-filter: blur(6px);
+}
+
+.pp-logo {
+    display: block;
+    line-height: 0;
+}
+
+.pp-logo img {
+    width: 58px;
+    height: auto;
+}
+
+.pp-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    transition: color var(--transition-base);
+}
+
+.pp-back:hover { color: var(--accent); }
+
+/* ---- Hero ---- */
+.pp-hero {
+    padding: 10rem clamp(1.2rem, 4vw, 3rem) 4rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.pp-eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.pp-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 11vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+}
+
+.pp-lead {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.65;
+    color: #bbb;
+    max-width: 46ch;
+    margin-bottom: 3.5rem;
+}
+
+.pp-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pp-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pp-meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.pp-meta-value {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.pp-hero-image {
+    margin-top: 4rem;
+}
+
+.pp-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* ---- Body ---- */
+.pp-body {
+    padding: 6rem clamp(1.2rem, 4vw, 3rem) !important;
+}
+
+/* ---- Footer ---- */
+.pp-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem clamp(1.2rem, 4vw, 3rem);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pp-footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #666;
+}
+
+.pp-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.pp-footer-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    transition: color var(--transition-base);
+}
+
+.pp-footer-links a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+    .pp-hero { padding-top: 7rem !important; }
+    .pp-body { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+    .pp-meta { gap: 1.25rem; }
+
+    /* Stránka projektu záměrně nelinkuje responsive.css (je psaný pro index),
+       takže si mobilní pravidla pro pd-* a lightbox nese sama. */
+    .pd-grid-2,
+    .comparison-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .pd-title { font-size: 1.5rem; }
+    .pd-section { margin-bottom: 3rem; }
+    .lightbox img { max-width: 95%; }
+    .lb-arrow { width: 44px; height: 44px; font-size: 1.2rem; }
+}

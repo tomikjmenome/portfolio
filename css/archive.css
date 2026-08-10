@@ -317,6 +317,13 @@
     letter-spacing: 0.05em;
 }
 
+/* Neviditelný odkaz přes celou kartu — projekty s vlastní stránkou */
+.a-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+}
+
 .a-card.hidden {
     display: none;
 }
