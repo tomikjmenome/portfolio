@@ -137,6 +137,35 @@
     padding: 6rem clamp(1.2rem, 4vw, 3rem) !important;
 }
 
+/* ---- Pixel art ----
+   Sprity věží jsou 128×64. Bez tohohle je prohlížeč při zvětšení
+   rozmaže do bláta — přesně to, co u pixel artu nechceš. */
+.pp-pixel {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated; /* poslední = vyhrává; širší podpora než crisp-edges */
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem;
+}
+
+.pp-towers {
+    align-items: start;
+}
+
+/* ---- Downloads ---- */
+.pp-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.pp-downloads .pd-btn {
+    margin-top: 0;
+}
+
 /* ---- Footer ---- */
 .pp-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
