@@ -75,6 +75,7 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/work.css">
     <link rel="stylesheet" href="css/archive.css">
+    <link rel="stylesheet" href="css/wip.css">
     <link rel="stylesheet" href="css/partners.css">
     <link rel="stylesheet" href="css/transitions.css">
     <link rel="stylesheet" href="css/modal.css">
@@ -154,6 +155,7 @@
         <div class="mobile-nav-links">
             <a href="#about" class="mobile-link" data-i18n="mobileAbout">O mně</a>
             <a href="#work" class="mobile-link" data-i18n="mobileWork">Práce</a>
+            <a href="#wip" class="mobile-link" data-i18n="mobileWip">Rozdělané</a>
             <a href="#partners" class="mobile-link" data-i18n="mobilePartners">Spolupráce</a>
             <a href="#contact" class="mobile-link" data-i18n="mobileContact">Kontakt</a>
             <div class="mobile-lang-switch">
@@ -448,6 +450,75 @@
             </div>
         </section>
 
+        <!-- WORK IN PROGRESS -->
+        <section class="wip-section" id="wip" aria-label="Rozdělané projekty">
+            <div class="wip-container">
+                <div class="wip-header">
+                    <span class="wip-eyebrow" data-i18n="wipEyebrow">// ROZDĚLANÉ PROJEKTY</span>
+                    <h2 data-i18n="wipTitle">Na čem se právě pracuje</h2>
+                    <p class="wip-intro" data-i18n="wipIntro">Projekty, které ještě nejsou hotové. Postupně sem přibudou jako plné case studies.</p>
+                </div>
+
+                <ul class="wip-grid" role="list">
+                    <li class="wip-card" style="--wip-accent:#e9b75e">
+                        <div class="wip-mark" aria-hidden="true"><span>M</span></div>
+                        <div class="wip-body">
+                            <div class="wip-top">
+                                <h3 class="wip-name">Maki</h3>
+                                <span class="wip-status" data-i18n="wipStatusDev">Ve vývoji</span>
+                            </div>
+                            <p class="wip-desc" data-i18n="wipMaki">Lokální AI asistent, který běží celý na vlastním počítači. Desktopová aplikace nad modelem v Ollamě — hledání na webu, čtení stránek, obrázky i videa přímo v odpovědi.</p>
+                            <ul class="wip-tags" role="list">
+                                <li>Tauri</li><li>React</li><li>Rust</li><li>Ollama</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="wip-card" style="--wip-accent:#6a85b6">
+                        <div class="wip-mark" aria-hidden="true"><span>L</span></div>
+                        <div class="wip-body">
+                            <div class="wip-top">
+                                <h3 class="wip-name">Litera V3</h3>
+                                <span class="wip-status" data-i18n="wipStatusDev2">Ve vývoji</span>
+                            </div>
+                            <p class="wip-desc" data-i18n="wipLitera">Pomocník s maturitní četbou ve stylu Duolinga. Cesta úkolů, XP, streaky a truhly postavené nad rozbory děl. Finální verze poběží na backendu s účty.</p>
+                            <ul class="wip-tags" role="list">
+                                <li>Vanilla JS</li><li>SPA</li><li>Design systém</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="wip-card" style="--wip-accent:#e8404c">
+                        <div class="wip-mark" aria-hidden="true"><span>MG</span></div>
+                        <div class="wip-body">
+                            <div class="wip-top">
+                                <h3 class="wip-name">MatlGroup web</h3>
+                                <span class="wip-status" data-i18n="wipStatusClient">Klientská zakázka</span>
+                            </div>
+                            <p class="wip-desc" data-i18n="wipMatl">Web pro klienta z oboru automotive. Přestavba na Next.js nad hotovým design systémem — registr služeb, galerie a podstránky jednotlivých přeprav.</p>
+                            <ul class="wip-tags" role="list">
+                                <li>Next.js</li><li>TypeScript</li><li>Web design</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="wip-card" style="--wip-accent:#9aa0a6">
+                        <div class="wip-mark" aria-hidden="true"><span>OR</span></div>
+                        <div class="wip-body">
+                            <div class="wip-top">
+                                <h3 class="wip-name">Odin's rune</h3>
+                                <span class="wip-status" data-i18n="wipStatusConcept">Koncept</span>
+                            </div>
+                            <p class="wip-desc" data-i18n="wipOdin">Příběhová hra o cestování časem. Hráč se pohybuje mezi současným Londýnem, renesanční Florencií roku 1488 a rudolfínskou Prahou. Zatím scénář a skici na papíře.</p>
+                            <ul class="wip-tags" role="list">
+                                <li>Game design</li><li>Scénář</li><li>Koncept art</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <!-- PARTNERS -->
         <section class="partners-section" id="partners" aria-label="Spolupráce">
             <div class="partners-container">
@@ -559,6 +630,7 @@
                             <a href="#about" data-i18n="footerAbout">O mně</a>
                             <a href="#work" data-i18n="footerWork">Práce</a>
                             <a href="#work-grid" data-i18n="footerArchive">Archiv</a>
+                            <a href="#wip" data-i18n="footerWip">Rozdělané</a>
                             <a href="#partners" data-i18n="footerPartners">Spolupráce</a>
                         </nav>
                     </div>

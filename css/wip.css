@@ -1,0 +1,163 @@
+/* =========================================
+   WORK IN PROGRESS — "Rozdělané projekty"
+
+   Sekce je tmavá záměrně: skutečné barvy těchto projektů (jantarová Maki,
+   modrá Litera) na světlém podkladu nemají dost kontrastu, na tmavém ano.
+   Zároveň to dělá rytmus mezi světlým archivem a světlými partnery.
+   ========================================= */
+.wip-section {
+    position: relative;
+    background: #0d0d0d;
+    color: var(--white);
+    padding: 8rem 2rem;
+    width: 100%;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.wip-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.wip-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+}
+
+.wip-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.wip-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+.wip-intro {
+    color: #999;
+    font-size: 1rem;
+    max-width: 52ch;
+    line-height: 1.6;
+}
+
+.wip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.wip-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.wip-card:hover {
+    border-color: var(--wip-accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Zástupná dlaždice, dokud nedorazí loga projektů */
+.wip-mark {
+    flex: 0 0 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--wip-accent);
+    color: var(--wip-accent);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.wip-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.wip-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.wip-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--white);
+}
+
+.wip-status {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wip-accent);
+    border: 1px solid var(--wip-accent);
+    padding: 0.25rem 0.6rem;
+    white-space: nowrap;
+}
+
+.wip-desc {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.wip-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.wip-tags li {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #777;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.25rem 0.55rem;
+}
+
+@media (max-width: 900px) {
+    .wip-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .wip-section { padding: 4rem 1.2rem; }
+    .wip-header { margin-bottom: 2.5rem; }
+    .wip-card { padding: 1.5rem; gap: 1rem; }
+    .wip-mark { flex-basis: 56px; height: 56px; font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    .wip-card { flex-direction: column; }
+}
