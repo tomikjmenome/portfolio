@@ -24,40 +24,12 @@ const projectsDatabase = {
         category: 'Redesign',
         displayTag: 'Cover Art',
         image: 'img/works/Beatles/Beatles-mockup-final.webp',
+        url: 'projects/abbey-road.html',
+        vtName: 'project-abbey-road',
         gridClass: 'span-col-2',
         tags: ['Redesign', 'Fan Art', 'Cover Art'],
         shortDesc: 'Redesign ikonického alba The Beatles z roku 1969. Moderní reinterpretace hudebního dědictví — nové LP, obal a série plakátů. Osobní projekt / fan art.',
         shortDescEn: 'Redesign of The Beatles\' iconic 1969 album. A modern reinterpretation of the musical legacy — new LP, cover and a series of posters. Personal project / fan art.',
-        contentHTML: `
-            <div class="project-detail-container">
-                <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Beatles/Beatles-mockup-final.webp" class="pd-image" alt="Abbey Road Hero">
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Osobní Projekt / Fan Art</h3>
-                    <p class="pd-text">Tento projekt vznikl jako vizuální studie a pocta legendární kapele Beatles. Nejedná se o oficiální ani komerční zakázku, nýbrž o "fan art" koncept, jehož cílem bylo procvičit práci s typografií, kompozicí a atmosférou. Chtěl jsem zachovat ikonický status původního alba, ale vtisknout mu moderní, minimalistickou tvář.</p>
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Vinyl & Cover Design</h3>
-                    <div class="pd-grid-2">
-                        <div><img src="img/works/Beatles/lp-design.webp" class="pd-image" alt="LP Design"></div>
-                        <div class="pd-text">Detailní pohled na zpracování samotné desky a obalu. Důraz na čisté linie a výrazný kontrast, který nechává vyniknout podstatu díla.</div>
-                    </div>
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Plakáty</h3>
-                    <p class="pd-text">Série plakátů navržená jako doprovodný vizuál k tomuto fiktivnímu redesignu.</p>
-                    <img src="img/works/Beatles/posters-mockup-final-Recovered.webp" class="pd-image" style="margin-bottom:2rem" alt="Posters Mockup">
-                    <div class="pd-grid-3">
-                        <img src="img/works/Beatles/poster/poster-beatles-black-gradiant.webp" class="pd-image" alt="Poster Black Gradient">
-                        <img src="img/works/Beatles/poster/poster-beatles-white-gradiant.webp" class="pd-image" alt="Poster White Gradient">
-                        <img src="img/works/Beatles/poster/poster-beatles-black-white.webp" class="pd-image" alt="Poster BW">
-                    </div>
-                </div>
-                <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
-                    <a href="javascript:void(0)" onclick="openModal('fusion-1')" class="pd-next-btn">Next Project: Fusion TD →</a>
-                </div>
-            </div>`
     },
     'fusion-1': {
         title: 'Fusion Tower Defense',
@@ -109,28 +81,12 @@ const projectsDatabase = {
         category: 'UI/UX',
         displayTag: 'App Design',
         image: 'img/works/Apex/apex-home.webp',
+        url: 'projects/apex.html',
+        vtName: 'project-apex',
         gridClass: 'span-col-2',
         tags: ['UI/UX', 'App Design', 'Concept'],
         shortDesc: 'Konceptuální návrh UI pro streamovací aplikaci Apex. Důraz na přehlednost, typografii a tmavý vizuální styl inspirovaný prémiových streamovacími platformami.',
         shortDescEn: 'Conceptual UI design for Apex streaming app. Focus on clarity, typography and a dark visual style inspired by premium streaming platforms.',
-        contentHTML: `
-            <div class="project-detail-container">
-                <div class="pd-section" style="margin-top:2rem">
-                    <img src="img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — Hlavní obrazovka">
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">O Projektu</h3>
-                    <p class="pd-text">Apex je konceptuální návrh UI pro fiktivní streamovací platformu. Cílem bylo vytvořit čistý, moderní a intuitivní interface s důrazem na obsah — filmy a seriály. Inspirací byly přední světové streamovací služby, ale s vlastním vizuálním jazykem.</p>
-                    <p class="pd-text">Tmavé pozadí, výrazná typografie a dobře zvolená hierarchie prvků zajišťují, že uživatel okamžitě ví, co je důležité a jak se orientovat.</p>
-                </div>
-                <div class="pd-section">
-                    <h3 class="pd-title">Obrazovky</h3>
-                    <div class="pd-grid-2">
-                        <div><img src="img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — Domovská stránka"><span class="pd-caption">Domovská stránka</span></div>
-                        <div><img src="img/works/Apex/apex-selected-movie.webp" class="pd-image" alt="Apex — Detail filmu"><span class="pd-caption">Detail vybraného titulu</span></div>
-                    </div>
-                </div>
-            </div>`
     },
     'digital-1': {
         title: 'Death Note',

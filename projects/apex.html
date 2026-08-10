@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apex — UI koncept streamovací aplikace | Tomáš Hájek</title>
+    <meta name="description" content="Konceptuální návrh uživatelského rozhraní pro streamovací platformu Apex — tmavý vizuální styl, výrazná typografie a důraz na obsah. Případová studie z portfolia Tomáše Hájka.">
+    <meta name="author" content="Tomáš Hájek">
+    <link rel="canonical" href="https://tomikjmenome.github.io/portfolio/projects/apex.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tomikjmenome.github.io/portfolio/projects/apex.html">
+    <meta property="og:title" content="Apex — UI koncept streamovací aplikace">
+    <meta property="og:description" content="Konceptuální návrh rozhraní streamovací platformy. Tmavý styl, výrazná typografie, důraz na obsah.">
+    <meta property="og:image" content="https://tomikjmenome.github.io/portfolio/img/works/Apex/apex-home.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="theme-color" content="#ef2530">
+    <link rel="icon" href="../img/logo/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../img/logo/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/noise.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../css/transitions.css">
+
+    <!-- Červená z loga v rozhraní je #e50914, ta má ale na tmavém pozadí
+         kontrast jen 4.25:1 a neprošla by pro drobný text. #ef2530 je
+         opticky tatáž červená a dává 4.83:1. -->
+    <style>
+        :root { --accent: #ef2530; }
+        .pp-hero-image img { view-transition-name: project-apex; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Apex — UI koncept streamovací aplikace",
+        "creator": { "@type": "Person", "name": "Tomáš Hájek" },
+        "genre": "UI/UX Design",
+        "url": "https://tomikjmenome.github.io/portfolio/projects/apex.html"
+    }
+    </script>
+</head>
+<body class="project-page" id="top">
+
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+    <div class="cursor-aura" aria-hidden="true"></div>
+
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
+        <div class="lightbox-controls">
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+        </div>
+        <img id="lightboxImg" src="" alt="Zvětšený náhled">
+        <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
+    </div>
+
+    <header class="pp-header" role="banner">
+        <a href="../index.html" class="pp-logo" aria-label="Tomáš Hájek — zpět na portfolio">
+            <img src="../img/logo/th-logo-white.svg" alt="Tomáš Hájek" width="1062" height="446">
+        </a>
+        <a href="../index.html#work-grid" class="pp-back">← Zpět na projekty</a>
+    </header>
+
+    <main id="main-content">
+
+        <section class="pp-hero" aria-labelledby="pp-title">
+            <span class="pp-eyebrow">UI/UX · Koncept</span>
+            <h1 class="pp-title" id="pp-title">Apex</h1>
+            <p class="pp-lead">Konceptuální návrh rozhraní pro streamovací aplikaci. Důraz na přehlednost, typografii a tmavý vizuální styl inspirovaný prémiovými streamovacími platformami.</p>
+
+            <div class="pp-meta">
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Kategorie</span>
+                    <span class="pp-meta-value">UI/UX</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Typ</span>
+                    <span class="pp-meta-value">Koncept</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Disciplíny</span>
+                    <span class="pp-meta-value">App design, typografie</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Výstup</span>
+                    <span class="pp-meta-value">Návrh rozhraní</span>
+                </div>
+            </div>
+
+            <div class="pp-hero-image">
+                <img src="../img/works/Apex/apex-home.webp" alt="Apex — domovská obrazovka aplikace" width="4577" height="2746" loading="eager" decoding="async">
+            </div>
+        </section>
+
+        <section class="pp-body">
+            <div class="project-detail-container">
+
+                <div class="pd-section">
+                    <h2 class="pd-title">O projektu</h2>
+                    <p class="pd-text">Apex je konceptuální návrh UI pro fiktivní streamovací platformu. Cílem bylo vytvořit čistý, moderní a intuitivní interface s důrazem na obsah — filmy a seriály. Inspirací byly přední světové streamovací služby, ale s vlastním vizuálním jazykem.</p>
+                    <p class="pd-text">Tmavé pozadí, výrazná typografie a dobře zvolená hierarchie prvků zajišťují, že uživatel okamžitě ví, co je důležité a jak se orientovat.</p>
+                </div>
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Obrazovky</h2>
+                    <div class="pd-grid-2">
+                        <div>
+                            <img src="../img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — domovská stránka" loading="lazy">
+                            <span class="pd-caption">Domovská stránka</span>
+                        </div>
+                        <div>
+                            <img src="../img/works/Apex/apex-selected-movie.webp" class="pd-image" alt="Apex — detail vybraného titulu" loading="lazy">
+                            <span class="pd-caption">Detail vybraného titulu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
+                    <a href="../index.html#work-grid" class="pd-next-btn">Zpět na projekty →</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pp-footer">
+        <span class="pp-footer-copy">&copy; 2026 Tomáš Hájek</span>
+        <nav class="pp-footer-links" aria-label="Odkazy">
+            <a href="../index.html">Portfolio</a>
+            <a href="../index.html#work-grid">Projekty</a>
+            <a href="../index.html#contact">Kontakt</a>
+            <a href="#top">Nahoru ↑</a>
+        </nav>
+    </footer>
+
+    <script src="../js/project.js"></script>
+</body>
+</html>
