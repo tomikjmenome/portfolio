@@ -77,16 +77,9 @@
 }
 
 .modal-logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--white);
+    width: 68px;
+    height: auto;
     margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-.modal-logo .logo-dot {
-    color: var(--accent);
 }
 
 #modalCategory {

@@ -57,10 +57,13 @@
 }
 
 .mobile-logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: -0.05em;
+    display: block;
+    line-height: 0;
+}
+
+.mobile-logo img {
+    width: 62px;
+    height: auto;
 }
 
 .hamburger-menu {

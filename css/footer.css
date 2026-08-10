@@ -89,6 +89,52 @@
     -webkit-text-stroke: 0;
 }
 
+/* Phone + vCard */
+.gf-direct {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+    margin-top: 2.5rem;
+}
+
+.gf-phone,
+.gf-vcard {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.gf-phone {
+    color: var(--white);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    letter-spacing: 0.02em;
+}
+
+.gf-phone:hover {
+    color: var(--accent);
+}
+
+.gf-vcard {
+    color: #999;
+    border: 1px solid #333;
+    padding: 0.7rem 1.2rem;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+.gf-vcard:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 /* Contact Form */
 .gf-form-section {
     display: flex;

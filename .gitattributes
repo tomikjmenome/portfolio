@@ -1,0 +1,3 @@
+# vCard spec (RFC 6350) vyžaduje CRLF — bez tohoto by autocrlf uložil soubor
+# s LF a GitHub Pages by ho tak i servíroval.
+*.vcf text eol=crlf

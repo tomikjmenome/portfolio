@@ -292,6 +292,12 @@ const translations = {
         f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternativní redesign filmového plakátu kultovního Jurského Parku.',
         // Archive
         archiveTitle: 'Projekty',
+        // Partners
+        partnersEyebrow: '// SPOLUPRACUJI S',
+        partnersTitle: 'Značky, pro které tvořím',
+        partnerRoleAuto: 'Automotive', partnerRoleAuto2: 'Automotive',
+        partnerRoleDetail: 'Detailing', partnerRolePolitics: 'Vizuální identita',
+        mobilePartners: 'Spolupráce', footerPartners: 'Spolupráce',
         // Footer
         footerCTA: 'Máte projekt?',
         footerFormTitle: 'Nebo napište přímo',
@@ -299,6 +305,7 @@ const translations = {
         footerMenuTitle: 'Menu', footerSocialsTitle: 'Socials',
         footerLocationTitle: 'Lokace', footerLocation: 'Brno, Czech Republic\nAvailable for remote',
         footerBackTop: 'Zpět nahoru ↑',
+        saveContact: 'Uložit kontakt',
         // Form
         formName: 'Jméno', formEmail: 'E-mail', formMessage: 'Zpráva', formSend: 'Odeslat',
         formSuccess: 'Zpráva odeslána! Ozvu se brzy.', formError: 'Nepodařilo se odeslat. Použijte e-mail přímo.',
@@ -330,6 +337,12 @@ const translations = {
         f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternative movie poster redesign for the iconic Jurassic Park.',
         // Archive
         archiveTitle: 'Projects',
+        // Partners
+        partnersEyebrow: '// WORKING WITH',
+        partnersTitle: 'Brands I create for',
+        partnerRoleAuto: 'Automotive', partnerRoleAuto2: 'Automotive',
+        partnerRoleDetail: 'Detailing', partnerRolePolitics: 'Visual identity',
+        mobilePartners: 'Partners', footerPartners: 'Partners',
         // Footer
         footerCTA: 'Got a project?',
         footerFormTitle: 'Or write directly',
@@ -337,6 +350,7 @@ const translations = {
         footerMenuTitle: 'Menu', footerSocialsTitle: 'Socials',
         footerLocationTitle: 'Location', footerLocation: 'Brno, Czech Republic\nAvailable for remote',
         footerBackTop: 'Back to Top ↑',
+        saveContact: 'Save contact',
         // Form
         formName: 'Name', formEmail: 'Email', formMessage: 'Message', formSend: 'Send',
         formSuccess: "Message sent! I'll get back to you soon.", formError: 'Sending failed. Please use email directly.',

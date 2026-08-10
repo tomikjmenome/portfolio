@@ -47,7 +47,11 @@
     font-family: var(--font-heading);
     font-size: clamp(4rem, 15vw, 11rem);
     font-weight: 800;
-    line-height: 0.85;
+    /* 0.85 made the acute/caron of HÁJEK collide with the TOMÁŠ baseline.
+       Line-height 1 leaves ~0.07em clearance for Czech diacritics. */
+    line-height: 1;
+    letter-spacing: -0.02em;
+    padding-top: 0.12em;
     margin-bottom: 2rem;
     text-transform: uppercase;
     display: flex;
@@ -69,7 +73,16 @@
     will-change: transform;
     display: block;
     color: transparent;
-    -webkit-text-stroke: 2.5px var(--accent);
+    /* Scale the outline with the type size — 2.5px was a hairline at 11rem */
+    -webkit-text-stroke: clamp(2px, 0.45vw, 4px) var(--accent);
+    paint-order: stroke fill;
+}
+
+/* Browsers without text-stroke would render invisible transparent text */
+@supports not (-webkit-text-stroke: 1px currentColor) {
+    .hero-name-bottom {
+        color: var(--accent);
+    }
 }
 
 .hero-name-bottom:hover {

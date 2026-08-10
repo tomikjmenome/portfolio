@@ -63,14 +63,10 @@ section h2 {
     gap: 2rem;
 }
 .preloader-logo {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: -0.04em;
+    width: clamp(140px, 22vw, 260px);
+    height: auto;
     animation: plFadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
-.preloader-dot { color: var(--accent); }
 .preloader-bar {
     width: 120px;
     height: 1px;
