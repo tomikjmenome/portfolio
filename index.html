@@ -45,6 +45,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
+    <!-- Rozhodnout o preloaderu ještě před prvním vykreslením, jinak by problikl.
+         Běží schválně v <head> a ne v app.js, který se pouští až po parsování těla. -->
+    <script>
+    (function () {
+        try {
+            var KEY = 'th-preloader-shown';
+            var TTL = 6 * 60 * 60 * 1000; // 6 hodin
+            var last = parseInt(localStorage.getItem(KEY) || '0', 10);
+            if (Date.now() - last < TTL) {
+                document.documentElement.classList.add('no-preloader');
+            } else {
+                localStorage.setItem(KEY, String(Date.now()));
+            }
+        } catch (e) {
+            // Privátní režim / zakázané úložiště — preloader se prostě zobrazí.
+        }
+    })();
+    </script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/animations.css">

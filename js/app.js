@@ -408,6 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function initPreloader() {
     var loader = document.getElementById('preloader');
     if (!loader) return;
+    // Přeskočeno inline skriptem v <head> — preloader je schovaný, není co odkrývat.
+    if (document.documentElement.classList.contains('no-preloader')) return;
     setTimeout(function() { loader.classList.add('done'); }, 1100);
 }
 

@@ -56,6 +56,12 @@ section h2 {
     visibility: hidden;
     pointer-events: none;
 }
+
+/* Nastaveno inline skriptem v <head>, když byl preloader viděn nedávno.
+   display:none (ne opacity) — aby se vůbec nevykreslil a neproblikl. */
+html.no-preloader #preloader {
+    display: none;
+}
 .preloader-inner {
     display: flex;
     flex-direction: column;
