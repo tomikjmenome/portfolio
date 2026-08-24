@@ -18,6 +18,18 @@ const projectsDatabase = {
         shortDesc: 'Značka a rozhraní aplikace, která z maturitní četby dělá cestu s postupem, questy a testy. Logo a podznačky, logomanuál, devět obrazovek a vlastní sada ilustrovaných autorů.',
         shortDescEn: 'Brand and interface for an app that turns the required school reading list into a path with progress, quests and quizzes. Logo and sub-brands, brand manual, nine screens and a custom set of illustrated authors.',
     },
+    'alternativa-1': {
+        title: 'Alternativa pro Rajhradice',
+        category: 'Branding',
+        displayTag: 'Kampaň',
+        image: 'img/works/Alternativa/card.webp',
+        url: 'projects/alternativa.html',
+        vtName: 'project-alternativa',
+        gridClass: 'span-col-2',
+        tags: ['Branding', 'Kampaň', 'Motion', 'Print'],
+        shortDesc: 'Vizuální identita komunálního uskupení a celý balík materiálů ke kampani — logo postavené na rozcestí, jeho animovaná verze a grafika na sociální sítě.',
+        shortDescEn: 'Visual identity for a local political grouping and the full campaign toolkit — a logo built on a fork in the road, its animated version and social media graphics.',
+    },
     'branding-1': {
         title: 'Robokolo',
         category: 'Redesign',

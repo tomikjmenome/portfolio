@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alternativa pro Rajhradice — identita a kampaň | Tomáš Hájek</title>
+    <meta name="description" content="Vizuální identita komunálního uskupení Alternativa pro Rajhradice a kompletní materiály ke kampani — logo a jeho varianty, animovaná značka a grafika na sociální sítě. Případová studie z portfolia Tomáše Hájka.">
+    <meta name="author" content="Tomáš Hájek">
+    <link rel="canonical" href="https://tomikjmenome.github.io/portfolio/projects/alternativa.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tomikjmenome.github.io/portfolio/projects/alternativa.html">
+    <meta property="og:title" content="Alternativa pro Rajhradice — identita a kampaň">
+    <meta property="og:description" content="Značka postavená na rozcestí a kampaňová grafika pro sociální sítě.">
+    <meta property="og:image" content="https://tomikjmenome.github.io/portfolio/img/works/Alternativa/og-alternativa.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="theme-color" content="#c94e2c">
+    <link rel="icon" href="../img/logo/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../img/logo/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/noise.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="../css/transitions.css">
+
+    <!-- Firemní cihlová #C94E2C dává na černém pozadí 4,3:1 a na drobný text
+         by nestačila. #DA5A32 je opticky tatáž barva a vychází 5,2:1. -->
+    <style>
+        :root { --accent: #DA5A32; }
+        .pp-hero-image img { view-transition-name: project-alternativa; }
+
+        /* Značka je kreslená pro krémový podklad, ne pro černou stránku —
+           ukázky proto sedí na vlastní krémové ploše. */
+        .alt-plate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #F2EBE1;
+            border-radius: 12px;
+            padding: clamp(1.5rem, 5vw, 3rem);
+        }
+        .alt-plate img { width: 100%; height: auto; }
+        .alt-plate.is-tight img { width: min(220px, 60%); }
+
+        .alt-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .alt-swatch {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .alt-swatch-fill { height: 110px; }
+        .alt-swatch-body {
+            padding: 0.9rem 1.1rem 1.1rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: #999;
+        }
+        .alt-swatch-body strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+        .alt-swatch-body em {
+            display: block;
+            font-style: normal;
+            color: #777;
+        }
+
+
+        @media (max-width: 768px) {
+            .alt-swatch-fill { height: 84px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Alternativa pro Rajhradice — identita a kampaň",
+        "creator": { "@type": "Person", "name": "Tomáš Hájek" },
+        "genre": "Brand Identity, Campaign Design, Motion Graphics",
+        "dateCreated": "2026",
+        "url": "https://tomikjmenome.github.io/portfolio/projects/alternativa.html"
+    }
+    </script>
+</head>
+<body class="project-page" id="top">
+
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+    <div class="cursor-aura" aria-hidden="true"></div>
+
+    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
+        <div class="lightbox-controls">
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+        </div>
+        <img id="lightboxImg" src="" alt="Zvětšený náhled">
+        <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
+    </div>
+
+    <header class="pp-header" role="banner">
+        <a href="../index.html" class="pp-logo" aria-label="Tomáš Hájek — zpět na portfolio">
+            <img src="../img/logo/th-logo-white.svg" alt="Tomáš Hájek" width="1062" height="446">
+        </a>
+        <a href="../index.html#work-grid" class="pp-back">← Zpět na projekty</a>
+    </header>
+
+    <main id="main-content">
+
+        <section class="pp-hero" aria-labelledby="pp-title">
+            <span class="pp-eyebrow">Identita · Kampaň · Motion</span>
+            <h1 class="pp-title" id="pp-title">Alternativa pro&nbsp;Rajhradice</h1>
+            <p class="pp-lead">Vizuální identita komunálního uskupení a celý balík materiálů ke kampani — od loga a jeho variant až po grafiku na sociální sítě. Všechno stojí na jednom obraze: rozcestí.</p>
+
+            <div class="pp-meta">
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Rok</span>
+                    <span class="pp-meta-value">2026</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Typ</span>
+                    <span class="pp-meta-value">Klientská zakázka</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Disciplíny</span>
+                    <span class="pp-meta-value">Brand identity, kampaňová grafika, motion</span>
+                </div>
+                <div class="pp-meta-item">
+                    <span class="pp-meta-label">Výstup</span>
+                    <span class="pp-meta-value">Logo, vizuály, animace</span>
+                </div>
+            </div>
+
+            <div class="pp-hero-image">
+                <img src="../img/works/Alternativa/hero-facebook.webp" alt="Úvodní grafika Alternativy pro Rajhradice — logo, heslo a rozcestí s kruhovým objezdem" width="1640" height="720" loading="eager" decoding="async">
+            </div>
+        </section>
+
+        <section class="pp-body">
+            <div class="project-detail-container">
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Zadání</h2>
+                    <p class="pd-text">Nové uskupení jde do komunálních voleb v Rajhradicích v říjnu 2026, ve spolupráci se Starostovými. Nemělo nic — ani značku, ani vizuální styl, ani hotové šablony. Kampaň přitom běží skoro rok a materiály se vyrábějí průběžně: příspěvek na sociální sítě, video ze setkání, titulek s aktuální lokalitou.</p>
+                    <p class="pd-text">Z toho vyplynulo zadání, které bylo z poloviny grafické a z poloviny provozní. Značka musela být jednoduchá natolik, aby fungovala v profilovce i na banneru, a systém kolem ní musel jít obsluhovat jedním člověkem bez toho, aby se každý nový titulek kreslil od nuly.</p>
+                </div>
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Značka</h2>
+                    <p class="pd-text">Celá identita stojí na jednom obrazu — <strong>rozcestí</strong>. Značka je vidlice cesty ve tvaru <strong>Y</strong>: tmavá větev je ta obvyklá, cihlová ta alternativní. Jeden tvar, který doslova říká název, a přitom zůstává tak jednoduchý, že se čte i ve velikosti favikony.</p>
+                    <p class="pd-text">Motiv se pak nese vším ostatním: silnice v bannerech, kruhový objezd jako křižovatka rozhodnutí, přerušovaná čára na vozovce jako rytmus celé kampaně.</p>
+
+                    <div class="alt-plate">
+                        <img src="../img/works/Alternativa/logo-normal.webp" alt="Základní logotyp Alternativa pro Rajhradice" loading="lazy">
+                    </div>
+                    <span class="pd-caption" style="margin-top:1rem">Základní logotyp</span>
+
+                    <div class="pd-grid-2" style="margin-top:3rem;align-items:stretch">
+                        <div class="alt-plate">
+                            <img src="../img/works/Alternativa/logo-vertical.webp" alt="Vertikální varianta logotypu" loading="lazy">
+                        </div>
+                        <div class="alt-plate is-tight">
+                            <img src="../img/works/Alternativa/logo-icon.webp" alt="Samotný piktogram — vidlice cesty ve tvaru Y" loading="lazy">
+                        </div>
+                    </div>
+                    <span class="pd-caption" style="margin-top:1rem">Vertikální lockup a samotný piktogram pro profilovky a favikonu</span>
+
+                    <p class="pd-text" style="margin-top:3rem">Uskupení kandiduje ve spolupráci se Starostovými, takže identita potřebovala i společný lockup. Purpurová je barva partnera — v systému má vyhrazené jediné místo, právě tenhle štítek, aby nezačala konkurovat cihlové.</p>
+
+                    <div class="alt-plate">
+                        <img src="../img/works/Alternativa/logo-cobranding.webp" alt="Společný lockup se Starostovými" loading="lazy">
+                    </div>
+                    <span class="pd-caption" style="margin-top:1rem">Co-branding se Starostovými</span>
+                </div>
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Barvy</h2>
+                    <p class="pd-text">Krémová místo bílé a tmavě šedá místo černé — kampaňová grafika je ze tří čtvrtin plocha a čistě bílý podklad na displeji řeže do očí. Cihlová je jediný akcent a nese vždycky to podstatné: odbočku, číslo, výzvu.</p>
+
+                    <div class="alt-swatches">
+                        <div class="alt-swatch">
+                            <div class="alt-swatch-fill" style="background:#F2EBE1"></div>
+                            <div class="alt-swatch-body">
+                                <strong>Krémová</strong>
+                                #F2EBE1
+                                <em>podklad, obrysy</em>
+                            </div>
+                        </div>
+                        <div class="alt-swatch">
+                            <div class="alt-swatch-fill" style="background:#24252D"></div>
+                            <div class="alt-swatch-body">
+                                <strong>Tmavá</strong>
+                                #24252D
+                                <em>silnice, hlavní text</em>
+                            </div>
+                        </div>
+                        <div class="alt-swatch">
+                            <div class="alt-swatch-fill" style="background:#C94E2C"></div>
+                            <div class="alt-swatch-body">
+                                <strong>Cihlová</strong>
+                                #C94E2C
+                                <em>akcent, odbočka</em>
+                            </div>
+                        </div>
+                        <div class="alt-swatch">
+                            <div class="alt-swatch-fill" style="background:#E6007E"></div>
+                            <div class="alt-swatch-body">
+                                <strong>Purpurová</strong>
+                                #E6007E
+                                <em>jen Starostové</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Značka v pohybu</h2>
+                    <p class="pd-text">Animovaná verze piktogramu na začátek videí a jako profilovka tam, kde to jde. Nejdřív se nakreslí tmavá cesta, pak z ní v ohybu vyroste cihlová odbočka. Je to celý příběh značky ve dvou vteřinách a bez jediného slova.</p>
+
+                    <div class="pd-grid-2" style="align-items:center">
+                        <div>
+                            <img src="../img/works/Alternativa/anim-logo.webp" class="pd-image" alt="Animace piktogramu — tmavá cesta se nakreslí a vyroste z ní cihlová odbočka" loading="lazy">
+                            <span class="pd-caption">Animovaný piktogram, 2,5 s ve smyčce</span>
+                        </div>
+                        <div>
+                            <p class="pd-text">Vykresluje se po snímcích do PNG a exportuje do animovaného WebP i do sekvence s alfou pro střih. Díky tomu jde stejná animace použít v příspěvku i položit přes video, aniž by kolem ní byl bílý rámeček.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-section">
+                    <h2 class="pd-title">Kampaňové vizuály</h2>
+                    <p class="pd-text">První příspěvek nemá říct nic než datum a tón. Silnice vede ke kruhu, který je zároveň tečka na konci věty i „tady to začíná".</p>
+
+                    <img src="../img/works/Alternativa/prvni-prispevek.webp" class="pd-image" alt="První příspěvek kampaně — Něco nového začíná, 16. 8. 2026" loading="lazy">
+                    <span class="pd-caption">Ohlašovací příspěvek</span>
+
+                    <p class="pd-text" style="margin-top:3rem">Banner na YouTube je nejzrádnější formát, jaký v kampani je: nahrává se v 2560 × 1440, ale na televizi, na počítači a na telefonu se z něj ukáže pokaždé jiný výřez. Kompozice je proto stavěná od nejmenšího bezpečného pole ven — logo a heslo se vejdou i do mobilního výřezu, silnice a plochy vyplňují zbytek.</p>
+
+                    <div class="pd-grid-2">
+                        <div>
+                            <img src="../img/works/Alternativa/youtube-banner.webp" class="pd-image" alt="Banner na YouTube v plné velikosti" loading="lazy">
+                            <span class="pd-caption">Plné plátno 2560 × 1440</span>
+                        </div>
+                        <div>
+                            <img src="../img/works/Alternativa/youtube-guides.webp" class="pd-image" alt="Tentýž banner s vyznačenými bezpečnými poli pro mobil a tablet" loading="lazy">
+                            <span class="pd-caption">Zeleně mobilní výřez, modře tabletový</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
+                    <a href="../index.html#work-grid" class="pd-next-btn">Zpět na projekty →</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pp-footer">
+        <span class="pp-footer-copy">&copy; 2026 Tomáš Hájek</span>
+        <nav class="pp-footer-links" aria-label="Odkazy">
+            <a href="../index.html">Portfolio</a>
+            <a href="../index.html#work-grid">Projekty</a>
+            <a href="../index.html#contact">Kontakt</a>
+            <a href="#top">Nahoru ↑</a>
+        </nav>
+    </footer>
+
+    <script src="../js/project.js"></script>
+</body>
+</html>
