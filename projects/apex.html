@@ -53,21 +53,21 @@
     }
     </script>
 </head>
-<body class="project-page" id="top">
+<body class="project-page" id="top" data-title-en="Apex — streaming app UI concept | Tomáš Hájek">
 
     <div id="scrollProgress" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
     <div class="cursor-aura" aria-hidden="true"></div>
 
-    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <a href="#main-content" class="skip-link" data-en="Skip to content">Přeskočit na obsah</a>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
         <div class="lightbox-controls">
-            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
-            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek" data-en="←">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek" data-en="→">→</button>
         </div>
-        <img id="lightboxImg" src="" alt="Zvětšený náhled">
+        <img id="lightboxImg" src="" alt="Zvětšený náhled" data-alt-en="Enlarged preview">
         <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
     </div>
 
@@ -75,37 +75,40 @@
         <a href="../index.html" class="pp-logo" aria-label="Tomáš Hájek — zpět na portfolio">
             <img src="../img/logo/th-logo-white.svg" alt="Tomáš Hájek" width="1062" height="446">
         </a>
-        <a href="../index.html#work-grid" class="pp-back">← Zpět na projekty</a>
+        <div class="pp-header-right">
+            <a href="../index.html#work-grid" class="pp-back" data-en="&larr; Back to projects">← Zpět na projekty</a>
+            <button class="pp-lang" type="button" aria-label="Switch to English">EN</button>
+        </div>
     </header>
 
     <main id="main-content">
 
         <section class="pp-hero" aria-labelledby="pp-title">
-            <span class="pp-eyebrow">UI/UX · Koncept</span>
+            <span class="pp-eyebrow" data-en="UI/UX · Concept">UI/UX · Koncept</span>
             <h1 class="pp-title" id="pp-title">Apex</h1>
-            <p class="pp-lead">Konceptuální návrh rozhraní pro streamovací aplikaci. Důraz na přehlednost, typografii a tmavý vizuální styl inspirovaný prémiovými streamovacími platformami.</p>
+            <p class="pp-lead" data-en="A concept interface for a streaming app. The focus is on clarity, typography and a dark visual style borrowed from the premium streaming services.">Konceptuální návrh rozhraní pro streamovací aplikaci. Důraz na přehlednost, typografii a tmavý vizuální styl inspirovaný prémiovými streamovacími platformami.</p>
 
             <div class="pp-meta">
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Kategorie</span>
+                    <span class="pp-meta-label" data-en="Category">Kategorie</span>
                     <span class="pp-meta-value">UI/UX</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Typ</span>
-                    <span class="pp-meta-value">Koncept</span>
+                    <span class="pp-meta-label" data-en="Type">Typ</span>
+                    <span class="pp-meta-value" data-en="Concept">Koncept</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Disciplíny</span>
-                    <span class="pp-meta-value">App design, typografie</span>
+                    <span class="pp-meta-label" data-en="Disciplines">Disciplíny</span>
+                    <span class="pp-meta-value" data-en="App design, typography">App design, typografie</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Výstup</span>
-                    <span class="pp-meta-value">Návrh rozhraní</span>
+                    <span class="pp-meta-label" data-en="Output">Výstup</span>
+                    <span class="pp-meta-value" data-en="Interface design">Návrh rozhraní</span>
                 </div>
             </div>
 
             <div class="pp-hero-image">
-                <img src="../img/works/Apex/apex-home.webp" alt="Apex — domovská obrazovka aplikace" width="4577" height="2746" loading="eager" decoding="async">
+                <img src="../img/works/Apex/apex-home.webp" alt="Apex — domovská obrazovka aplikace" data-alt-en="Apex — app home screen" width="4577" height="2746" loading="eager" decoding="async">
             </div>
         </section>
 
@@ -113,27 +116,27 @@
             <div class="project-detail-container">
 
                 <div class="pd-section">
-                    <h2 class="pd-title">O projektu</h2>
-                    <p class="pd-text">Apex je konceptuální návrh UI pro fiktivní streamovací platformu. Cílem bylo vytvořit čistý, moderní a intuitivní interface s důrazem na obsah — filmy a seriály. Inspirací byly přední světové streamovací služby, ale s vlastním vizuálním jazykem.</p>
-                    <p class="pd-text">Tmavé pozadí, výrazná typografie a dobře zvolená hierarchie prvků zajišťují, že uživatel okamžitě ví, co je důležité a jak se orientovat.</p>
+                    <h2 class="pd-title" data-en="About">O projektu</h2>
+                    <p class="pd-text" data-en="Apex is a concept UI for a fictional streaming platform. The goal was a clean, modern interface that keeps the content — films and series — in front. The leading streaming services were the reference point, but the visual language is its own.">Apex je konceptuální návrh UI pro fiktivní streamovací platformu. Cílem bylo vytvořit čistý, moderní a intuitivní interface s důrazem na obsah — filmy a seriály. Inspirací byly přední světové streamovací služby, ale s vlastním vizuálním jazykem.</p>
+                    <p class="pd-text" data-en="A dark ground, strong typography and a clear hierarchy mean the viewer knows what matters and where they are without having to work for it.">Tmavé pozadí, výrazná typografie a dobře zvolená hierarchie prvků zajišťují, že uživatel okamžitě ví, co je důležité a jak se orientovat.</p>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Obrazovky</h2>
+                    <h2 class="pd-title" data-en="Screens">Obrazovky</h2>
                     <div class="pd-grid-2">
                         <div>
-                            <img src="../img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — domovská stránka" loading="lazy">
-                            <span class="pd-caption">Domovská stránka</span>
+                            <img src="../img/works/Apex/apex-home.webp" class="pd-image" alt="Apex — domovská stránka" data-alt-en="Apex — home screen" loading="lazy">
+                            <span class="pd-caption" data-en="Home screen">Domovská stránka</span>
                         </div>
                         <div>
-                            <img src="../img/works/Apex/apex-selected-movie.webp" class="pd-image" alt="Apex — detail vybraného titulu" loading="lazy">
-                            <span class="pd-caption">Detail vybraného titulu</span>
+                            <img src="../img/works/Apex/apex-selected-movie.webp" class="pd-image" alt="Apex — detail vybraného titulu" data-alt-en="Apex — selected title" loading="lazy">
+                            <span class="pd-caption" data-en="Selected title">Detail vybraného titulu</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
-                    <a href="../index.html#work-grid" class="pd-next-btn">Zpět na projekty →</a>
+                    <a href="../index.html#work-grid" class="pd-next-btn" data-en="Back to projects →">Zpět na projekty →</a>
                 </div>
 
             </div>
@@ -144,10 +147,10 @@
     <footer class="pp-footer">
         <span class="pp-footer-copy">&copy; 2026 Tomáš Hájek</span>
         <nav class="pp-footer-links" aria-label="Odkazy">
-            <a href="../index.html">Portfolio</a>
-            <a href="../index.html#work-grid">Projekty</a>
-            <a href="../index.html#contact">Kontakt</a>
-            <a href="#top">Nahoru ↑</a>
+            <a href="../index.html" data-en="Portfolio">Portfolio</a>
+            <a href="../index.html#work-grid" data-en="Projects">Projekty</a>
+            <a href="../index.html#contact" data-en="Contact">Kontakt</a>
+            <a href="#top" data-en="Top ↑">Nahoru ↑</a>
         </nav>
     </footer>
 

@@ -56,6 +56,32 @@
 
 .pp-back:hover { color: var(--accent); }
 
+/* Přepínač jazyka. Vypadá jako `.pp-back`, jen s rámečkem, aby bylo poznat,
+   že to není odkaz pryč ze stránky. */
+.pp-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.pp-lang {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #999;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    padding: 0.35rem 0.6rem;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.pp-lang:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 /* ---- Hero ---- */
 .pp-hero {
     padding: 10rem clamp(1.2rem, 4vw, 3rem) 4rem !important;
@@ -222,6 +248,8 @@
     /* Dotykové cíle — prst není kurzor, chce to aspoň ~44 px. */
     .pp-header { padding: 0.9rem 1.2rem; }
     .pp-back { padding: 0.85rem 0; }
+    .pp-header-right { gap: 0.8rem; }
+    .pp-lang { padding: 0.85rem 0.7rem; }
     .pp-logo { padding: 0.6rem 0; }
     .pp-footer { padding: 2.5rem 1.2rem; }
     .pp-footer-links { gap: 0 !important; flex-wrap: wrap; justify-content: center; }

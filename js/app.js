@@ -678,6 +678,21 @@ function initNav() {
 // =========================================
 var _currentLang = 'cs';
 
+/* Volba jazyka musí přežít proklik na stránku projektu a zpátky, jinak
+   přepínač slibuje něco, co neplatí o dva kliky dál. Stejný klíč čte
+   i `project.js`. Zápis do localStorage může v některých režimech
+   prohlížeče spadnout, proto try/catch. */
+var LANG_KEY = 'th-lang';
+
+function readLang() {
+    try { return localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'cs'; }
+    catch (e) { return 'cs'; }
+}
+
+function storeLang(lang) {
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+}
+
 function initLang() {
     _setLangBtns('cs');
     document.getElementById('btn-en') && document.getElementById('btn-en').addEventListener('click', function() { switchLanguage('en'); });
@@ -685,6 +700,8 @@ function initLang() {
     document.querySelectorAll('.m-lang-btn').forEach(function(btn) {
         btn.addEventListener('click', function() { switchLanguage(btn.dataset.lang); });
     });
+    var saved = readLang();
+    if (saved !== 'cs') switchLanguage(saved);
 }
 
 function switchLanguage(lang) {
@@ -699,6 +716,7 @@ function switchLanguage(lang) {
     });
 
     document.documentElement.lang = lang;
+    storeLang(lang);
     _setLangBtns(lang);
     resetTypewriter(t.typewriter, t.typewriterWord);
 }

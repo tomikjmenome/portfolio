@@ -5,10 +5,67 @@
 // =========================================
 
 document.addEventListener('DOMContentLoaded', function () {
+    initLang();
     initCursor();
     initScrollProgress();
     initLightbox();
 });
+
+// =========================================
+// JAZYK
+//
+// Stránky projektů nejedou přes slovník jako index — texty jsou dvojjazyčné
+// přímo v HTML. Česky je to, co je v elementu, anglicky to, co je v `data-en`.
+// Míň souborů, míň klíčů a při psaní nové case study je překlad vidět hned
+// vedle originálu.
+//
+// Klíč v localStorage sdílí s `app.js`, takže volba přežije proklik z indexu.
+// =========================================
+var LANG_KEY = 'th-lang';
+var _lang = 'cs';
+
+function initLang() {
+    var toggle = document.querySelector('.pp-lang');
+    try { _lang = localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'cs'; } catch (e) { _lang = 'cs'; }
+    applyLang(_lang);
+
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+        applyLang(_lang === 'cs' ? 'en' : 'cs');
+        try { localStorage.setItem(LANG_KEY, _lang); } catch (e) {}
+    });
+}
+
+function applyLang(lang) {
+    _lang = lang;
+    var en = lang === 'en';
+
+    // Originál se schová do `data-cs` při prvním přepnutí, aby se dalo vrátit.
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+        if (el.dataset.cs === undefined) el.dataset.cs = el.innerHTML;
+        el.innerHTML = en ? el.dataset.en : el.dataset.cs;
+    });
+
+    document.querySelectorAll('[data-alt-en]').forEach(function (el) {
+        if (el.dataset.altCs === undefined) el.dataset.altCs = el.getAttribute('alt') || '';
+        el.setAttribute('alt', en ? el.dataset.altEn : el.dataset.altCs);
+    });
+
+    var body = document.body;
+    if (body.dataset.titleEn) {
+        if (body.dataset.titleCs === undefined) body.dataset.titleCs = document.title;
+        document.title = en ? body.dataset.titleEn : body.dataset.titleCs;
+    }
+
+    document.documentElement.lang = lang;
+
+    var toggle = document.querySelector('.pp-lang');
+    if (toggle) {
+        // Tlačítko ukazuje jazyk, do kterého se přepne, ne ten aktuální.
+        toggle.textContent = en ? 'CS' : 'EN';
+        toggle.setAttribute('aria-label', en ? 'Přepnout do češtiny' : 'Switch to English');
+    }
+}
 
 // =========================================
 // CURSOR

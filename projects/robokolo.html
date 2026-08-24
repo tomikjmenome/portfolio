@@ -53,22 +53,22 @@
     }
     </script>
 </head>
-<body class="project-page" id="top">
+<body class="project-page" id="top" data-title-en="Robokolo — visual identity redesign | Tomáš Hájek">
 
     <div id="scrollProgress" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
     <div class="cursor-aura" aria-hidden="true"></div>
 
-    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <a href="#main-content" class="skip-link" data-en="Skip to content">Přeskočit na obsah</a>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
         <div class="lightbox-controls">
-            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
-            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek" data-en="←">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek" data-en="→">→</button>
         </div>
-        <img id="lightboxImg" src="" alt="Zvětšený náhled">
+        <img id="lightboxImg" src="" alt="Zvětšený náhled" data-alt-en="Enlarged preview">
         <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
     </div>
 
@@ -76,37 +76,40 @@
         <a href="../index.html" class="pp-logo" aria-label="Tomáš Hájek — zpět na portfolio">
             <img src="../img/logo/th-logo-white.svg" alt="Tomáš Hájek" width="1062" height="446">
         </a>
-        <a href="../index.html#work-grid" class="pp-back">← Zpět na projekty</a>
+        <div class="pp-header-right">
+            <a href="../index.html#work-grid" class="pp-back" data-en="&larr; Back to projects">← Zpět na projekty</a>
+            <button class="pp-lang" type="button" aria-label="Switch to English">EN</button>
+        </div>
     </header>
 
     <main id="main-content">
 
         <section class="pp-hero" aria-labelledby="pp-title">
-            <span class="pp-eyebrow">Redesign · 2025</span>
+            <span class="pp-eyebrow" data-en="Redesign · 2025">Redesign · 2025</span>
             <h1 class="pp-title" id="pp-title">Robokolo</h1>
-            <p class="pp-lead">Kompletní redesign vizuální identity. Cílem bylo posunout značku od „garážového hobby“ k moderní technologické firmě. Výstupem je nové logo, piktogram, tiskoviny a merch.</p>
+            <p class="pp-lead" data-en="A complete redesign of the visual identity. The goal was to move the brand from a garage hobby to a modern technology company — a new logo, pictogram, stationery and merch.">Kompletní redesign vizuální identity. Cílem bylo posunout značku od „garážového hobby“ k moderní technologické firmě. Výstupem je nové logo, piktogram, tiskoviny a merch.</p>
 
             <div class="pp-meta">
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Kategorie</span>
-                    <span class="pp-meta-value">Redesign</span>
+                    <span class="pp-meta-label" data-en="Category">Kategorie</span>
+                    <span class="pp-meta-value" data-en="Redesign">Redesign</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Rok</span>
+                    <span class="pp-meta-label" data-en="Year">Rok</span>
                     <span class="pp-meta-value">2025</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Disciplíny</span>
-                    <span class="pp-meta-value">Branding, UI/UX</span>
+                    <span class="pp-meta-label" data-en="Disciplines">Disciplíny</span>
+                    <span class="pp-meta-value" data-en="Branding, UI/UX">Branding, UI/UX</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Výstup</span>
-                    <span class="pp-meta-value">Logo, piktogram, tiskoviny, merch</span>
+                    <span class="pp-meta-label" data-en="Output">Výstup</span>
+                    <span class="pp-meta-value" data-en="Logo, pictogram, stationery, merch">Logo, piktogram, tiskoviny, merch</span>
                 </div>
             </div>
 
             <div class="pp-hero-image">
-                <img src="../img/works/Robokolo/robokolo.webp" alt="Robokolo — nová vizuální identita" width="1200" height="800" loading="eager" decoding="async">
+                <img src="../img/works/Robokolo/robokolo.webp" alt="Robokolo — nová vizuální identita" data-alt-en="Robokolo — the new visual identity" width="1200" height="800" loading="eager" decoding="async">
             </div>
         </section>
 
@@ -114,77 +117,77 @@
             <div class="project-detail-container">
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Rebranding</h2>
-                    <p class="pd-text">Cílem redesignu bylo posunout vizuální styl od „garážového projektu“ k moderní technologické značce. Nové logo využívá čisté geometrické tvary a výraznější typografii.</p>
+                    <h2 class="pd-title" data-en="Rebranding">Rebranding</h2>
+                    <p class="pd-text" data-en="The redesign had to move the visual style from a garage project to a modern technology brand. The new logo works with clean geometric shapes and stronger typography.">Cílem redesignu bylo posunout vizuální styl od „garážového projektu“ k moderní technologické značce. Nové logo využívá čisté geometrické tvary a výraznější typografii.</p>
                     <div class="comparison-wrapper">
                         <div class="comp-box old">
-                            <span class="comp-label">Původní logo</span>
-                            <img src="../img/works/Robokolo/original.svg" style="width:70%;opacity:0.8" alt="Původní logo Robokolo">
+                            <span class="comp-label" data-en="Original logo">Původní logo</span>
+                            <img src="../img/works/Robokolo/original.svg" style="width:70%;opacity:0.8" alt="Původní logo Robokolo" data-alt-en="Robokolo — original logo">
                         </div>
                         <div class="comp-box new bg-white">
-                            <span class="comp-label">Nový vizuál</span>
-                            <img src="../img/works/Robokolo/NEW-logo.svg" style="width:80%" alt="Nové logo Robokolo">
+                            <span class="comp-label" data-en="New identity">Nový vizuál</span>
+                            <img src="../img/works/Robokolo/NEW-logo.svg" style="width:80%" alt="Nové logo Robokolo" data-alt-en="Robokolo — new logo">
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Piktogram</h2>
+                    <h2 class="pd-title" data-en="Pictogram">Piktogram</h2>
                     <div class="pd-grid-2">
                         <div class="comp-box new bg-white" style="min-height:300px">
-                            <img src="../img/works/Robokolo/NEW-PIKTOGRAM.svg" style="width:40%" alt="Piktogram Robokolo">
+                            <img src="../img/works/Robokolo/NEW-PIKTOGRAM.svg" style="width:40%" alt="Piktogram Robokolo" data-alt-en="Robokolo pictogram">
                         </div>
                         <div>
-                            <p class="pd-text">Piktogram je zjednodušenou verzí loga, určenou pro malé formáty, ikony aplikací a sociální sítě. Zachovává dynamiku a rozpoznatelnost značky i bez textové části.</p>
+                            <p class="pd-text" data-en="The pictogram is the logo reduced for small sizes — app icons, social profiles. It keeps the movement and the recognition even without the wordmark.">Piktogram je zjednodušenou verzí loga, určenou pro malé formáty, ikony aplikací a sociální sítě. Zachovává dynamiku a rozpoznatelnost značky i bez textové části.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Firemní tiskoviny</h2>
+                    <h2 class="pd-title" data-en="Stationery">Firemní tiskoviny</h2>
                     <div class="pd-grid-3">
                         <div>
-                            <img src="../img/works/Robokolo/Robokolo_vizitka.webp" class="pd-image" alt="Vizitka Robokolo" loading="lazy">
-                            <span class="pd-caption">Vizitky</span>
+                            <img src="../img/works/Robokolo/Robokolo_vizitka.webp" class="pd-image" alt="Vizitka Robokolo" data-alt-en="Robokolo business card" loading="lazy">
+                            <span class="pd-caption" data-en="Business cards">Vizitky</span>
                         </div>
                         <div>
-                            <img src="../img/works/Robokolo/obalka-mockup.webp" class="pd-image" alt="DL obálka Robokolo" loading="lazy">
-                            <span class="pd-caption">DL obálka</span>
+                            <img src="../img/works/Robokolo/obalka-mockup.webp" class="pd-image" alt="DL obálka Robokolo" data-alt-en="Robokolo DL envelope" loading="lazy">
+                            <span class="pd-caption" data-en="DL envelope">DL obálka</span>
                         </div>
                         <div>
-                            <img src="../img/works/Robokolo/Dopis-papir-mockup.webp" class="pd-image" alt="Hlavičkový papír Robokolo" loading="lazy">
-                            <span class="pd-caption">Hlavičkový papír</span>
+                            <img src="../img/works/Robokolo/Dopis-papir-mockup.webp" class="pd-image" alt="Hlavičkový papír Robokolo" data-alt-en="Robokolo letterhead" loading="lazy">
+                            <span class="pd-caption" data-en="Letterhead">Hlavičkový papír</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Merch &amp; produkty</h2>
-                    <p class="pd-text">Aplikace nové identity na fyzické produkty. Od plechovek po textil.</p>
+                    <h2 class="pd-title" data-en="Merch &amp;amp; products">Merch &amp; produkty</h2>
+                    <p class="pd-text" data-en="The new identity applied to physical products, from cans to textiles.">Aplikace nové identity na fyzické produkty. Od plechovek po textil.</p>
                     <div class="pd-grid-2" style="margin-bottom:2rem">
-                        <img src="../img/works/Robokolo/Merch/Plechovka/can.webp" class="pd-image" alt="Plechovka energy drinku Robokolo" loading="lazy">
-                        <img src="../img/works/Robokolo/Merch/Taška/Taška-barevne.webp" class="pd-image" alt="Plátěná taška Robokolo" loading="lazy">
+                        <img src="../img/works/Robokolo/Merch/Plechovka/can.webp" class="pd-image" alt="Plechovka energy drinku Robokolo" data-alt-en="Robokolo energy drink can" loading="lazy">
+                        <img src="../img/works/Robokolo/Merch/Taška/Taška-barevne.webp" class="pd-image" alt="Plátěná taška Robokolo" data-alt-en="Robokolo tote bag" loading="lazy">
                     </div>
                     <div class="pd-grid-3">
-                        <img src="../img/works/Robokolo/Merch/Tričko/Barevné/Normální/Normální.webp" class="pd-image" alt="Barevné tričko Robokolo" loading="lazy">
-                        <img src="../img/works/Robokolo/Merch/Tričko/Černý potisk/Piktogram/Piktogram_black_wb.png" class="pd-image" alt="Tričko s piktogramem" loading="lazy">
-                        <img src="../img/works/Robokolo/Merch/Placka/Robokoloplacka.webp" class="pd-image" alt="Placka Robokolo" loading="lazy">
+                        <img src="../img/works/Robokolo/Merch/Tričko/Barevné/Normální/Normální.webp" class="pd-image" alt="Barevné tričko Robokolo" data-alt-en="Robokolo colour T-shirt" loading="lazy">
+                        <img src="../img/works/Robokolo/Merch/Tričko/Černý potisk/Piktogram/Piktogram_black_wb.png" class="pd-image" alt="Tričko s piktogramem" data-alt-en="T-shirt with the pictogram" loading="lazy">
+                        <img src="../img/works/Robokolo/Merch/Placka/Robokoloplacka.webp" class="pd-image" alt="Placka Robokolo" data-alt-en="Robokolo button badge" loading="lazy">
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Proces &amp; skici</h2>
-                    <p class="pd-text">Pohled do zákulisí tvorby loga. Prvotní nápady na papíře.</p>
+                    <h2 class="pd-title" data-en="Process &amp;amp; sketches">Proces &amp; skici</h2>
+                    <p class="pd-text" data-en="A look behind the logo. The first ideas on paper.">Pohled do zákulisí tvorby loga. Prvotní nápady na papíře.</p>
                     <div class="pd-grid-3">
-                        <img src="../img/works/Robokolo/Návrhy/20250415_201640.webp" class="pd-image" style="opacity:0.8" alt="Skica loga 1" loading="lazy">
-                        <img src="../img/works/Robokolo/Návrhy/20250415_201727.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Skica loga 2" loading="lazy">
-                        <img src="../img/works/Robokolo/Návrhy/20250415_201755.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Skica loga 3" loading="lazy">
+                        <img src="../img/works/Robokolo/Návrhy/20250415_201640.webp" class="pd-image" style="opacity:0.8" alt="Skica loga 1" data-alt-en="Logo sketch 1" loading="lazy">
+                        <img src="../img/works/Robokolo/Návrhy/20250415_201727.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Skica loga 2" data-alt-en="Logo sketch 2" loading="lazy">
+                        <img src="../img/works/Robokolo/Návrhy/20250415_201755.webp" class="pd-image rotate-left" style="opacity:0.8" alt="Skica loga 3" data-alt-en="Logo sketch 3" loading="lazy">
                     </div>
                 </div>
 
                 <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
-                    <a href="../img/works/Robokolo/Robokolo-Logomanuál-FINAL.pdf" target="_blank" rel="noopener" class="pd-btn" style="margin-bottom:2rem">Stáhnout logomanuál (PDF) ↓</a>
-                    <a href="../index.html#work-grid" class="pd-next-btn">Zpět na projekty →</a>
+                    <a href="../img/works/Robokolo/Robokolo-Logomanuál-FINAL.pdf" target="_blank" rel="noopener" class="pd-btn" style="margin-bottom:2rem" data-en="Download the brand manual (PDF) ↓">Stáhnout logomanuál (PDF) ↓</a>
+                    <a href="../index.html#work-grid" class="pd-next-btn" data-en="Back to projects →">Zpět na projekty →</a>
                 </div>
 
             </div>
@@ -195,10 +198,10 @@
     <footer class="pp-footer">
         <span class="pp-footer-copy">&copy; 2026 Tomáš Hájek</span>
         <nav class="pp-footer-links" aria-label="Odkazy">
-            <a href="../index.html">Portfolio</a>
-            <a href="../index.html#work-grid">Projekty</a>
-            <a href="../index.html#contact">Kontakt</a>
-            <a href="#top">Nahoru ↑</a>
+            <a href="../index.html" data-en="Portfolio">Portfolio</a>
+            <a href="../index.html#work-grid" data-en="Projects">Projekty</a>
+            <a href="../index.html#contact" data-en="Contact">Kontakt</a>
+            <a href="#top" data-en="Top ↑">Nahoru ↑</a>
         </nav>
     </footer>
 

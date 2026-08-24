@@ -137,21 +137,21 @@
     }
     </script>
 </head>
-<body class="project-page" id="top">
+<body class="project-page" id="top" data-title-en="Litera — brand and interface for school reading | Tomáš Hájek">
 
     <div id="scrollProgress" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
     <div class="custom-cursor" aria-hidden="true"><span class="cursor-label"></span></div>
     <div class="cursor-aura" aria-hidden="true"></div>
 
-    <a href="#main-content" class="skip-link">Přeskočit na obsah</a>
+    <a href="#main-content" class="skip-link" data-en="Skip to content">Přeskočit na obsah</a>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
         <div class="lightbox-controls">
-            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek">←</button>
-            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek">→</button>
+            <button class="lb-arrow" id="lbPrev" aria-label="Předchozí obrázek" data-en="←">←</button>
+            <button class="lb-arrow" id="lbNext" aria-label="Další obrázek" data-en="→">→</button>
         </div>
-        <img id="lightboxImg" src="" alt="Zvětšený náhled">
+        <img id="lightboxImg" src="" alt="Zvětšený náhled" data-alt-en="Enlarged preview">
         <div class="lb-counter" id="lbCounter" aria-live="polite">1 / 1</div>
     </div>
 
@@ -159,37 +159,40 @@
         <a href="../index.html" class="pp-logo" aria-label="Tomáš Hájek — zpět na portfolio">
             <img src="../img/logo/th-logo-white.svg" alt="Tomáš Hájek" width="1062" height="446">
         </a>
-        <a href="../index.html#work-grid" class="pp-back">← Zpět na projekty</a>
+        <div class="pp-header-right">
+            <a href="../index.html#work-grid" class="pp-back" data-en="&larr; Back to projects">← Zpět na projekty</a>
+            <button class="pp-lang" type="button" aria-label="Switch to English">EN</button>
+        </div>
     </header>
 
     <main id="main-content">
 
         <section class="pp-hero" aria-labelledby="pp-title">
-            <span class="pp-eyebrow">Identita · UI/UX · Ilustrace</span>
+            <span class="pp-eyebrow" data-en="Identity · UI/UX · Illustration">Identita · UI/UX · Ilustrace</span>
             <h1 class="pp-title" id="pp-title">Litera</h1>
-            <p class="pp-lead">Aplikace, která z maturitního seznamu četby dělá cestu — s postupem, questy a testy nad každou knihou. Postavil jsem k ní celou značku: logo a jeho podznačky, logomanuál, devět obrazovek rozhraní a vlastní sadu ilustrovaných autorů.</p>
+            <p class="pp-lead" data-en="An app that turns the required reading list for the school-leaving exam into a path — with progress, quests and a quiz on every book. I built the whole brand around it: the logo and its sub-brands, a brand manual, nine screens of interface and a set of illustrated authors.">Aplikace, která z maturitního seznamu četby dělá cestu — s postupem, questy a testy nad každou knihou. Postavil jsem k ní celou značku: logo a jeho podznačky, logomanuál, devět obrazovek rozhraní a vlastní sadu ilustrovaných autorů.</p>
 
             <div class="pp-meta">
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Rok</span>
+                    <span class="pp-meta-label" data-en="Year">Rok</span>
                     <span class="pp-meta-value">2025 — 2026</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Typ</span>
-                    <span class="pp-meta-value">Maturitní práce</span>
+                    <span class="pp-meta-label" data-en="Type">Typ</span>
+                    <span class="pp-meta-value" data-en="School-leaving project">Maturitní práce</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Disciplíny</span>
-                    <span class="pp-meta-value">Brand identity, UI/UX, vektorová ilustrace</span>
+                    <span class="pp-meta-label" data-en="Disciplines">Disciplíny</span>
+                    <span class="pp-meta-value" data-en="Brand identity, UI/UX, vector illustration">Brand identity, UI/UX, vektorová ilustrace</span>
                 </div>
                 <div class="pp-meta-item">
-                    <span class="pp-meta-label">Výstup</span>
-                    <span class="pp-meta-value">Aplikace, logomanuál, tiskoviny</span>
+                    <span class="pp-meta-label" data-en="Output">Výstup</span>
+                    <span class="pp-meta-value" data-en="App, brand manual, print">Aplikace, logomanuál, tiskoviny</span>
                 </div>
             </div>
 
             <div class="pp-hero-image">
-                <img src="../img/works/Litera/app-domu.webp" alt="Litera — domovská obrazovka s questy a rozečtenými knihami" width="1800" height="920" loading="eager" decoding="async">
+                <img src="../img/works/Litera/app-domu.webp" alt="Litera — domovská obrazovka s questy a rozečtenými knihami" data-alt-en="Litera — home screen with quests and books in progress" width="1800" height="920" loading="eager" decoding="async">
             </div>
         </section>
 
@@ -197,55 +200,55 @@
             <div class="project-detail-container">
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Zadání</h2>
-                    <p class="pd-text">Maturitní seznam četby je pro spoustu lidí ta nejnepříjemnější část zkoušky. Dvacet knih ve čtyřech okruzích, každá s autorem, dobou, směrem a rozborem — a žádný nástroj, který by to držel pohromadě. Kdo si vede zápisy, vede si je v sešitě. Kdo ne, čte den před zkouškou obsahy.</p>
-                    <p class="pd-text">Zadání jsem si postavil takhle: rozsekat přípravu na dávky, které se dají odbýt za pět minut, a dát jí strukturu, kterou lidi z her a jazykových aplikací znají — postup, denní série, questy, odměny. Duolingo pro maturitní četbu.</p>
+                    <h2 class="pd-title" data-en="The brief">Zadání</h2>
+                    <p class="pd-text" data-en="For a lot of people the reading list is the worst part of the exam. Twenty books in four groups, each with an author, a period, a movement and an analysis — and nothing that holds it together. Those who take notes take them in a notebook. Those who do not read summaries the day before.">Maturitní seznam četby je pro spoustu lidí ta nejnepříjemnější část zkoušky. Dvacet knih ve čtyřech okruzích, každá s autorem, dobou, směrem a rozborem — a žádný nástroj, který by to držel pohromadě. Kdo si vede zápisy, vede si je v sešitě. Kdo ne, čte den před zkouškou obsahy.</p>
+                    <p class="pd-text" data-en="So I set the brief myself: cut the studying into portions you can finish in five minutes, and give it the structure people already know from games and language apps — progress, daily streaks, quests, rewards. Duolingo for the reading list.">Zadání jsem si postavil takhle: rozsekat přípravu na dávky, které se dají odbýt za pět minut, a dát jí strukturu, kterou lidi z her a jazykových aplikací znají — postup, denní série, questy, odměny. Duolingo pro maturitní četbu.</p>
 
                     <div class="lit-okruhy">
                         <div class="lit-okruh">
-                            <span class="lit-okruh-key">Okruh A</span>
-                            <span class="lit-okruh-name">Česká a světová literatura do konce 18. století</span>
+                            <span class="lit-okruh-key" data-en="Group A">Okruh A</span>
+                            <span class="lit-okruh-name" data-en="Czech and world literature to the end of the 18th century">Česká a světová literatura do konce 18. století</span>
                             <span class="lit-okruh-count">3</span>
                         </div>
                         <div class="lit-okruh">
-                            <span class="lit-okruh-key">Okruh B</span>
-                            <span class="lit-okruh-name">Česká a světová literatura 19. století</span>
+                            <span class="lit-okruh-key" data-en="Group B">Okruh B</span>
+                            <span class="lit-okruh-name" data-en="Czech and world literature of the 19th century">Česká a světová literatura 19. století</span>
                             <span class="lit-okruh-count">6</span>
                         </div>
                         <div class="lit-okruh">
-                            <span class="lit-okruh-key">Okruh C</span>
-                            <span class="lit-okruh-name">Světová literatura 20. a 21. století</span>
+                            <span class="lit-okruh-key" data-en="Group C">Okruh C</span>
+                            <span class="lit-okruh-name" data-en="World literature of the 20th and 21st century">Světová literatura 20. a 21. století</span>
                             <span class="lit-okruh-count">5</span>
                         </div>
                         <div class="lit-okruh">
-                            <span class="lit-okruh-key">Okruh D</span>
-                            <span class="lit-okruh-name">Česká literatura 20. a 21. století</span>
+                            <span class="lit-okruh-key" data-en="Group D">Okruh D</span>
+                            <span class="lit-okruh-name" data-en="Czech literature of the 20th and 21st century">Česká literatura 20. a 21. století</span>
                             <span class="lit-okruh-count">6</span>
                         </div>
                     </div>
-                    <p class="pd-text" style="margin-top:1.5rem">Tahle čtveřice je kostra celé aplikace. Kniha bez okruhu neexistuje — okruh určuje, kam se v seznamu zařadí, jak se počítá plán četby a jaký štítek dostane v audiu i na mapě.</p>
+                    <p class="pd-text" style="margin-top:1.5rem" data-en="These four are the skeleton of the whole app. A book without a group does not exist — the group decides where it lands in the list, how the reading plan counts it, and what label it carries in the audio player and on the map.">Tahle čtveřice je kostra celé aplikace. Kniha bez okruhu neexistuje — okruh určuje, kam se v seznamu zařadí, jak se počítá plán četby a jaký štítek dostane v audiu i na mapě.</p>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Jméno</h2>
-                    <p class="pd-text">Pracovní název byl <em>Litlingo</em>. Inspirace Duolingem byla ale až moc doslovná a část „lingo“ k češtině neseděla — držel jsem ho jen jako placeholder, dokud nepřijde něco lepšího.</p>
-                    <p class="pd-text"><strong>Litera</strong> je jedno slovo, které nese celý obor, čte se stejně česky i anglicky a začíná písmenem, ze kterého se dá postavit značka. To rozhodlo.</p>
+                    <h2 class="pd-title" data-en="The name">Jméno</h2>
+                    <p class="pd-text" data-en="The working title was <em>Litlingo</em>. The nod to Duolingo was a shade too literal and the “lingo” half did not sit with a literature app — I kept it as a placeholder until something better turned up.">Pracovní název byl <em>Litlingo</em>. Inspirace Duolingem byla ale až moc doslovná a část „lingo“ k češtině neseděla — držel jsem ho jen jako placeholder, dokud nepřijde něco lepšího.</p>
+                    <p class="pd-text" data-en="<strong>Litera</strong> is one word that carries the whole subject, reads the same in Czech and in English, and begins with a letter you can build a mark from. That settled it."><strong>Litera</strong> je jedno slovo, které nese celý obor, čte se stejně česky i anglicky a začíná písmenem, ze kterého se dá postavit značka. To rozhodlo.</p>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Značka</h2>
-                    <p class="pd-text">Značka je verzálkové <strong>L</strong>, kterému spodní rameno vybíhá do záložky do knihy. Jeden tvar, dvě čtení: písmeno i předmět. Postavené na čtvercové mřížce, aby fungovalo jako ikona aplikace ve stejné kvalitě jako v logotypu.</p>
-                    <img src="../img/works/Litera/logo-konstrukce.webp" class="pd-image" alt="Konstrukce značky Litera — z hranatého L přes zkosení rohů k vlaječce záložky, na čtvercové mřížce" loading="lazy">
-                    <span class="pd-caption">Konstrukce — z hranatého L přes zaoblení k výřezu záložky</span>
+                    <h2 class="pd-title" data-en="The mark">Značka</h2>
+                    <p class="pd-text" data-en="The mark is a capital <strong>L</strong> whose lower arm runs out into a bookmark. One shape, two readings: a letter and an object. Built on a square grid, so it holds up as an app icon just as well as in the logotype.">Značka je verzálkové <strong>L</strong>, kterému spodní rameno vybíhá do záložky do knihy. Jeden tvar, dvě čtení: písmeno i předmět. Postavené na čtvercové mřížce, aby fungovalo jako ikona aplikace ve stejné kvalitě jako v logotypu.</p>
+                    <img src="../img/works/Litera/logo-konstrukce.webp" class="pd-image" alt="Konstrukce značky Litera — z hranatého L přes zkosení rohů k vlaječce záložky, na čtvercové mřížce" data-alt-en="Construction of the Litera mark — from a square L through the chamfered corners to the bookmark flag, on a square grid" loading="lazy">
+                    <span class="pd-caption" data-en="Construction — from a square L through the rounding to the bookmark notch">Konstrukce — z hranatého L přes zaoblení k výřezu záložky</span>
 
-                    <p class="pd-text" style="margin-top:3rem">Barevná verze značku rozvrství: tmavší navy tvoří „desky“, světlejší modrá stránku, která se z nich vysouvá. Ta hloubka je jediné, co se v logu za celý proces měnilo.</p>
-                    <img src="../img/works/Litera/logo-barvy.webp" class="pd-image" alt="Pět kroků barevného rozvrstvení značky — od obrysu přes plnou navy po dvoubarevnou verzi s hloubkou" loading="lazy">
-                    <span class="pd-caption">Cesta k finálnímu rozvrstvení</span>
+                    <p class="pd-text" style="margin-top:3rem" data-en="The colour version gives the mark depth: the darker navy is the cover, the lighter blue the page sliding out of it. That depth is the only thing about the logo that changed across the whole process.">Barevná verze značku rozvrství: tmavší navy tvoří „desky“, světlejší modrá stránku, která se z nich vysouvá. Ta hloubka je jediné, co se v logu za celý proces měnilo.</p>
+                    <img src="../img/works/Litera/logo-barvy.webp" class="pd-image" alt="Pět kroků barevného rozvrstvení značky — od obrysu přes plnou navy po dvoubarevnou verzi s hloubkou" data-alt-en="Five steps of the mark’s colour layering — from outline through solid navy to the two-colour version with depth" loading="lazy">
+                    <span class="pd-caption" data-en="The road to the final layering">Cesta k finálnímu rozvrstvení</span>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Barvy</h2>
-                    <p class="pd-text">Modrá záměrně, ne z rozpaků: aplikace se používá večer a před zkouškou, kdy je poslední, co člověk potřebuje, křiklavá barva. Navy nese plochy a hlavičky, světlejší modrá akcenty a stavy. Zlatá je vyhrazená mincím a odměnám, zelená splněnému okruhu — nic jiného je nesmí použít.</p>
+                    <h2 class="pd-title" data-en="Colour">Barvy</h2>
+                    <p class="pd-text" data-en="Blue on purpose, not for want of an idea: the app gets opened in the evening and before an exam, when a loud colour is the last thing anyone needs. Navy carries surfaces and headers, the lighter blue accents and states. Gold is reserved for coins and rewards, green for a finished group — nothing else may use them.">Modrá záměrně, ne z rozpaků: aplikace se používá večer a před zkouškou, kdy je poslední, co člověk potřebuje, křiklavá barva. Navy nese plochy a hlavičky, světlejší modrá akcenty a stavy. Zlatá je vyhrazená mincím a odměnám, zelená splněnému okruhu — nic jiného je nesmí použít.</p>
 
                     <div class="lit-swatches">
                         <div class="lit-swatch">
@@ -271,177 +274,177 @@
                         </div>
                     </div>
 
-                    <p class="pd-text" style="margin-top:2.5rem">Hodnoty jsou odečtené přímo z vektoru loga, aby digitál a tisk seděly na stejný odstín.</p>
+                    <p class="pd-text" style="margin-top:2.5rem" data-en="The values are read straight from the logo vector, so screen and print land on the same shade.">Hodnoty jsou odečtené přímo z vektoru loga, aby digitál a tisk seděly na stejný odstín.</p>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Logotyp a podznačky</h2>
-                    <p class="pd-text">Aplikace není jedna obrazovka, ale rozcestník na tři menší — audio, mapu a literární teorii. Každá si zaslouží vlastní identitu, ale žádná nesmí odejít od mateřské značky. Řešením je jeden logotyp s vyměnitelným podpisem: značka a slovo Litera zůstávají, mění se jen slovo pod nimi.</p>
+                    <h2 class="pd-title" data-en="Logotype and sub-brands">Logotyp a podznačky</h2>
+                    <p class="pd-text" data-en="The app is not one screen but a hub leading to three smaller ones — audio, the map and literary theory. Each deserves its own identity, and none may drift away from the parent brand. The answer is one logotype with a swappable signature: the mark and the word Litera stay, only the word beneath them changes.">Aplikace není jedna obrazovka, ale rozcestník na tři menší — audio, mapu a literární teorii. Každá si zaslouží vlastní identitu, ale žádná nesmí odejít od mateřské značky. Řešením je jeden logotyp s vyměnitelným podpisem: značka a slovo Litera zůstávají, mění se jen slovo pod nimi.</p>
 
                     <div class="pd-grid-2" style="align-items:stretch">
                         <div class="lit-logo-panel">
-                            <img src="../img/works/Litera/logo-litera.webp" alt="Logotyp Litera — barevná verze pro tmavý podklad" loading="lazy">
+                            <img src="../img/works/Litera/logo-litera.webp" alt="Logotyp Litera — barevná verze pro tmavý podklad" data-alt-en="Litera logotype — colour version for a dark ground" loading="lazy">
                         </div>
                         <div class="lit-logo-panel is-mark">
-                            <img src="../img/works/Litera/piktogram.webp" alt="Samostatná značka Litera — L se záložkou" loading="lazy">
+                            <img src="../img/works/Litera/piktogram.webp" alt="Samostatná značka Litera — L se záložkou" data-alt-en="The Litera mark on its own — an L with a bookmark" loading="lazy">
                         </div>
                     </div>
 
                     <div class="pd-grid-3" style="margin-top:2rem">
                         <div class="lit-logo-panel">
-                            <img src="../img/works/Litera/sub-audio.webp" alt="Podznačka Litera audio" loading="lazy">
+                            <img src="../img/works/Litera/sub-audio.webp" alt="Podznačka Litera audio" data-alt-en="Litera audio sub-brand" loading="lazy">
                         </div>
                         <div class="lit-logo-panel">
-                            <img src="../img/works/Litera/sub-mapa.webp" alt="Podznačka Litera mapa" loading="lazy">
+                            <img src="../img/works/Litera/sub-mapa.webp" alt="Podznačka Litera mapa" data-alt-en="Litera mapa sub-brand" loading="lazy">
                         </div>
                         <div class="lit-logo-panel">
-                            <img src="../img/works/Litera/sub-teorie.webp" alt="Podznačka Litera teorie" loading="lazy">
+                            <img src="../img/works/Litera/sub-teorie.webp" alt="Podznačka Litera teorie" data-alt-en="Litera teorie sub-brand" loading="lazy">
                         </div>
                     </div>
-                    <span class="pd-caption" style="margin-top:1rem">Tři podaplikace, jeden logotyp — mění se jen podpis</span>
+                    <span class="pd-caption" style="margin-top:1rem" data-en="Three sub-apps, one logotype — only the signature changes">Tři podaplikace, jeden logotyp — mění se jen podpis</span>
 
-                    <img src="../img/works/Litera/logo-proces.webp" class="pd-image" style="margin-top:3rem" alt="Pracovní plocha s celým vývojem loga — od prvních skic a barevných variant po finální export všech verzí" loading="lazy">
-                    <span class="pd-caption">Celý proces na jedné ploše — od skic po finální exporty</span>
+                    <img src="../img/works/Litera/logo-proces.webp" class="pd-image" style="margin-top:3rem" alt="Pracovní plocha s celým vývojem loga — od prvních skic a barevných variant po finální export všech verzí" data-alt-en="The board with the whole logo development — from the first sketches and colour variants to the final exports" loading="lazy">
+                    <span class="pd-caption" data-en="The whole process on one board — from sketches to the final exports">Celý proces na jedné ploše — od skic po finální exporty</span>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Rozhraní</h2>
-                    <p class="pd-text">Devět obrazovek nad společnou datovou vrstvou. Knihy i autoři žijí v jednom JSON, na který se napojují všechny části aplikace — takže když se do seznamu přidá kniha, objeví se zároveň v přehledu, v audiu i mezi otázkami. Autoři a díla jsou provázaní oboustranně: z knihy se dá prokliknout na autora a od něj zpátky na jeho ostatní díla.</p>
+                    <h2 class="pd-title" data-en="The interface">Rozhraní</h2>
+                    <p class="pd-text" data-en="Nine screens over a shared data layer. Books and authors live in one JSON that every part of the app reads from, so adding a book to the list makes it appear in the overview, in the audio player and among the quiz questions at once. Authors and works link both ways: from a book you can jump to its author and from there back to the rest of their work.">Devět obrazovek nad společnou datovou vrstvou. Knihy i autoři žijí v jednom JSON, na který se napojují všechny části aplikace — takže když se do seznamu přidá kniha, objeví se zároveň v přehledu, v audiu i mezi otázkami. Autoři a díla jsou provázaní oboustranně: z knihy se dá prokliknout na autora a od něj zpátky na jeho ostatní díla.</p>
 
-                    <img src="../img/works/Litera/app-vybrat.webp" class="pd-image" alt="Obrazovka Výběr knih — plán četby s postupem po okruzích A až D a seznamem děl" loading="lazy">
-                    <span class="pd-caption">Výběr knih — plán četby ukazuje, kolik do splnění okruhu zbývá</span>
+                    <img src="../img/works/Litera/app-vybrat.webp" class="pd-image" alt="Obrazovka Výběr knih — plán četby s postupem po okruzích A až D a seznamem děl" data-alt-en="The book selection screen — a reading plan with progress across groups A to D and the list of works" loading="lazy">
+                    <span class="pd-caption" data-en="Choosing books — the reading plan shows how much of each group is left">Výběr knih — plán četby ukazuje, kolik do splnění okruhu zbývá</span>
 
-                    <p class="pd-text" style="margin-top:3rem">Plán četby je jediná věc, kterou uživatel uvidí, i když aplikaci otevře jen na minutu. Čtyři pruhy, čtyři čísla — a hned je jasné, který okruh zaostává a co si vzít jako další knihu.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="The reading plan is the one thing a user sees even if they open the app for a minute. Four bars, four numbers — and it is immediately clear which group is lagging and what to pick up next.">Plán četby je jediná věc, kterou uživatel uvidí, i když aplikaci otevře jen na minutu. Čtyři pruhy, čtyři čísla — a hned je jasné, který okruh zaostává a co si vzít jako další knihu.</p>
 
                     <div class="pd-grid-2">
                         <div>
-                            <img src="../img/works/Litera/app-kniha.webp" class="pd-image" alt="Detail knihy — hlavička s autorem, rokem a žánrem, pod ní PDF zápis, test, rozbor úryvku a flashkarty" loading="lazy">
-                            <span class="pd-caption">Detail knihy</span>
+                            <img src="../img/works/Litera/app-kniha.webp" class="pd-image" alt="Detail knihy — hlavička s autorem, rokem a žánrem, pod ní PDF zápis, test, rozbor úryvku a flashkarty" data-alt-en="Book detail — a header with author, year and genre, below it the PDF notes, a quiz, passage analysis and flashcards" loading="lazy">
+                            <span class="pd-caption" data-en="Book detail">Detail knihy</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/app-autor.webp" class="pd-image" alt="Detail autora — portrét, letopočty, citát, biografie a seznam děl v aplikaci" loading="lazy">
-                            <span class="pd-caption">Detail autora</span>
+                            <img src="../img/works/Litera/app-autor.webp" class="pd-image" alt="Detail autora — portrét, letopočty, citát, biografie a seznam děl v aplikaci" data-alt-en="Author detail — portrait, dates, a quote, a biography and the works available in the app" loading="lazy">
+                            <span class="pd-caption" data-en="Author detail">Detail autora</span>
                         </div>
                     </div>
 
-                    <p class="pd-text" style="margin-top:3rem">Obě detailní stránky sdílí stejnou kostru: tmavá hlavička s ilustrací, pod ní čtyři akce ve stejném pořadí a pak už jen obsah v kartách. Kdo se naučí jednu, umí i druhou.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="Both detail pages share the same skeleton: a dark header with the illustration, four actions underneath in the same order, then content in cards. Learn one and you know the other.">Obě detailní stránky sdílí stejnou kostru: tmavá hlavička s ilustrací, pod ní čtyři akce ve stejném pořadí a pak už jen obsah v kartách. Kdo se naučí jednu, umí i druhou.</p>
 
-                    <img src="../img/works/Litera/app-teorie.webp" class="pd-image" alt="Literární teorie — strom směrů v postranním panelu a detail Symbolismu s hlavními znaky" loading="lazy">
-                    <span class="pd-caption">Literární teorie — směry, znaky a autoři, kteří do nich patří</span>
+                    <img src="../img/works/Litera/app-teorie.webp" class="pd-image" alt="Literární teorie — strom směrů v postranním panelu a detail Symbolismu s hlavními znaky" data-alt-en="Literary theory — a tree of movements in the sidebar and the Symbolism entry with its main traits" loading="lazy">
+                    <span class="pd-caption" data-en="Literary theory — movements, their traits and the authors who belong to them">Literární teorie — směry, znaky a autoři, kteří do nich patří</span>
 
                     <div class="pd-grid-2" style="margin-top:3rem">
                         <div>
-                            <img src="../img/works/Litera/app-mapa.webp" class="pd-image" alt="Hra Mapa — otázka na místo děje a klikatelná mapa světa" loading="lazy">
-                            <span class="pd-caption">Mapa — kde se to odehrává</span>
+                            <img src="../img/works/Litera/app-mapa.webp" class="pd-image" alt="Hra Mapa — otázka na místo děje a klikatelná mapa světa" data-alt-en="The map game — a question about a setting and a clickable world map" loading="lazy">
+                            <span class="pd-caption" data-en="The map — where it takes place">Mapa — kde se to odehrává</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/app-audio.webp" class="pd-image" alt="Litera audio — seznam nahrávek se štítky a panel s informacemi o díle" loading="lazy">
-                            <span class="pd-caption">Audio — rozbory k poslechu</span>
+                            <img src="../img/works/Litera/app-audio.webp" class="pd-image" alt="Litera audio — seznam nahrávek se štítky a panel s informacemi o díle" data-alt-en="Litera audio — a list of recordings with tags and a panel about the work" loading="lazy">
+                            <span class="pd-caption" data-en="Audio — analyses to listen to">Audio — rozbory k poslechu</span>
                         </div>
                     </div>
 
-                    <p class="pd-text" style="margin-top:3rem">Mapa vznikla jako druhá hra: otázka na místo — kde autor žil, kam spisovatel zasadil děj — a mapa světa, do které se kliká. Má životy, nápovědy, úrovně a násobič skóre; obtížnost i otázky se nastavují v JSONu, takže přidat level znamená napsat pár řádků dat, ne kód.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="The map came second: a question about a place — where an author lived, where a novel is set — and a world map you click into. It has lives, hints, levels and a score multiplier; difficulty and questions are set in JSON, so adding a level means writing a few lines of data, not code.">Mapa vznikla jako druhá hra: otázka na místo — kde autor žil, kam spisovatel zasadil děj — a mapa světa, do které se kliká. Má životy, nápovědy, úrovně a násobič skóre; obtížnost i otázky se nastavují v JSONu, takže přidat level znamená napsat pár řádků dat, ne kód.</p>
 
                     <div class="pd-grid-2">
                         <div>
-                            <img src="../img/works/Litera/app-profil.webp" class="pd-image" alt="Profil — úroveň, XP, statistiky, denní série a odznaky" loading="lazy">
-                            <span class="pd-caption">Profil — XP, série, odznaky</span>
+                            <img src="../img/works/Litera/app-profil.webp" class="pd-image" alt="Profil — úroveň, XP, statistiky, denní série a odznaky" data-alt-en="Profile — level, XP, stats, daily streak and badges" loading="lazy">
+                            <span class="pd-caption" data-en="Profile — XP, streaks, badges">Profil — XP, série, odznaky</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/app-obchod.webp" class="pd-image" alt="Obchod — denní nabídka pozadí, ikon a widgetů za mince" loading="lazy">
-                            <span class="pd-caption">Obchod — za co utratit mince</span>
+                            <img src="../img/works/Litera/app-obchod.webp" class="pd-image" alt="Obchod — denní nabídka pozadí, ikon a widgetů za mince" data-alt-en="Shop — a daily offer of backgrounds, icons and widgets for coins" loading="lazy">
+                            <span class="pd-caption" data-en="Shop — what to spend the coins on">Obchod — za co utratit mince</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Ilustrace autorů</h2>
-                    <p class="pd-text">Portrét autora v učebnici je černobílá fotka z devatenáctého století. To je přesně ten tón, kvůli kterému si k literatuře nikdo nesedne dobrovolně. Každý autor v aplikaci proto dostal vlastní vektorovou ilustraci — plochý, přátelský styl bez obrysů, blízko tomu, co dělá Duolingo.</p>
+                    <h2 class="pd-title" data-en="Illustrating the authors">Ilustrace autorů</h2>
+                    <p class="pd-text" data-en="The author portrait in a textbook is a black-and-white photograph from the nineteenth century. That is exactly the tone that keeps people away from literature. So every author in the app got their own vector illustration — a flat, friendly style without outlines, close to what Duolingo does.">Portrét autora v učebnici je černobílá fotka z devatenáctého století. To je přesně ten tón, kvůli kterému si k literatuře nikdo nesedne dobrovolně. Každý autor v aplikaci proto dostal vlastní vektorovou ilustraci — plochý, přátelský styl bez obrysů, blízko tomu, co dělá Duolingo.</p>
 
-                    <img src="../img/works/Litera/ilu-autori.webp" class="pd-image" alt="Tři hotové ilustrace autorů vedle sebe" loading="lazy">
-                    <span class="pd-caption">Hotové portréty — jeden styl, různé siluety</span>
+                    <img src="../img/works/Litera/ilu-autori.webp" class="pd-image" alt="Tři hotové ilustrace autorů vedle sebe" data-alt-en="Three finished author illustrations side by side" loading="lazy">
+                    <span class="pd-caption" data-en="The finished portraits — one style, different silhouettes">Hotové portréty — jeden styl, různé siluety</span>
 
-                    <p class="pd-text" style="margin-top:3rem">Postup je u všech stejný: dobové fotografie nebo portréty jako reference, pak stavba tvarů odspodu nahoru — hlava, vlasy, oči, nos, ústa, oblečení. Každá část je vlastní objekt, takže se dá kdykoli vyměnit, aniž bych sahal na zbytek.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="The method is the same for all of them: period photographs or portraits as reference, then the shapes built from the bottom up — head, hair, eyes, nose, mouth, clothes. Every part is its own object, so any of it can be swapped without touching the rest.">Postup je u všech stejný: dobové fotografie nebo portréty jako reference, pak stavba tvarů odspodu nahoru — hlava, vlasy, oči, nos, ústa, oblečení. Každá část je vlastní objekt, takže se dá kdykoli vyměnit, aniž bych sahal na zbytek.</p>
 
-                    <img src="../img/works/Litera/ilu-steinbeck.webp" class="pd-image" alt="Proces ilustrace Johna Steinbecka — od referenčních fotografií přes desítky variant obličeje po finální portrét" loading="lazy">
-                    <span class="pd-caption">John Steinbeck — první autor, a proto nejvíc variant</span>
+                    <img src="../img/works/Litera/ilu-steinbeck.webp" class="pd-image" alt="Proces ilustrace Johna Steinbecka — od referenčních fotografií přes desítky variant obličeje po finální portrét" data-alt-en="Illustrating John Steinbeck — from reference photographs through dozens of face variants to the final portrait" loading="lazy">
+                    <span class="pd-caption" data-en="John Steinbeck — the first author, and so the one with the most variants">John Steinbeck — první autor, a proto nejvíc variant</span>
 
                     <div class="pd-grid-2" style="margin-top:3rem">
                         <div>
-                            <img src="../img/works/Litera/ilu-exupery.webp" class="pd-image" alt="Proces ilustrace Antoina de Saint-Exupéryho — stavba letecké helmy s brýlemi a kožené bundy" loading="lazy">
-                            <span class="pd-caption">Saint-Exupéry — letec, takže helma a brýle</span>
+                            <img src="../img/works/Litera/ilu-exupery.webp" class="pd-image" alt="Proces ilustrace Antoina de Saint-Exupéryho — stavba letecké helmy s brýlemi a kožené bundy" data-alt-en="Illustrating Antoine de Saint-Exupéry — building the flying helmet with goggles and the leather jacket" loading="lazy">
+                            <span class="pd-caption" data-en="Saint-Exupéry — an aviator, so the helmet and goggles">Saint-Exupéry — letec, takže helma a brýle</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/ilu-dyk.webp" class="pd-image" alt="Proces ilustrace Viktora Dyka — od reference přes vrstvy vlasů a obličeje po finální portrét" loading="lazy">
-                            <span class="pd-caption">Viktor Dyk</span>
+                            <img src="../img/works/Litera/ilu-dyk.webp" class="pd-image" alt="Proces ilustrace Viktora Dyka — od reference přes vrstvy vlasů a obličeje po finální portrét" data-alt-en="Illustrating Viktor Dyk — from reference through the hair and face layers to the final portrait" loading="lazy">
+                            <span class="pd-caption" data-en="Viktor Dyk">Viktor Dyk</span>
                         </div>
                     </div>
 
-                    <p class="pd-text" style="margin-top:3rem">Každý autor dostal jeden atribut, po kterém se pozná dřív než po tváři — Exupéry leteckou helmu, Molière paruku a dvorský kabát, Havlíček uniformu. Ilustrace pak funguje i v miniatuře v seznamu, kde je vysoká čtyřicet pixelů.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="Each author got one attribute you recognise before you recognise the face — a flying helmet for Saint-Exupéry, a wig and a court coat for Molière, a uniform for Havlíček. That way the illustration still works at forty pixels tall in a list.">Každý autor dostal jeden atribut, po kterém se pozná dřív než po tváři — Exupéry leteckou helmu, Molière paruku a dvorský kabát, Havlíček uniformu. Ilustrace pak funguje i v miniatuře v seznamu, kde je vysoká čtyřicet pixelů.</p>
 
-                    <img src="../img/works/Litera/ilu-moliere.webp" class="pd-image" alt="Proces ilustrace Molièra — dobové portréty jako reference a postupná stavba hlavy, paruky a kabátu" loading="lazy">
-                    <span class="pd-caption">Molière — z dobových portrétů do plochého vektoru</span>
+                    <img src="../img/works/Litera/ilu-moliere.webp" class="pd-image" alt="Proces ilustrace Molièra — dobové portréty jako reference a postupná stavba hlavy, paruky a kabátu" data-alt-en="Illustrating Molière — period portraits as reference and the head, wig and coat built up step by step" loading="lazy">
+                    <span class="pd-caption" data-en="Molière — from period portraits into flat vector">Molière — z dobových portrétů do plochého vektoru</span>
 
-                    <p class="pd-text" style="margin-top:3rem">Nejvíc práce mi u autorů ušetřila funkce kreslení uvnitř vrstev — brýle na Exupéryho letecké helmě by se jinak dělaly násobně dýl.</p>
+                    <p class="pd-text" style="margin-top:3rem" data-en="What saved the most time on the authors was drawing inside layers — the goggles on Saint-Exupéry’s flying helmet would otherwise have taken several times as long.">Nejvíc práce mi u autorů ušetřila funkce kreslení uvnitř vrstev — brýle na Exupéryho letecké helmě by se jinak dělaly násobně dýl.</p>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Avatar uživatele</h2>
-                    <p class="pd-text">Autoři jsou pevně dané postavy. Svou vlastní si ale skládá uživatel — a pro ni vznikl samostatný modulární soubor. Hlava, oči, vlasy a ústa jsou vlastní skupiny, každá s několika styly a odstíny, které se zapínají a vypínají. Kombinací vznikne postavička, kterou pak člověk vidí ve svém profilu a v pravém rohu navigace.</p>
-                    <p class="pd-text">Kreslený je ve stejném plochém stylu jako autoři, aby avatar a portréty v seznamu držely pohromadě. Rozdíl je v zadání: u autora musí sedět jedna konkrétní tvář, u avatara musí vypadat dobře každá kombinace.</p>
+                    <h2 class="pd-title" data-en="The user avatar">Avatar uživatele</h2>
+                    <p class="pd-text" data-en="The authors are fixed characters. Users build their own, and that got a separate modular file. Head, eyes, hair and mouth are their own groups, each with a few styles and shades that switch on and off. The combination makes a character the user then sees in their profile and in the corner of the navigation.">Autoři jsou pevně dané postavy. Svou vlastní si ale skládá uživatel — a pro ni vznikl samostatný modulární soubor. Hlava, oči, vlasy a ústa jsou vlastní skupiny, každá s několika styly a odstíny, které se zapínají a vypínají. Kombinací vznikne postavička, kterou pak člověk vidí ve svém profilu a v pravém rohu navigace.</p>
+                    <p class="pd-text" data-en="It is drawn in the same flat style as the authors, so the avatar and the portraits in a list hold together. The brief differs, though: an author has to look like one particular face, an avatar has to look good in every combination.">Kreslený je ve stejném plochém stylu jako autoři, aby avatar a portréty v seznamu držely pohromadě. Rozdíl je v zadání: u autora musí sedět jedna konkrétní tvář, u avatara musí vypadat dobře každá kombinace.</p>
 
-                    <img src="../img/works/Litera/ilu-vrstvy.webp" class="pd-image" alt="Illustrator s rozbaleným panelem vrstev — hlava, oči, vlasy a ústa jako samostatné skupiny s variantami stylů" loading="lazy">
-                    <span class="pd-caption">Modulární soubor avatara — styly vlasů, očí a úst jako přepínatelné vrstvy</span>
+                    <img src="../img/works/Litera/ilu-vrstvy.webp" class="pd-image" alt="Illustrator s rozbaleným panelem vrstev — hlava, oči, vlasy a ústa jako samostatné skupiny s variantami stylů" data-alt-en="Illustrator with the layers panel open — head, eyes, hair and mouth as separate groups with style variants" loading="lazy">
+                    <span class="pd-caption" data-en="The modular avatar file — hair, eye and mouth styles as switchable layers">Modulární soubor avatara — styly vlasů, očí a úst jako přepínatelné vrstvy</span>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Tiskoviny a merch</h2>
-                    <p class="pd-text">Značka musela obstát i mimo obrazovku. Nosným prvkem je šipka odvozená z výřezu záložky — v tiskovinách se z ní stává pruh, který drží kompozici pohromadě. Na malých plochách jde do hry samotná značka, na velkých plný logotyp.</p>
+                    <h2 class="pd-title" data-en="Print and merch">Tiskoviny a merch</h2>
+                    <p class="pd-text" data-en="The brand had to hold up off screen as well. The load-bearing element is an arrow taken from the bookmark notch — in print it becomes a band that holds the composition together. Small surfaces get the mark alone, large ones the full logotype.">Značka musela obstát i mimo obrazovku. Nosným prvkem je šipka odvozená z výřezu záložky — v tiskovinách se z ní stává pruh, který drží kompozici pohromadě. Na malých plochách jde do hry samotná značka, na velkých plný logotyp.</p>
 
                     <div class="pd-grid-2">
                         <div>
-                            <img src="../img/works/Litera/vizitka.webp" class="pd-image" alt="Vizitky Litera — přední strana s logotypem a QR kódem, zadní se značkou na navy podkladu" loading="lazy">
-                            <span class="pd-caption">Vizitky</span>
+                            <img src="../img/works/Litera/vizitka.webp" class="pd-image" alt="Vizitky Litera — přední strana s logotypem a QR kódem, zadní se značkou na navy podkladu" data-alt-en="Litera business cards — the logotype and a QR code on the front, the mark on navy on the back" loading="lazy">
+                            <span class="pd-caption" data-en="Business cards">Vizitky</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/hlavickovy-papir.webp" class="pd-image" alt="Hlavičkový papír Litera se stohem archů" loading="lazy">
-                            <span class="pd-caption">Hlavičkový papír</span>
-                        </div>
-                    </div>
-
-                    <div class="pd-grid-2" style="margin-top:3rem">
-                        <div>
-                            <img src="../img/works/Litera/denik.webp" class="pd-image" alt="Zápisník Litera deník v navy provedení s modrým pruhem a ražbou logotypu" loading="lazy">
-                            <span class="pd-caption">Litera deník — zápisník na rozbory</span>
-                        </div>
-                        <div>
-                            <img src="../img/works/Litera/taska.webp" class="pd-image" alt="Plátěná taška se značkou Litera" loading="lazy">
-                            <span class="pd-caption">Plátěná taška</span>
+                            <img src="../img/works/Litera/hlavickovy-papir.webp" class="pd-image" alt="Hlavičkový papír Litera se stohem archů" data-alt-en="Litera letterhead in a stack" loading="lazy">
+                            <span class="pd-caption" data-en="Letterhead">Hlavičkový papír</span>
                         </div>
                     </div>
 
                     <div class="pd-grid-2" style="margin-top:3rem">
                         <div>
-                            <img src="../img/works/Litera/placka.webp" class="pd-image" alt="Placka se značkou Litera" loading="lazy">
-                            <span class="pd-caption">Placka</span>
+                            <img src="../img/works/Litera/denik.webp" class="pd-image" alt="Zápisník Litera deník v navy provedení s modrým pruhem a ražbou logotypu" data-alt-en="The Litera deník notebook in navy with a blue band and the logotype" loading="lazy">
+                            <span class="pd-caption" data-en="Litera deník — a notebook for analyses">Litera deník — zápisník na rozbory</span>
                         </div>
                         <div>
-                            <img src="../img/works/Litera/propisky.webp" class="pd-image" alt="Dvě propisky Litera v navy a modrém provedení" loading="lazy">
-                            <span class="pd-caption">Propisky</span>
+                            <img src="../img/works/Litera/taska.webp" class="pd-image" alt="Plátěná taška se značkou Litera" data-alt-en="Tote bag with the Litera mark" loading="lazy">
+                            <span class="pd-caption" data-en="Tote bag">Plátěná taška</span>
+                        </div>
+                    </div>
+
+                    <div class="pd-grid-2" style="margin-top:3rem">
+                        <div>
+                            <img src="../img/works/Litera/placka.webp" class="pd-image" alt="Placka se značkou Litera" data-alt-en="Button badge with the Litera mark" loading="lazy">
+                            <span class="pd-caption" data-en="Button badge">Placka</span>
+                        </div>
+                        <div>
+                            <img src="../img/works/Litera/propisky.webp" class="pd-image" alt="Dvě propisky Litera v navy a modrém provedení" data-alt-en="Two Litera pens, navy and blue" loading="lazy">
+                            <span class="pd-caption" data-en="Pens">Propisky</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="pd-section">
-                    <h2 class="pd-title">Co si z toho beru</h2>
-                    <p class="pd-text">Projekt měl původně dva lidi — mě na grafiku a kamaráda na kód. Po třech týdnech se cesty rozešly a zbyl jsem na to sám. To znamenalo škrtnout půlku plánu, začít u datové struktury a teprve nad ni stavět vzhled. Zpětně to byl ten správný pořádek: první verze aplikace vznikla rychle a vypadala mizerně, druhá vznikla nad hotovými daty a mohla se soustředit na to, jak se ovládá.</p>
-                    <p class="pd-text">Kód jsem psal s pomocí jazykových modelů a průběžně si zapisoval, který se k čemu hodí. To srovnání se nakonec stalo samostatnou částí maturitní práce — a naučilo mě zadávat práci líp než většina návodů.</p>
-                    <p class="pd-text">Největší lekce je ale z ilustrací. Autory jsem zpočátku kreslil každého úplně od nuly a teprve v průběhu se ustálil postup — reference, stavba po částech odspodu, jeden poznávací atribut. U avatara jsem díky tomu rovnou stavěl modulární soubor s přepínatelnými vrstvami a nezkoušel deset variant vedle sebe. Systém se vyplatí postavit dřív, než začne být potřeba.</p>
+                    <h2 class="pd-title" data-en="What I take from it">Co si z toho beru</h2>
+                    <p class="pd-text" data-en="The project started with two people — me on the graphics, a friend on the code. Three weeks in our paths split and I was left with it alone. That meant cutting half the plan, starting from the data structure and only then building the look on top. In hindsight that was the right order: the first version came quickly and looked poor, the second was built over finished data and could concentrate on how it handles.">Projekt měl původně dva lidi — mě na grafiku a kamaráda na kód. Po třech týdnech se cesty rozešly a zbyl jsem na to sám. To znamenalo škrtnout půlku plánu, začít u datové struktury a teprve nad ni stavět vzhled. Zpětně to byl ten správný pořádek: první verze aplikace vznikla rychle a vypadala mizerně, druhá vznikla nad hotovými daty a mohla se soustředit na to, jak se ovládá.</p>
+                    <p class="pd-text" data-en="I wrote the code with help from language models and kept notes on which one suited what. That comparison ended up as its own part of the project — and taught me to brief work better than most guides would.">Kód jsem psal s pomocí jazykových modelů a průběžně si zapisoval, který se k čemu hodí. To srovnání se nakonec stalo samostatnou částí maturitní práce — a naučilo mě zadávat práci líp než většina návodů.</p>
+                    <p class="pd-text" data-en="The biggest lesson, though, came from the illustrations. At first I drew every author from scratch, and only along the way did a method settle — reference, build in parts from the bottom, one recognisable attribute. Because of that I built the avatar as a modular file straight away instead of trying ten variants side by side. A system is worth building before you need it.">Největší lekce je ale z ilustrací. Autory jsem zpočátku kreslil každého úplně od nuly a teprve v průběhu se ustálil postup — reference, stavba po částech odspodu, jeden poznávací atribut. U avatara jsem díky tomu rovnou stavěl modulární soubor s přepínatelnými vrstvami a nezkoušel deset variant vedle sebe. Systém se vyplatí postavit dřív, než začne být potřeba.</p>
                 </div>
 
                 <div class="pd-section" style="border-top:1px solid rgba(255,255,255,0.1);padding-top:4rem;text-align:center">
-                    <a href="../img/works/Litera/Litera-Logomanuál.pdf" target="_blank" rel="noopener" class="pd-btn" style="margin-bottom:2rem">Prohlédnout logomanuál (PDF) ↗</a>
-                    <a href="../index.html#work-grid" class="pd-next-btn">Zpět na projekty →</a>
+                    <a href="../img/works/Litera/Litera-Logomanuál.pdf" target="_blank" rel="noopener" class="pd-btn" style="margin-bottom:2rem" data-en="View the brand manual (PDF) ↗">Prohlédnout logomanuál (PDF) ↗</a>
+                    <a href="../index.html#work-grid" class="pd-next-btn" data-en="Back to projects →">Zpět na projekty →</a>
                 </div>
 
             </div>
@@ -452,10 +455,10 @@
     <footer class="pp-footer">
         <span class="pp-footer-copy">&copy; 2026 Tomáš Hájek</span>
         <nav class="pp-footer-links" aria-label="Odkazy">
-            <a href="../index.html">Portfolio</a>
-            <a href="../index.html#work-grid">Projekty</a>
-            <a href="../index.html#contact">Kontakt</a>
-            <a href="#top">Nahoru ↑</a>
+            <a href="../index.html" data-en="Portfolio">Portfolio</a>
+            <a href="../index.html#work-grid" data-en="Projects">Projekty</a>
+            <a href="../index.html#contact" data-en="Contact">Kontakt</a>
+            <a href="#top" data-en="Top ↑">Nahoru ↑</a>
         </nav>
     </footer>
 
