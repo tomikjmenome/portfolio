@@ -346,6 +346,18 @@ function initScroll() {
             bar.style.width = (scrolled / total * 100) + '%';
         }, { passive: true });
     }
+    // Mobilní hlavička je průhledná a blenduje se s obsahem pod sebou. Nad
+    // herem je to záměr, po odscrollování z ní ale musí být pruh, jinak se
+    // logo mísí s textem, který jede pod ním.
+    var mobileHeader = document.querySelector('.mobile-header');
+    if (mobileHeader) {
+        var syncHeader = function() {
+            mobileHeader.classList.toggle('is-solid', window.scrollY > 40);
+        };
+        window.addEventListener('scroll', syncHeader, { passive: true });
+        syncHeader();
+    }
+
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) entry.target.classList.add('visible');

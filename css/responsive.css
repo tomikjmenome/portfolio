@@ -88,6 +88,20 @@
     .lang-switcher { display: none; }
     .fab-contact { display: flex; }
 
+    /* ---- DOTYKOVÉ CÍLE ----
+       Prst není kurzor. Vizuální velikost prvků zůstává, roste jen plocha,
+       na kterou se dá trefit — doporučené minimum je ~44 px.
+       Hamburger měl 30 × 20 px, odkazy v patičce ~20 px na výšku. */
+    .hamburger-menu {
+        box-sizing: border-box;
+        width: 44px;
+        height: 44px;
+        padding: 12px 7px;
+    }
+    .mobile-logo { padding: 0.55rem 0; }
+    .m-lang-btn { padding: 0.5rem 0.9rem; }
+    .scroll-indicator { padding: 0.6rem 1rem; }
+
     /* ---- SECTIONS ---- */
     section { padding: 3rem 1.2rem; }
     .hero { padding-top: 5.5rem; }
@@ -275,29 +289,53 @@
     .gf-container { padding: 3.5rem 1.2rem; }
     .gf-grid { grid-template-columns: 1fr; gap: 2rem; }
     .gf-big-email { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-    .gf-bottom { flex-direction: column; gap: 1rem; align-items: center; }
+    .gf-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        /* Plovoucí tlačítko kontaktu sedí 2 rem nad spodní hranou a je 56 px
+           vysoké — bez tohohle odsazení leží přes copyright a „Zpět nahoru". */
+        padding-bottom: 6rem;
+    }
+
+    /* Odkazy v patičce jsou na telefonu jediná navigace, tak ať se do nich dá
+       trefit. Padding je svislý, takže se rozestupy nezmění opticky, jen se
+       zvětší plocha. */
+    .gf-nav { gap: 0 !important; }
+    .gf-nav a { display: block; padding: 0.7rem 0; }
+    .gf-nav a:hover { padding-left: 0; }
+    .gf-phone { padding: 0.65rem 0; }
+    .gf-vcard { padding: 0.95rem 1.3rem; }
+    .gf-back-top { padding: 0.8rem 0.4rem; }
 
     /* ---- ARCHIVE ---- */
     .archive-section { padding: 3rem 1.2rem; }
     .archive-grid { grid-template-columns: 1fr; }
     .archive-sidebar, .archive-grid { min-width: 0; }
 
-    /* Stats + button in one row */
+    /* Statistiky v řadě, tlačítko přes celou šířku pod nimi.
+       V jedné řadě se na 390 px popisky lámaly na dva řádky („Total / Files")
+       a na „Surprise me" zbylo 8,8 px — pod hranicí čitelnosti. */
     .archive-dashboard {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 0.8rem !important;
-        padding: 1rem 1.2rem !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1.1rem !important;
+        padding: 1.2rem !important;
     }
-    .dashboard-stats { flex: 1; min-width: 0; gap: 1.2rem; }
-    .d-stat { justify-content: flex-end; }
-    .d-label { font-size: 0.7rem; }
-    .d-value { font-size: 1.7rem; }
-    .dashboard-actions { flex-shrink: 0; }
+    .dashboard-stats {
+        justify-content: space-between;
+        gap: 0.8rem;
+        min-width: 0;
+    }
+    .d-stat { justify-content: flex-start; min-width: 0; }
+    .d-label { font-size: 0.68rem; white-space: nowrap; }
+    .d-value { font-size: 1.8rem; }
+    .dashboard-actions { width: 100%; }
     .random-glitch-btn {
-        padding: 0.6rem 0.9rem !important;
-        font-size: 0.62rem !important;
+        width: 100%;
+        padding: 0.9rem 1rem !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.08em;
         white-space: nowrap;
     }
 
@@ -341,13 +379,20 @@
     }
 
     /* ---- CAREER ---- */
-    .xp-card { min-height: auto; }
+    .xp-card { min-height: auto; padding: 1.8rem 1.4rem; }
+    /* Odsazený rámeček vyčnívá o 10 px vpravo, což se na 390 px ořízne
+       o padding sekce a vypadá to jako chyba sazby, ne jako ozdoba. */
+    .xp-card::before { display: none; }
     .xp-card-header { flex-direction: column; gap: 0.5rem; }
     .xp-company-logo { text-align: left; font-size: 1rem; }
 
-    /* ---- LIGHTBOX ---- */
-    .lightbox img { max-width: 95%; }
+    /* ---- LIGHTBOX ----
+       Screenshoty z desktopu jsou na telefonu tak jako tak drobné, tak ať
+       aspoň využijí celou šířku. Zbytek dořeší pinch zoom — viewport ho
+       nikde nezakazuje. */
+    .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 0; }
     .lb-arrow { width: 44px; height: 44px; font-size: 1.2rem; }
+    .lightbox-controls { padding: 0 0.6rem; }
 }
 
 /* ---- SMALL PHONES (≤ 480px) ---- */
@@ -359,10 +404,10 @@
     .gf-big-email { font-size: 1.7rem; }
     .gf-bottom  { padding: 1.5rem 1.2rem; }
 
-    .dashboard-stats { gap: 0.8rem; }
-    .d-value { font-size: 1.4rem !important; }
-    .d-label { font-size: 0.62rem !important; }
-    .random-glitch-btn { font-size: 0.55rem !important; padding: 0.5rem 0.7rem !important; }
+    .dashboard-stats { gap: 0.6rem; }
+    .d-value { font-size: 1.6rem; }
+    .d-label { font-size: 0.64rem; }
+    .mobile-header { padding-left: 1.2rem; padding-right: 1.2rem; }
     .modal-tags  { gap: 0.5rem; }
     .modal-tag   { padding: 0.5rem 1rem; font-size: 0.8rem; }
 

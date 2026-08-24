@@ -54,6 +54,25 @@
     align-items: center;
     mix-blend-mode: difference;
     color: var(--white);
+    border-bottom: 1px solid transparent;
+    transition: background var(--transition-base),
+                padding var(--transition-base),
+                border-color var(--transition-base);
+}
+
+/* Jakmile se odscrolluje z hera, dostane hlavička vlastní podklad.
+   `mix-blend-mode: difference` sice logo samo obarví podle toho, co je pod
+   ním, ale nechává obsah projíždět těsně pod hlavičkou — text se pak s logem
+   překrývá a ani jedno není čitelné. Na desktopu se nic nemění, tam je
+   hlavička skrytá. */
+.mobile-header.is-solid {
+    mix-blend-mode: normal;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
 }
 
 .mobile-logo {
