@@ -139,7 +139,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: zoom-in !important;
+    /* Ne zoom-in — custom kurzor už stav „ZOOM" kreslí sám (.cursor-zoom).
+       Nativní lupa by se vykreslila přes něj. */
+    cursor: none !important;
     min-height: calc(100vh - 6rem);
 }
 
@@ -212,7 +214,7 @@
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     transition: transform var(--transition-base);
-    cursor: zoom-in !important;
+    cursor: none !important;
 }
 
 .pd-image:hover {

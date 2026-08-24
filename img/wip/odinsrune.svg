@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 100 100" role="img" aria-label="Odin's rune">
+  <!-- Othala (ᛟ) — dedictvi / birthright.
+       Zamerne BEZ pricnych patek na koncich nohou: patkovana varianta
+       (gefusste Odalrune) je znak 7. divize SS Prinz Eugen a RuSHA.
+       Prosta runa nese uplne stejny vyznam a zadny takovy nanos. -->
+  <g fill="none" stroke="#2b2f36" stroke-width="9"
+     stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- kosoctverec -->
+    <path d="M50 12 L74 36 L50 60 L26 36 Z"/>
+    <!-- rozbihave nohy z dolniho vrcholu, zakonceni rovnym rezem -->
+    <path d="M50 60 L26 88"/>
+    <path d="M50 60 L74 88"/>
+  </g>
+</svg>

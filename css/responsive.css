@@ -77,6 +77,11 @@
     .custom-cursor, .cursor-aura { display: none; }
     body { cursor: auto; }
     a, button, .f-card, .a-card, .featured-slide[data-project] { cursor: pointer !important; }
+    /* Custom kurzor je pod 769 px vypnutý (initCursor se ukončí), takže
+       polím je nutné nativní I-beam vrátit — jinak zůstanou bez kurzoru. */
+    input, textarea, select, option, label,
+    .form-input, .form-textarea { cursor: auto !important; }
+    input[type="submit"], input[type="button"] { cursor: pointer !important; }
 
     /* ---- NAV ---- */
     .mobile-header { display: flex; }
@@ -97,7 +102,7 @@
         color: var(--accent);
     }
     .fs-num {
-        font-size: 2.8rem !important;
+        font-size: 0.7rem !important;
         line-height: 1 !important;
         -webkit-text-stroke: 0 !important;
         color: var(--accent) !important;
@@ -150,11 +155,13 @@
         position: relative !important;
         height: auto !important;
         overflow: visible !important;
+        perspective: none !important;
     }
     .featured-slides-track {
         flex-direction: column !important;
         height: auto !important;
         transform: none !important;   /* Override JS inline transform */
+        transform-style: flat !important;
         gap: 0 !important;
     }
 
@@ -165,6 +172,7 @@
 
     /* Step 3: Intro slide → compact section label */
     .fs-intro-slide {
+        width: 100% !important;
         min-width: 100% !important;
         height: auto !important;
         min-height: auto !important;
@@ -174,6 +182,12 @@
         padding: 2.5rem 1.2rem 1.8rem !important;
         cursor: auto !important;
         border-bottom: none !important;
+        /* 3D dlaždic je čistě desktopová věc — na telefonu jen ubírá výkon
+           a rozbíjí čtení. Sousedi se nevykukují, takže by stejně nebylo co. */
+        transform: none !important;
+        opacity: 1 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
     }
     .fs-intro-slide::after    { display: none !important; }
     .fs-intro-scroll-cue      { display: none !important; }
@@ -222,8 +236,7 @@
     }
 
     /* Typography tweaks inside cards */
-    .fs-meta    { margin-bottom: 0.3rem !important; gap: 0.1rem !important; }
-    .fs-rule    { margin-bottom: 0.5rem !important; width: 1.5rem !important; }
+    .fs-meta    { margin-bottom: 0.4rem !important; gap: 0.5rem !important; }
     .fs-title   { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; margin-bottom: 0 !important; }
     .fs-tags    { margin-bottom: 0.3rem !important; gap: 0.25rem !important; }
     .fs-cta     { margin-top: 0.2rem !important; }
@@ -341,7 +354,7 @@
 @media (max-width: 480px) {
     .hero h1    { font-size: clamp(3rem, 20vw, 5rem); }
     .fs-title   { font-size: 1.4rem !important; }
-    .fs-num     { font-size: 2.2rem !important; }
+    .fs-num     { font-size: 0.65rem !important; }
     .fs-info    { padding: 1.2rem 1rem 1.5rem !important; }
     .gf-big-email { font-size: 1.7rem; }
     .gf-bottom  { padding: 1.5rem 1.2rem; }

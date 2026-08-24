@@ -12,6 +12,14 @@ a, button, .contact-cta, .f-btn, .lang-btn,
     cursor: none !important;
 }
 
+/* Formulářová pole mají v UA stylesheetu vlastní `cursor`, který přebíjí
+   dědění z body — bez tohohle pravidla se nad nimi vykreslí nativní I-beam
+   přes náš kurzor. Musí být vyjmenovaná explicitně. */
+input, textarea, select, option, label,
+.form-input, .form-textarea {
+    cursor: none !important;
+}
+
 .custom-cursor {
     width: 16px;
     height: 16px;
@@ -89,6 +97,17 @@ a, button, .contact-cta, .f-btn, .lang-btn,
     mix-blend-mode: normal;
 }
 .custom-cursor.cursor-copy .cursor-label { opacity: 1; color: var(--black); }
+
+/* State: TEXT (on inputs) — náhrada za nativní I-beam.
+   Tenká svislá čárka, aby bylo poznat, že do pole jde psát. */
+.custom-cursor.cursor-text {
+    width: 2px;
+    height: 26px;
+    border-radius: 1px;
+    background: var(--white);
+    mix-blend-mode: exclusion;
+}
+.custom-cursor.cursor-text .cursor-label { opacity: 0; }
 
 /* State: ZOOM (on modal gallery images) */
 .custom-cursor.cursor-zoom {
