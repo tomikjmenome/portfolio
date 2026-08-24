@@ -6,6 +6,18 @@
 // ---- DATA ----
 
 const projectsDatabase = {
+    'litera-1': {
+        title: 'Litera',
+        category: 'Branding',
+        displayTag: 'Identita & UI',
+        image: 'img/works/Litera/card.webp',
+        url: 'projects/litera.html',
+        vtName: 'project-litera',
+        gridClass: 'span-col-2',
+        tags: ['Branding', 'UI/UX', 'App Design', 'Illustration'],
+        shortDesc: 'Značka a rozhraní aplikace, která z maturitní četby dělá cestu s postupem, questy a testy. Logo a podznačky, logomanuál, devět obrazovek a vlastní sada ilustrovaných autorů.',
+        shortDescEn: 'Brand and interface for an app that turns the required school reading list into a path with progress, quests and quizzes. Logo and sub-brands, brand manual, nine screens and a custom set of illustrated authors.',
+    },
     'branding-1': {
         title: 'Robokolo',
         category: 'Redesign',
@@ -144,20 +156,19 @@ const translations = {
         // About
         aboutBio1: 'Jmenuji se Tomáš a jsem grafický designér. Kromě vizuální tvorby se aktivně zajímám o 3D tisk, moderní technologie a historii. Mou velkou inspirací je hudba – konkrétně skladby plné skrytých odkazů, historických narážek a detailů, které člověk docení až při opakovaném poslechu.',
         aboutBio2: 'Tento princip objevování hlubších vrstev se snažím přenášet i do své práce. Baví mě tvořit design s přesahem a mám radost, když se mi podaří do grafiky zakomponovat jemný detail či "easter egg", který pozorný divák časem odhalí.',
-        aboutBio3: 'Angličtina: B2 (upper-intermediate)',
         available: 'Dostupný', contactCTA: 'Kontaktovat', downloadCV: 'Stáhnout CV',
         // Career
         careerTitle: 'Vzdělání',
         xpDegree: 'Informační Technologie',
-        xpDesc: 'Maturitní obor zakončený státní maturitní zkouškou. Průměr 1,47.',
+        xpDesc: 'Zakončeno státní maturitní zkouškou s vyznamenáním. Průměr za studium 1,47.',
         // Software
         softwareTitle: 'Můj Digitální Arzenál',
         // Featured work
         featuredTitle: 'Vybraná práce',
         featuredSubtitle: 'Výběr mých nejlepších prací',
-        f1Cat: 'Redesign', f1Title: 'Robokolo', f1Desc: 'Kompletní redesign značky a vizuální identity.',
-        f2Cat: 'Redesign', f2Title: 'Abbey Road — The Beatles', f2Desc: 'Kompletní redesign LP desky a souvisejících plakátů.',
-        f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternativní redesign filmového plakátu kultovního Jurského Parku.',
+        f1Cat: 'Branding & Identity', f1Title: 'Robokolo', f1Desc: 'Kompletní redesign značky — nové logo, piktogram, tiskoviny a merch. Cílem bylo posunout projekt od garážového hobby k moderní technologické identitě.',
+        f2Cat: 'Cover Art & Fan Art', f2Title: 'Abbey Road', f2Desc: 'Moderní reinterpretace ikonického alba The Beatles z roku 1969. Nový vinyl, obal a série plakátů s minimalistickým přístupem.',
+        f3Cat: 'Identita & UI/UX', f3Title: 'Litera', f3Desc: 'Značka a rozhraní aplikace, která z maturitní četby dělá cestu. Logo a jeho podznačky, logomanuál, devět obrazovek a vlastní ilustrace autorů.',
         // Archive
         archiveTitle: 'Projekty',
         // Partners
@@ -173,7 +184,7 @@ const translations = {
         wipStatusDev: 'Ve vývoji', wipStatusDev2: 'Ve vývoji',
         wipStatusClient: 'Klientská zakázka', wipStatusConcept: 'Koncept',
         wipMaki: 'Lokální AI asistent, který běží celý na vlastním počítači. Desktopová aplikace nad modelem v Ollamě — hledání na webu, čtení stránek, obrázky i videa přímo v odpovědi.',
-        wipLitera: 'Pomocník s maturitní četbou ve stylu Duolinga. Cesta úkolů, XP, streaky a truhly postavené nad rozbory děl. Finální verze poběží na backendu s účty.',
+        wipLitera: 'Třetí verze Litery. Na hotovou značku a rozhraní navazuje cesta úkolů, XP, streaky a truhly nad rozbory děl — finální verze poběží na backendu s účty.',
         wipMatl: 'Web pro klienta z oboru automotive. Přestavba na Next.js nad hotovým design systémem — registr služeb, galerie a podstránky jednotlivých přeprav.',
         wipOdin: 'Příběhová hra o cestování časem. Hráč se pohybuje mezi současným Londýnem, renesanční Florencií roku 1488 a rudolfínskou Prahou. Zatím scénář a skici na papíře.',
         mobileWip: 'Rozdělané', footerWip: 'Rozdělané',
@@ -200,20 +211,19 @@ const translations = {
         // About
         aboutBio1: 'My name is Tomáš and I am a graphic designer. Beyond visual creation, I am actively interested in 3D printing, modern technology, and history. My greatest inspiration is music — specifically compositions full of hidden references, historical allusions, and details that one only appreciates upon repeated listening.',
         aboutBio2: 'I try to transfer this principle of discovering deeper layers into my own work. I enjoy creating design with broader meaning, and I take pride when I manage to incorporate a subtle detail or "easter egg" into a graphic that an attentive viewer will eventually discover.',
-        aboutBio3: 'English: B2 (upper-intermediate)',
         available: 'Available', contactCTA: 'Contact Me', downloadCV: 'Download CV',
         // Career
         careerTitle: 'Education',
         xpDegree: 'Information Technology',
-        xpDesc: 'Secondary school diploma with state graduation exam. GPA 1.47.',
+        xpDesc: 'Graduated with honours in the state final examination. Overall GPA 1.47.',
         // Software
         softwareTitle: 'My Digital Arsenal',
         // Featured work
         featuredTitle: 'Featured Work',
         featuredSubtitle: 'Curated selection of my finest pixels',
-        f1Cat: 'Redesign', f1Title: 'Robokolo', f1Desc: 'Complete brand and visual identity redesign.',
-        f2Cat: 'Redesign', f2Title: 'Abbey Road — The Beatles', f2Desc: 'Complete LP record and poster series redesign.',
-        f3Cat: 'Redesign', f3Title: 'Jurský Park', f3Desc: 'Alternative movie poster redesign for the iconic Jurassic Park.',
+        f1Cat: 'Branding & Identity', f1Title: 'Robokolo', f1Desc: 'A complete brand redesign — new logo, pictogram, print materials and merch. The goal was to move the project from a garage hobby to a modern technology identity.',
+        f2Cat: 'Cover Art & Fan Art', f2Title: 'Abbey Road', f2Desc: 'A modern reinterpretation of the iconic 1969 Beatles album. New vinyl, sleeve and a poster series with a minimalist approach.',
+        f3Cat: 'Identity & UI/UX', f3Title: 'Litera', f3Desc: 'Brand and interface for an app that turns required school reading into a path. Logo and sub-brands, brand manual, nine screens and custom author illustrations.',
         // Archive
         archiveTitle: 'Projects',
         // Partners
@@ -229,7 +239,7 @@ const translations = {
         wipStatusDev: 'In development', wipStatusDev2: 'In development',
         wipStatusClient: 'Client work', wipStatusConcept: 'Concept',
         wipMaki: 'A local AI assistant that runs entirely on your own machine. Desktop app on top of a model in Ollama — web search, page reading, images and video right in the answer.',
-        wipLitera: 'A Duolingo-style companion for required school reading. A path of tasks, XP, streaks and chests built on top of literary analysis. The final version will run on a backend with accounts.',
+        wipLitera: 'The third version of Litera. On top of the finished brand and interface come a path of tasks, XP, streaks and chests built over literary analysis — the final version will run on a backend with accounts.',
         wipMatl: 'A website for an automotive client. Rebuilt on Next.js over a finished design system — a service registry, gallery and per-service subpages.',
         wipOdin: 'A narrative time-travel game. The player moves between present-day London, Renaissance Florence of 1488 and Rudolfine Prague. Currently a script and sketches on paper.',
         mobileWip: 'In progress', footerWip: 'In progress',
@@ -389,11 +399,15 @@ function initCursor() {
         var slide    = e.target.closest('.featured-slide[data-project]');
         var email    = e.target.closest('.gf-big-email');
         var imgModal = e.target.closest('#modalGallery img, .modal-image img');
+        var textIn   = e.target.closest('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea');
 
-        cursor.classList.remove('cursor-view', 'cursor-copy', 'cursor-zoom');
+        cursor.classList.remove('cursor-view', 'cursor-copy', 'cursor-zoom', 'cursor-text');
         aura.classList.remove('hovering');
 
-        if (slide) {
+        if (textIn) {
+            cursor.classList.add('cursor-text');
+            if (label) label.textContent = '';
+        } else if (slide) {
             cursor.classList.add('cursor-view');
             if (label) label.textContent = _currentLang === 'cs' ? 'ZOBRAZIT' : 'VIEW';
         } else if (email) {
@@ -415,8 +429,9 @@ function initCursor() {
         var slide    = e.target.closest('.featured-slide[data-project]');
         var email    = e.target.closest('.gf-big-email');
         var imgModal = e.target.closest('#modalGallery img, .modal-image img');
-        if (slide || email || imgModal) {
-            cursor.classList.remove('cursor-view', 'cursor-copy', 'cursor-zoom');
+        var textIn   = e.target.closest('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea');
+        if (slide || email || imgModal || textIn) {
+            cursor.classList.remove('cursor-view', 'cursor-copy', 'cursor-zoom', 'cursor-text');
             if (label) label.textContent = '';
         } else if (e.target.closest(HOVER)) {
             cursor.classList.remove('hovering');
@@ -1160,13 +1175,39 @@ function initFeaturedScroll() {
     if (!n) return;
 
     var _cur = 0;
+    var inner = document.getElementById('featuredInner');
+
+    /* Posun tracku se počítá z naměřené šířky dlaždice, ne z pevných 100 %.
+       Dlaždice je na desktopu užší než viewport (vykukují sousedi), na mobilu
+       ji responsive.css roztáhne na plnou šířku — tahle matematika zvládne
+       obojí bez větvení. */
+    function applyTransform(idx) {
+        if (!slides.length || !inner) return;
+        var w  = slides[0].offsetWidth;          // offsetWidth, ne getBoundingClientRect:
+                                                 // rect by vracel rozměr už otočený rotateY
+        var cs = window.getComputedStyle(track);
+        var gap = parseFloat(cs.columnGap);
+        if (isNaN(gap)) gap = parseFloat(cs.gap) || 0;
+        var centering = (inner.clientWidth - w) / 2;
+        track.style.transform = 'translateX(' + (centering - idx * (w + gap)) + 'px)';
+    }
 
     function goTo(idx) {
         idx = Math.max(0, Math.min(n - 1, idx));
         if (idx === _cur) return;
         _cur = idx;
-        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-        slides.forEach(function(s, i) { s.classList.toggle('is-active', i === idx); });
+        applyTransform(idx);
+        slides.forEach(function(s, i) {
+            s.classList.toggle('is-active', i === idx);
+            s.classList.toggle('is-before', i < idx);
+            s.classList.toggle('is-after',  i > idx);
+            // Zbytkový náklon po myši by jinak zůstal na dlaždici, která
+            // právě odjela do pozadí.
+            if (i !== idx) {
+                s.style.removeProperty('--fs-mx');
+                s.style.removeProperty('--fs-my');
+            }
+        });
         dots.forEach(function(d, i) { d.classList.toggle('is-active', i === idx - 1); });
         if (progress) progress.classList.toggle('hidden', idx === 0);
         // Counter
@@ -1204,8 +1245,52 @@ function initFeaturedScroll() {
     window.addEventListener('scroll', update, { passive: true });
     update();
 
+    /* Výchozí vycentrování — goTo(0) se na startu ukončí hned (idx === _cur),
+       takže transform i stavové třídy je nutné nasadit zvlášť. Stejná funkce
+       slouží k přepočtu po změně velikosti okna, protože dlaždice měří ve vw. */
+    function syncLayout() {
+        applyTransform(_cur);
+        slides.forEach(function(s, i) {
+            s.classList.toggle('is-active', i === _cur);
+            s.classList.toggle('is-before', i < _cur);
+            s.classList.toggle('is-after',  i > _cur);
+        });
+    }
+    syncLayout();
+
+    var _rsTimer = null;
+    window.addEventListener('resize', function() {
+        clearTimeout(_rsTimer);
+        _rsTimer = setTimeout(syncLayout, 120);
+    });
+
+    /* Náklon aktivní dlaždice podle myši. Jen na desktopu a jen když
+       uživatel nemá vypnuté animace. */
+    var _tiltOK = window.matchMedia('(min-width: 769px)').matches &&
+                  !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (_tiltOK) {
+        if (inner) {
+            inner.addEventListener('mousemove', function(e) {
+                var act = slides[_cur];
+                if (!act) return;
+                var r = act.getBoundingClientRect();
+                // -1..1 od středu dlaždice
+                var mx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+                var my = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+                act.style.setProperty('--fs-mx', Math.max(-1, Math.min(1, mx)).toFixed(3));
+                act.style.setProperty('--fs-my', Math.max(-1, Math.min(1, my)).toFixed(3));
+            }, { passive: true });
+
+            inner.addEventListener('mouseleave', function() {
+                slides.forEach(function(s) {
+                    s.style.removeProperty('--fs-mx');
+                    s.style.removeProperty('--fs-my');
+                });
+            });
+        }
+    }
+
     // Touch swipe to navigate slides
-    var inner = document.getElementById('featuredInner');
     if (inner) {
         var _touchX = 0, _touchY = 0;
         inner.addEventListener('touchstart', function(e) {
