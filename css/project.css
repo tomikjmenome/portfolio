@@ -192,6 +192,17 @@
     margin-top: 0;
 }
 
+/* Řádek pod tlačítky — nese číslo verze, kterou návštěvník za odkazem uvidí,
+   aby case study a živá aplikace nesplyývaly v jedno. */
+.pp-downloads-note {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: #888;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 /* ---- Footer ---- */
 .pp-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);

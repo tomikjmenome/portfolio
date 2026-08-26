@@ -198,6 +198,10 @@ const translations = {
         wipMaki: 'Lokální AI asistent, který běží celý na vlastním počítači. Desktopová aplikace nad modelem v Ollamě — hledání na webu, čtení stránek, obrázky i videa přímo v odpovědi.',
         wipLitera: 'Třetí verze Litery. Na hotovou značku a rozhraní navazuje cesta úkolů, XP, streaky a truhly nad rozbory děl — finální verze poběží na backendu s účty.',
         wipMatl: 'Web pro klienta z oboru automotive. Přestavba na Next.js nad hotovým design systémem — registr služeb, galerie a podstránky jednotlivých přeprav.',
+        wipLiteraLink: 'Otevřít Literu ↗',
+        wipLiteraNote: 'Momentální verze V2.4',
+        wipMatlLink: 'Otevřít rozpracovaný web ↗',
+        wipMatlNote: 'Pozor: vývojová verze — obsah i funkce se ještě mění.',
         wipOdin: 'Příběhová hra o cestování časem. Hráč se pohybuje mezi současným Londýnem, renesanční Florencií roku 1488 a rudolfínskou Prahou. Zatím scénář a skici na papíře.',
         mobileWip: 'Rozdělané', footerWip: 'Rozdělané',
         // Footer
@@ -253,6 +257,10 @@ const translations = {
         wipMaki: 'A local AI assistant that runs entirely on your own machine. Desktop app on top of a model in Ollama — web search, page reading, images and video right in the answer.',
         wipLitera: 'The third version of Litera. On top of the finished brand and interface come a path of tasks, XP, streaks and chests built over literary analysis — the final version will run on a backend with accounts.',
         wipMatl: 'A website for an automotive client. Rebuilt on Next.js over a finished design system — a service registry, gallery and per-service subpages.',
+        wipLiteraLink: 'Open Litera ↗',
+        wipLiteraNote: 'Currently version V2.4',
+        wipMatlLink: 'Open the work-in-progress site ↗',
+        wipMatlNote: 'Heads up: development version — content and features are still changing.',
         wipOdin: 'A narrative time-travel game. The player moves between present-day London, Renaissance Florence of 1488 and Rudolfine Prague. Currently a script and sketches on paper.',
         mobileWip: 'In progress', footerWip: 'In progress',
         // Footer
@@ -370,11 +378,17 @@ function initScroll() {
         syncHeader();
     }
 
+    /* Práh 0.1 znamená „deset procent VÝŠKY SEKCE“, ne výřezu. Na mobilu, kde
+       se karty skládají pod sebe, má sekce přes 1400 px — fade se pak spustil
+       až 140 px poté, co uživatel začal sekci vidět, takže první karta naěhla
+       prázdná a doplňovala se až při scrollu. Práh 0 + spodní rootMargin to
+       spouští v okamžiku, kdy sekce podleze spodní hranu viewportu — stejně
+       na desktopu i na telefonu, bez ohledu na výšku sekce. */
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('section').forEach(function(s) { observer.observe(s); });
     var hero = document.querySelector('.hero');
     if (hero) hero.classList.add('visible');
@@ -1210,6 +1224,28 @@ function initFeaturedScroll() {
     var track    = document.getElementById('featuredSlidesTrack');
     var progress = document.getElementById('fsProgress');
     if (!outer || !track) return;
+
+    /* Sticky vodorovná mechanika je čistě desktopová věc. Na mobilu
+       responsive.css dlaždice rozloží pod sebe a všechny transformy přebíjí
+       přes !important — JS už nemá co řídit, jen škodí:
+
+       • update() běžel na každém scroll eventu a přes applyTransform() četl
+         offsetWidth + getComputedStyle + clientWidth → vynucený reflow při
+         každém posunu prstu. Odtud to trhané načítání sekce na telefonu.
+       • touchend swipe počítal cíl z `outer.offsetHeight - innerHeight`, což je
+         délka sticky dráhy. Ta na mobilu neexistuje (výška je auto), takže
+         jakýkoliv šikmý tah odhodil uživatele někam mimo sekci.
+
+       Když se okno později roztáhne na desktop, sekce se nastartuje. */
+    var fsDesktop = window.matchMedia('(min-width: 769px)');
+    if (!fsDesktop.matches) {
+        fsDesktop.addEventListener('change', function onDesktop(e) {
+            if (!e.matches) return;
+            fsDesktop.removeEventListener('change', onDesktop);
+            initFeaturedScroll();
+        });
+        return;
+    }
 
     var slides = document.querySelectorAll('.featured-slide');
     var dots   = document.querySelectorAll('.fs-dot');

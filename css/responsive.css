@@ -217,7 +217,12 @@
         height: auto !important;
         flex-direction: column !important;
         align-items: stretch !important;
-        border-top: 2px solid var(--accent) !important;
+        /* Byl tu 2px růžový pruh (--accent). Na desktopu se dlaždice oddělují
+           prostorem, takže na mobilu měl nahradit tu hranici — jenže nad první
+           kartou seděl těsně pod nadpisem „Vybrané práce“ a četl se jako chyba
+           renderu, ne jako design. Vlasová linka oddělí karty stejně dobře
+           a nekonkuruje růžové v nadpisu. */
+        border-top: 1px solid rgba(255,255,255,0.08) !important;
         border-bottom: none !important;
         background: #080808 !important;
     }
