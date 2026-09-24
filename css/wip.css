@@ -116,6 +116,12 @@
     padding: 0.3rem;
 }
 
+/* Maki je tmavá aplikace a jeho jantarová je laděná na tmavou plochu —
+   na světlé dlaždici by značka ztratila charakter. */
+.wip-mark.is-dark {
+    background: #1c1915;
+}
+
 /* Zástupný monogram — pro projekty bez použitelného loga */
 .wip-mark.is-placeholder {
     background: none;
