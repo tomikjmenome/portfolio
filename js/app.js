@@ -220,6 +220,7 @@ const translations = {
         wipMatlNote: 'Pozor: vývojová verze — obsah i funkce se ještě mění.',
         wipUvolnito: 'Web pro masážní studio v Brně. Ceník přímo na stránce, rezervace přes Reservio na jedno kliknutí a osobní značka maséra místo anonymního salonu. Web už běží, doplňují se poslední údaje od klienta.',
         wipUvolnitoLink: 'Otevřít web ↗',
+        wipUvolnitoNote: 'Pozor: vývojová verze — obsah i funkce se ještě mění.',
         mobileWip: 'Rozdělané', footerWip: 'Rozdělané',
         // Footer
         footerCTA: 'Máte projekt?',
@@ -234,7 +235,8 @@ const translations = {
         formSuccess: 'Zpráva odeslána! Ozvu se brzy.', formError: 'Nepodařilo se odeslat. Použijte e-mail přímo.',
         // Mobile nav
         mobileAbout: 'O mně', mobileWork: 'Práce', mobileContact: 'Kontakt',
-        filterLabel: '// CO POTŘEBUJETE?',
+        filterLabel: '// CO POTŘEBUJETE?', surpriseMe: 'Překvap mě 🎲',
+        statFiles: 'Projektů', statClients: 'Klientů', statYears: 'Let praxe',
         filterAll: 'Vše', filterBrand: 'Značka a logo', filterWeb: 'Weby a aplikace',
         filterPrint: 'Tiskoviny a plakáty', filterCampaign: 'Kampaně a sociální sítě', filterIllustration: 'Ilustrace a hry',
     },
@@ -283,6 +285,7 @@ const translations = {
         wipMatlNote: 'Heads up: development version — content and features are still changing.',
         wipUvolnito: 'A website for a massage studio in Brno. The price list right on the page, one-click booking through Reservio and the therapist’s personal brand instead of an anonymous salon. The site is live; the last details from the client are being filled in.',
         wipUvolnitoLink: 'Open the website ↗',
+        wipUvolnitoNote: 'Heads up: development version — content and features are still changing.',
         mobileWip: 'In progress', footerWip: 'In progress',
         // Footer
         footerCTA: 'Got a project?',
@@ -297,7 +300,8 @@ const translations = {
         formSuccess: "Message sent! I'll get back to you soon.", formError: 'Sending failed. Please use email directly.',
         // Mobile nav
         mobileAbout: 'About', mobileWork: 'Work', mobileContact: 'Contact',
-        filterLabel: '// WHAT DO YOU NEED?',
+        filterLabel: '// WHAT DO YOU NEED?', surpriseMe: 'Surprise me 🎲',
+        statFiles: 'Projects', statClients: 'Clients', statYears: 'Years of experience',
         filterAll: 'Everything', filterBrand: 'Brand & logo', filterWeb: 'Websites & apps',
         filterPrint: 'Print & posters', filterCampaign: 'Campaigns & social', filterIllustration: 'Illustration & games',
     }

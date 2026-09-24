@@ -116,16 +116,6 @@
     padding: 0.3rem;
 }
 
-/* Maki a uvolni.to jsou hotové ikony aplikací — mají vlastní plochu i barvu.
-   Ve světlé dlaždici s odsazením z nich zbyl malý čtverec v rámečku, proto
-   tu ikona vyplní celou dlaždici a dlaždice jen ořízne rohy. */
-.wip-mark.is-icon {
-    padding: 0;
-    background: none;
-    border-radius: 22%;
-    overflow: hidden;
-}
-
 /* Zástupný monogram — pro projekty bez použitelného loga */
 .wip-mark.is-placeholder {
     background: none;
@@ -263,7 +253,6 @@
     .wip-card { padding: 1.5rem; gap: 1.1rem; }
     .wip-mark { width: 72px; height: 72px; padding: 0.4rem; font-size: 1.2rem; }
     .wip-mark.is-wide { padding: 0.25rem; }
-    .wip-mark.is-icon { padding: 0; }
 }
 
 /* Na nejmenších displejích zůstává řádek (dřív se překlápěl do sloupce).
@@ -274,7 +263,6 @@
     .wip-card { padding: 1.15rem; gap: 0.9rem; }
     .wip-mark { width: 56px; height: 56px; padding: 0.3rem; border-radius: 8px; }
     .wip-mark.is-wide { padding: 0.2rem; }
-    .wip-mark.is-icon { padding: 0; border-radius: 22%; }
     .wip-name { font-size: 1.15rem; }
     .wip-desc { font-size: 0.9rem; }
     .wip-live { flex-direction: column; align-items: flex-start; gap: 0.45rem; }

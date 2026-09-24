@@ -293,7 +293,7 @@
                         <img src="img/icons/indesign-icon.svg" alt="Adobe InDesign" class="software-icon-lg" loading="lazy">
                     </a>
                     <a href="https://www.affinity.studio/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Affinity">
-                        <img src="img/icons/affinity-icon.svg" alt="Affinity" class="software-icon-lg" loading="lazy">
+                        <img src="img/icons/affinity-icon.png" alt="Affinity" class="software-icon-lg" loading="lazy">
                     </a>
                     <a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe Premiere Pro">
                         <img src="img/icons/premiere-icon.svg" alt="Adobe Premiere Pro" class="software-icon-lg" loading="lazy">
@@ -362,7 +362,7 @@
                             <div class="fs-cta" aria-hidden="true">Zobrazit projekt <span>→</span></div>
                         </div>
                         <div class="fs-image-wrap">
-                            <img src="img/works/Alternativa/slide-letak.webp" alt="Volební leták Alternativy pro Rajhradice — přední a zadní strana" class="fs-img" loading="lazy">
+                            <img src="img/works/Alternativa/slide-logo.webp" alt="Alternativa pro Rajhradice" class="fs-img" loading="lazy">
                         </div>
                     </article>
 
@@ -438,22 +438,20 @@
                 <div class="archive-dashboard">
                     <div class="dashboard-stats" aria-label="Statistiky">
                         <div class="d-stat">
-                            <span class="d-label">Total Files</span>
+                            <span class="d-label" data-i18n="statFiles">Projektů</span>
                             <span class="d-value stat-number" id="totalFilesCount" aria-live="polite">0</span>
                         </div>
                         <div class="d-stat">
-                            <span class="d-label">Clients</span>
+                            <span class="d-label" data-i18n="statClients">Klientů</span>
                             <span class="d-value stat-number" data-target="2">0</span>
                         </div>
                         <div class="d-stat">
-                            <span class="d-label">XP Years</span>
+                            <span class="d-label" data-i18n="statYears">Let praxe</span>
                             <span class="d-value stat-number" data-target="3">0</span>
                         </div>
                     </div>
                     <div class="dashboard-actions">
-                        <button class="random-glitch-btn" id="randomProjectBtn" aria-label="Zobrazit náhodný projekt">
-                            Surprise Me 🎲
-                        </button>
+                        <button class="random-glitch-btn" id="randomProjectBtn" aria-label="Zobrazit náhodný projekt" data-i18n="surpriseMe">Překvap mě 🎲</button>
                     </div>
                 </div>
 
@@ -484,7 +482,7 @@
 
                 <ul class="wip-grid" role="list">
                     <li class="wip-card" style="--wip-accent:#e9b75e">
-                        <div class="wip-mark is-icon" aria-hidden="true"><img src="img/wip/maki.svg" alt="" class="wip-logo" loading="lazy" width="88" height="88"></div>
+                        <div class="wip-mark" aria-hidden="true"><img src="img/wip/maki-mark.svg" alt="" class="wip-logo" loading="lazy" width="88" height="88"></div>
                         <div class="wip-body">
                             <div class="wip-top">
                                 <h3 class="wip-name">Maki</h3>
@@ -534,7 +532,7 @@
                     </li>
 
                     <li class="wip-card" style="--wip-accent:#ccbba0">
-                        <div class="wip-mark is-icon" aria-hidden="true"><img src="img/wip/uvolnito.svg" alt="" class="wip-logo" loading="lazy" width="88" height="88"></div>
+                        <div class="wip-mark" aria-hidden="true"><img src="img/wip/uvolnito-mark.svg" alt="" class="wip-logo" loading="lazy" width="88" height="88"></div>
                         <div class="wip-body">
                             <div class="wip-top">
                                 <h3 class="wip-name">uvolni.to</h3>
@@ -546,6 +544,7 @@
                             </ul>
                             <div class="wip-live">
                                 <a class="wip-link" href="https://uvolnito.cz/" target="_blank" rel="noopener" data-i18n="wipUvolnitoLink">Otevřít web ↗</a>
+                                <span class="wip-note is-warning" data-i18n="wipUvolnitoNote">Pozor: vývojová verze — obsah i funkce se ještě mění.</span>
                             </div>
                         </div>
                     </li>
