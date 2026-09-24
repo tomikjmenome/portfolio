@@ -58,9 +58,9 @@
     .sticky-filter-wrapper { position: static; margin-bottom: 2rem; }
     .filter-list { flex-direction: row; flex-wrap: wrap; }
     .f-btn { border: 1px solid #ddd; }
-    .span-col-2, .span-row-2 { grid-column: auto; grid-row: auto; }
-    .archive-grid { grid-auto-rows: auto; }
-    .a-image { aspect-ratio: 16/9; }
+    /* Karty si i tady nechávají svou velikost (široké, vysoké) — jen řádky
+       jsou nižší, aby se celý archiv vešel na pár obrazovek. */
+    .archive-grid { grid-auto-rows: 240px; }
 
     /* Stats */
     .dashboard-stats { gap: 1rem; }
@@ -315,8 +315,26 @@
 
     /* ---- ARCHIVE ---- */
     .archive-section { padding: 3rem 1.2rem; }
-    .archive-grid { grid-template-columns: 1fr; }
+    /* Dva sloupce jako mozaika: široké karty přes oba sloupce, vysoké přes dva
+       řádky, `dense` dosype malé karty do mezer. Výška řádku se odvíjí od šířky
+       displeje, takže poměr stran karet zůstává stejný na 360 i 768 px. */
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: clamp(130px, 40vw, 260px);
+        gap: 0.6rem;
+    }
     .archive-sidebar, .archive-grid { min-width: 0; }
+    .a-meta { padding: 0.45rem 0.6rem; gap: 0.4rem; align-items: center; }
+    .a-id { font-size: 0.6rem; margin-top: 0; }
+    .a-info { min-width: 0; }
+    .a-info h4 {
+        font-size: 0.78rem;
+        margin-bottom: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .a-overlay-tech { display: none; }
 
     /* Statistiky v řadě, tlačítko přes celou šířku pod nimi.
        V jedné řadě se na 390 px popisky lámaly na dva řádky („Total / Files")
