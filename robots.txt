@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tomikjmenome.github.io/portfolio/sitemap.xml
+Sitemap: https://tomashajek.com/sitemap.xml
