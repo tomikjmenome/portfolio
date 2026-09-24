@@ -178,7 +178,7 @@ const translations = {
         // Featured work
         featuredTitle: 'Vybraná práce',
         featuredSubtitle: 'Výběr mých nejlepších prací',
-        f1Cat: 'Branding & Identity', f1Title: 'Robokolo', f1Desc: 'Kompletní redesign značky — nové logo, piktogram, tiskoviny a merch. Cílem bylo posunout projekt od garážového hobby k moderní technologické identitě.',
+        f1Cat: 'Identita & Kampaň', f1Title: 'Alternativa pro Rajhradice', f1Desc: 'Vizuální identita komunálního uskupení a celá kampaň k volbám — logo postavené na rozcestí, jeho animace, volební leták, grafika na sociální sítě a web.',
         f2Cat: 'Cover Art & Fan Art', f2Title: 'Abbey Road', f2Desc: 'Moderní reinterpretace ikonického alba The Beatles z roku 1969. Nový vinyl, obal a série plakátů s minimalistickým přístupem.',
         f3Cat: 'Identita & UI/UX', f3Title: 'Litera', f3Desc: 'Značka a rozhraní aplikace, která z maturitní četby dělá cestu. Logo a jeho podznačky, logomanuál, devět obrazovek a vlastní ilustrace autorů.',
         // Archive
@@ -188,13 +188,14 @@ const translations = {
         partnersTitle: 'Značky, pro které tvořím',
         partnerRoleAuto: 'Automotive', partnerRoleAuto2: 'Automotive',
         partnerRoleDetail: 'Detailing', partnerRolePolitics: 'Vizuální identita',
+        partnerRoleWellness: 'Web',
         mobilePartners: 'Spolupráce', footerPartners: 'Spolupráce',
         // Work in progress
         wipEyebrow: '// ROZDĚLANÉ PROJEKTY',
         wipTitle: 'Na čem se právě pracuje',
         wipIntro: 'Projekty, které ještě nejsou hotové. Postupně sem přibudou jako plné case studies.',
         wipStatusDev: 'Ve vývoji', wipStatusDev2: 'Ve vývoji',
-        wipStatusClient: 'Klientská zakázka', wipStatusConcept: 'Koncept',
+        wipStatusClient: 'Klientská zakázka', wipStatusClient2: 'Klientská zakázka',
         wipMaki: 'Lokální AI asistent, který běží celý na vlastním počítači. Desktopová aplikace nad modelem v Ollamě — hledání na webu, čtení stránek, obrázky i videa přímo v odpovědi.',
         wipLitera: 'Třetí verze Litery. Na hotovou značku a rozhraní navazuje cesta úkolů, XP, streaky a truhly nad rozbory děl — finální verze poběží na backendu s účty.',
         wipMatl: 'Web pro klienta z oboru automotive. Přestavba na Next.js nad hotovým design systémem — registr služeb, galerie a podstránky jednotlivých přeprav.',
@@ -202,7 +203,8 @@ const translations = {
         wipLiteraNote: 'Momentální verze V2.4',
         wipMatlLink: 'Otevřít rozpracovaný web ↗',
         wipMatlNote: 'Pozor: vývojová verze — obsah i funkce se ještě mění.',
-        wipOdin: 'Příběhová hra o cestování časem. Hráč se pohybuje mezi současným Londýnem, renesanční Florencií roku 1488 a rudolfínskou Prahou. Zatím scénář a skici na papíře.',
+        wipUvolnito: 'Web pro masážní studio v Brně. Ceník přímo na stránce, rezervace přes Reservio na jedno kliknutí a osobní značka maséra místo anonymního salonu. Web už běží, doplňují se poslední údaje od klienta.',
+        wipUvolnitoLink: 'Otevřít web ↗',
         mobileWip: 'Rozdělané', footerWip: 'Rozdělané',
         // Footer
         footerCTA: 'Máte projekt?',
@@ -237,7 +239,7 @@ const translations = {
         // Featured work
         featuredTitle: 'Featured Work',
         featuredSubtitle: 'Curated selection of my finest pixels',
-        f1Cat: 'Branding & Identity', f1Title: 'Robokolo', f1Desc: 'A complete brand redesign — new logo, pictogram, print materials and merch. The goal was to move the project from a garage hobby to a modern technology identity.',
+        f1Cat: 'Identity & Campaign', f1Title: 'Alternativa pro Rajhradice', f1Desc: 'Visual identity for a local political grouping and its whole election campaign — a logo built on a fork in the road, its animation, the election flyer, social media graphics and the website.',
         f2Cat: 'Cover Art & Fan Art', f2Title: 'Abbey Road', f2Desc: 'A modern reinterpretation of the iconic 1969 Beatles album. New vinyl, sleeve and a poster series with a minimalist approach.',
         f3Cat: 'Identity & UI/UX', f3Title: 'Litera', f3Desc: 'Brand and interface for an app that turns required school reading into a path. Logo and sub-brands, brand manual, nine screens and custom author illustrations.',
         // Archive
@@ -247,13 +249,14 @@ const translations = {
         partnersTitle: 'Brands I create for',
         partnerRoleAuto: 'Automotive', partnerRoleAuto2: 'Automotive',
         partnerRoleDetail: 'Detailing', partnerRolePolitics: 'Visual identity',
+        partnerRoleWellness: 'Website',
         mobilePartners: 'Partners', footerPartners: 'Partners',
         // Work in progress
         wipEyebrow: '// WORK IN PROGRESS',
         wipTitle: 'What I am building now',
         wipIntro: 'Projects that are not finished yet. They will land here as full case studies as they mature.',
         wipStatusDev: 'In development', wipStatusDev2: 'In development',
-        wipStatusClient: 'Client work', wipStatusConcept: 'Concept',
+        wipStatusClient: 'Client work', wipStatusClient2: 'Client work',
         wipMaki: 'A local AI assistant that runs entirely on your own machine. Desktop app on top of a model in Ollama — web search, page reading, images and video right in the answer.',
         wipLitera: 'The third version of Litera. On top of the finished brand and interface come a path of tasks, XP, streaks and chests built over literary analysis — the final version will run on a backend with accounts.',
         wipMatl: 'A website for an automotive client. Rebuilt on Next.js over a finished design system — a service registry, gallery and per-service subpages.',
@@ -261,7 +264,8 @@ const translations = {
         wipLiteraNote: 'Currently version V2.4',
         wipMatlLink: 'Open the work-in-progress site ↗',
         wipMatlNote: 'Heads up: development version — content and features are still changing.',
-        wipOdin: 'A narrative time-travel game. The player moves between present-day London, Renaissance Florence of 1488 and Rudolfine Prague. Currently a script and sketches on paper.',
+        wipUvolnito: 'A website for a massage studio in Brno. The price list right on the page, one-click booking through Reservio and the therapist’s personal brand instead of an anonymous salon. The site is live; the last details from the client are being filled in.',
+        wipUvolnitoLink: 'Open the website ↗',
         mobileWip: 'In progress', footerWip: 'In progress',
         // Footer
         footerCTA: 'Got a project?',

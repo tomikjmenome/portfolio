@@ -47,7 +47,7 @@
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
 }
 
@@ -112,6 +112,10 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #777;
+}
+
+@media (max-width: 1200px) {
+    .partners-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 1024px) {
