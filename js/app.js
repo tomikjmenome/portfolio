@@ -9,6 +9,8 @@ const projectsDatabase = {
     'litera-1': {
         title: 'Litera',
         category: 'Branding',
+        // Co zákazník hledá — projekt může patřit do víc skupin najednou.
+        services: ['brand', 'web'],
         displayTag: 'Identita & UI',
         image: 'img/works/Litera/card.webp',
         url: 'projects/litera.html',
@@ -21,6 +23,7 @@ const projectsDatabase = {
     'alternativa-1': {
         title: 'Alternativa pro Rajhradice',
         category: 'Branding',
+        services: ['brand', 'web', 'print', 'campaign'],
         displayTag: 'Kampaň',
         image: 'img/works/Alternativa/card.webp',
         url: 'projects/alternativa.html',
@@ -33,6 +36,7 @@ const projectsDatabase = {
     'branding-1': {
         title: 'Robokolo',
         category: 'Redesign',
+        services: ['brand', 'print'],
         displayTag: 'Redesign',
         image: 'img/works/Robokolo/robokolo.webp',
         // Velká case study má vlastní stránku — `url` přepne kartu z modálu na navigaci.
@@ -46,6 +50,7 @@ const projectsDatabase = {
     'web-1': {
         title: 'Abbey Road',
         category: 'Redesign',
+        services: ['print'],
         displayTag: 'Cover Art',
         image: 'img/works/Beatles/Beatles-mockup-final.webp',
         url: 'projects/abbey-road.html',
@@ -58,6 +63,7 @@ const projectsDatabase = {
     'fusion-1': {
         title: 'Fusion Tower Defense',
         category: 'Game Art',
+        services: ['illustration'],
         displayTag: 'Pixel Art',
         image: 'img/works/Fusion - Tower defense/main-titlescreen.png',
         gridClass: '',
@@ -70,6 +76,7 @@ const projectsDatabase = {
     'poster-1': {
         title: 'PF 2026',
         category: 'Posters',
+        services: ['print'],
         displayTag: 'Graphic Design',
         image: 'img/works/Posters/PolicieRajhrad-PF-2026.webp',
         gridClass: 'span-row-2',
@@ -81,6 +88,7 @@ const projectsDatabase = {
     'poster-2': {
         title: 'Matl Group',
         category: 'Posters',
+        services: ['print', 'campaign'],
         displayTag: 'Advertising',
         image: 'img/works/Posters/MatlGroup-Reklamniplakat-krytapřeprava.webp',
         gridClass: 'span-row-2',
@@ -92,6 +100,7 @@ const projectsDatabase = {
     'poster-3': {
         title: 'Jurský Park',
         category: 'Posters',
+        services: ['print'],
         displayTag: 'Redesign',
         image: 'img/works/Posters/JurskýPark-redesignFilmovehoPlakatu.webp',
         gridClass: 'span-row-2',
@@ -103,6 +112,7 @@ const projectsDatabase = {
     'apex-1': {
         title: 'Apex',
         category: 'UI/UX',
+        services: ['web'],
         displayTag: 'App Design',
         image: 'img/works/Apex/apex-home.webp',
         url: 'projects/apex.html',
@@ -115,6 +125,7 @@ const projectsDatabase = {
     'digital-1': {
         title: 'Death Note',
         category: 'Digital Art',
+        services: ['illustration'],
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/DeathNote.png',
         modalImage: 'img/works/Digitální kresba/DeathNote.png',
@@ -127,6 +138,7 @@ const projectsDatabase = {
     'digital-2': {
         title: 'Dragon I',
         category: 'Digital Art',
+        services: ['illustration'],
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/Dragon1.png',
         modalImage: 'img/works/Digitální kresba/Dragon1.png',
@@ -139,6 +151,7 @@ const projectsDatabase = {
     'digital-3': {
         title: 'Dragon II',
         category: 'Digital Art',
+        services: ['illustration'],
         displayTag: 'Digital Art',
         image: 'img/works/Digitální kresba/Dragon2.png',
         modalImage: 'img/works/Digitální kresba/Dragon2.png',
@@ -149,14 +162,16 @@ const projectsDatabase = {
     }
 };
 
+// Filtr je řazený podle toho, co zákazník shání, ne podle řemesla.
+// Jeden projekt se tak může ukázat ve víc skupinách (Alternativa je značka,
+// tiskoviny, kampaň i web zároveň). Popisky jsou v `translations`.
 const filterCategories = [
-    { value: 'all',          label: 'All Files'    },
-    { value: 'Redesign',     label: 'Redesign'     },
-    { value: 'Branding',     label: 'Branding'     },
-    { value: 'Posters',      label: 'Posters'      },
-    { value: 'Game Art',     label: 'Game Art'     },
-    { value: 'UI/UX',        label: 'UI/UX'        },
-    { value: 'Digital Art',  label: 'Digital Art'  },
+    { value: 'all',          key: 'filterAll'          },
+    { value: 'brand',        key: 'filterBrand'        },
+    { value: 'web',          key: 'filterWeb'          },
+    { value: 'print',        key: 'filterPrint'        },
+    { value: 'campaign',     key: 'filterCampaign'     },
+    { value: 'illustration', key: 'filterIllustration' },
 ];
 
 const translations = {
@@ -219,7 +234,9 @@ const translations = {
         formSuccess: 'Zpráva odeslána! Ozvu se brzy.', formError: 'Nepodařilo se odeslat. Použijte e-mail přímo.',
         // Mobile nav
         mobileAbout: 'O mně', mobileWork: 'Práce', mobileContact: 'Kontakt',
-        filterAll: 'All Files',
+        filterLabel: '// CO POTŘEBUJETE?',
+        filterAll: 'Vše', filterBrand: 'Značka a logo', filterWeb: 'Weby a aplikace',
+        filterPrint: 'Tiskoviny a plakáty', filterCampaign: 'Kampaně a sociální sítě', filterIllustration: 'Ilustrace a hry',
     },
     en: {
         // Hero
@@ -280,7 +297,9 @@ const translations = {
         formSuccess: "Message sent! I'll get back to you soon.", formError: 'Sending failed. Please use email directly.',
         // Mobile nav
         mobileAbout: 'About', mobileWork: 'Work', mobileContact: 'Contact',
-        filterAll: 'All Files',
+        filterLabel: '// WHAT DO YOU NEED?',
+        filterAll: 'Everything', filterBrand: 'Brand & logo', filterWeb: 'Websites & apps',
+        filterPrint: 'Print & posters', filterCampaign: 'Campaigns & social', filterIllustration: 'Illustration & games',
     }
 };
 
@@ -763,6 +782,7 @@ function renderArchive() {
         var card = document.createElement('article');
         card.className = ('a-card ' + (item.gridClass || '')).trim();
         card.dataset.category = item.category;
+        card.dataset.services = (item.services || []).join(' ');
         card.dataset.project = key;
         card.style.animationDelay = (index * 0.05) + 's';
         card.setAttribute('role', 'button');
@@ -825,9 +845,11 @@ function _renderFilterBtns() {
     if (!filterList) return;
     var counts = {};
     Object.keys(projectsDatabase).forEach(function(key) {
-        var cat = projectsDatabase[key].category;
-        counts[cat] = (counts[cat] || 0) + 1;
+        (projectsDatabase[key].services || []).forEach(function(svc) {
+            counts[svc] = (counts[svc] || 0) + 1;
+        });
     });
+    var t = translations[_currentLang] || translations.cs;
     var total = Object.keys(projectsDatabase).length;
     filterList.innerHTML = '';
     filterCategories.forEach(function(cat) {
@@ -836,7 +858,7 @@ function _renderFilterBtns() {
         btn.className = 'f-btn' + (cat.value === 'all' ? ' active' : '');
         btn.dataset.filter = cat.value;
         if (cat.value === 'all') btn.id = 'filterAllBtn';
-        btn.innerHTML = cat.label + ' <span class="filter-count">[' + count + ']</span>';
+        btn.innerHTML = '<span data-i18n="' + cat.key + '">' + t[cat.key] + '</span> <span class="filter-count">[' + count + ']</span>';
         filterList.appendChild(btn);
     });
 }
@@ -852,7 +874,7 @@ function _initFilters() {
         btn.classList.add('active');
         document.querySelectorAll('.a-card').forEach(function(card) {
             card.classList.remove('span-col-2', 'span-row-2');
-            var match = filter === 'all' || card.dataset.category === filter;
+            var match = filter === 'all' || card.dataset.services.split(' ').indexOf(filter) !== -1;
             if (match) {
                 card.classList.remove('hidden');
                 if (filter === 'all') { var orig = projectsDatabase[card.dataset.project] && projectsDatabase[card.dataset.project].gridClass; if (orig) card.classList.add(orig); }

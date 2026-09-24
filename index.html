@@ -45,6 +45,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
+    <!-- Stará záložka nebo odkaz na /index.html — v adresním řádku má být jen
+         tomashajek.com/. Jen přepis adresy, stránka se znovu nenačítá. -->
+    <script>
+    if (/\/index\.html$/.test(location.pathname)) {
+        history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
+    }
+    </script>
+
     <!-- Rozhodnout o preloaderu ještě před prvním vykreslením, jinak by problikl.
          Běží schválně v <head> a ne v app.js, který se pouští až po parsování těla. -->
     <script>
@@ -284,8 +292,14 @@
                     <a href="https://www.adobe.com/products/indesign.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe InDesign">
                         <img src="img/icons/indesign-icon.svg" alt="Adobe InDesign" class="software-icon-lg" loading="lazy">
                     </a>
+                    <a href="https://www.affinity.studio/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Affinity">
+                        <img src="img/icons/affinity-icon.svg" alt="Affinity" class="software-icon-lg" loading="lazy">
+                    </a>
                     <a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe Premiere Pro">
                         <img src="img/icons/premiere-icon.svg" alt="Adobe Premiere Pro" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Adobe After Effects">
+                        <img src="img/icons/aftereffects-icon.svg" alt="Adobe After Effects" class="software-icon-lg" loading="lazy">
                     </a>
                     <a href="https://www.autodesk.com/products/inventor/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Autodesk Inventor">
                         <img src="img/icons/autodesk-inventor-icon.png" alt="Autodesk Inventor" class="software-icon-lg" loading="lazy">
@@ -295,6 +309,15 @@
                     </a>
                     <a href="https://www.audacityteam.org/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Audacity">
                         <img src="img/icons/audacity-icon.svg" alt="Audacity" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://developer.mozilla.org/docs/Web/HTML" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="HTML">
+                        <img src="img/icons/html5-icon.svg" alt="HTML" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="JavaScript">
+                        <img src="img/icons/javascript-icon.svg" alt="JavaScript" class="software-icon-lg" loading="lazy">
+                    </a>
+                    <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Python">
+                        <img src="img/icons/python-icon.svg" alt="Python" class="software-icon-lg" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -437,7 +460,7 @@
                 <div class="archive-layout">
                     <aside class="archive-sidebar" aria-label="Filtrování projektů">
                         <div class="sticky-filter-wrapper">
-                            <span class="filter-label" id="filter-label">// FILTER SYSTEM</span>
+                            <span class="filter-label" id="filter-label" data-i18n="filterLabel">// CO POTŘEBUJETE?</span>
                             <div class="filter-list" role="group" aria-labelledby="filter-label">
                                 <!-- Dynamically rendered by archive.js -->
                             </div>
@@ -711,5 +734,8 @@
     </div>
 
     <script src="js/app.js"></script>
+    <!-- Návštěvnost: GoatCounter nepoužívá cookies ani neukládá nic do prohlížeče,
+         takže nepotřebuje souhlas ani cookie lištu. -->
+    <script data-goatcounter="https://tomashajek.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
